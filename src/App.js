@@ -1,16 +1,18 @@
-import logo from './logo.svg';
 import './App.scss';
+import { Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
+import Header from './components/Header';
+import Schedule from './pages/Schedule';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-      </header>
+      <Header/>
+      <Switch>
+        <Route path="/" component={Home} exact={true} />
+        <Route path="/schedule" component={Schedule} exact={true} />
+      </Switch>
     </div>
   );
 }
