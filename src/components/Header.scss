@@ -1,0 +1,28 @@
+.HeaderWrapper {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    background-color: #171E4F;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.Header {
+    max-width: 980px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.logo-wrapper {
+    height: 4rem;
+    padding: 0.5rem 1rem 0.5rem 0;
+}
+
+.Header-logo {
+    height: 100%;
+    width: auto;
+}
