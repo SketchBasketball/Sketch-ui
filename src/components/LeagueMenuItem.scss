@@ -1,0 +1,15 @@
+.league-menu-link {
+    padding: 0.5rem;
+    margin: 0.5rem 0.2rem;
+    border: #757575 solid 1px;
+    border-radius: 1rem;
+    box-sizing: border-box;
+
+    font-weight: 600;
+    color: #757575;
+    text-decoration: none;
+
+    &:hover {
+        color: #FF5722;
+    }
+}

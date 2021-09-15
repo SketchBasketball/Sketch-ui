@@ -1,0 +1,16 @@
+.league-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.league-menu-wrapper {
+    position: sticky;
+    top: 5rem;
+    background-color: #f6f6f6;
+    max-width: 980px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
