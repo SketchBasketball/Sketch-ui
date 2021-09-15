@@ -5,7 +5,7 @@ const LeagueMenuItem = (props) => {
     return (
         <NavLink
             className="league-menu-link"
-            exact={false}
+            exact={props.exact ? props.exact : false}
             to={props.path}
             activeStyle={{
                 color: "#FF5722",
