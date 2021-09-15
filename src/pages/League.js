@@ -14,6 +14,8 @@ const League = () => {
                 <LeagueMenuItem name="U18 League" path="/Leagues/Men2"/>
                 <LeagueMenuItem name="U15 League" path="/Leagues/Men3"/>
                 <LeagueMenuItem name="U12 League" path="/Leagues/Men4"/>
+                <LeagueMenuItem name="U9 League" path="/Leagues/Men5"/>
+                <LeagueMenuItem name="U7 League" path="/Leagues/Men6"/>
             </div>
             <Switch>
                 <Route path="/Leagues" component={Home} exact={true} />
