@@ -1,7 +1,8 @@
 import './League.scss';
 import LeagueMenuItem from '../components/LeagueMenuItem';
 import { Route, Switch } from 'react-router-dom';
-import Home from './Home';
+import LeagueDetail from './LeagueDetail';
+import LeagueSummary from './LeagueSummary';
 
 const League = () => {
     return (
@@ -17,15 +18,12 @@ const League = () => {
                 <LeagueMenuItem name="U9 League" path="/Leagues/Men5"/>
                 <LeagueMenuItem name="U7 League" path="/Leagues/Men6"/>
             </div>
-            <Switch>
-                <Route path="/Leagues" component={Home} exact={true} />
-                <Route path="/Leagues/Men" component={Home} exact={true} />
-                <Route path="/Leagues/Women" component={Home} exact={true} />
-                <Route path="/Leagues/Men1" component={Home} exact={true} />
-                <Route path="/Leagues/Men2" component={Home} exact={true} />
-                <Route path="/Leagues/Men3" component={Home} exact={true} />
-                <Route path="/Leagues/Men4" component={Home} exact={true} />
-            </Switch>
+            <div className="league-content-wrapper">
+                <Switch>
+                    <Route path="/Leagues" component={LeagueSummary} exact={true} />
+                    <Route path="/Leagues/:league" component={LeagueDetail} exact={true} />
+                </Switch>
+            </div>
         </div>
     )
 }

@@ -24,3 +24,10 @@
 .league-menu-wrapper::-webkit-scrollbar {
     display: none;
 }
+
+.league-content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}

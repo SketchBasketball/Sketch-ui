@@ -1,5 +1,5 @@
 import './Home.scss';
-import MainContent from '../components/MainContent';
+import ContentBox from '../components/ContentBox';
 import mainTitlesAndRoutes from '../const/mainTitlesAndRoutes';
 
 function Home() {
@@ -7,11 +7,18 @@ function Home() {
       <div className="home-wrapper">
         <div className="content-wrapper">
           {mainTitlesAndRoutes.map((item, index) => {
-            return <MainContent key={index} title={item.title} path={item.path}/>
+            return (
+              <ContentBox key={index} title={item.title} path={item.path}>
+                <div>
+                  <h3>Home~~~</h3>
+                  <h3>Home~~~</h3>
+                  <h3>Home~~~</h3>
+                  <h3>Home~~~</h3>
+                  <h3>Home~~~</h3>
+                </div>
+              </ContentBox>
+            )
           })}
-          {/* <MainContent title="UPCOMING SCHEDULES"/>
-          <MainContent title="League Standings"/>
-          <MainContent title="Leader Board"/> */}
         </div>
       </div>
     );
