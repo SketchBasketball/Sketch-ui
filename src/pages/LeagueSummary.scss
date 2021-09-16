@@ -18,7 +18,7 @@
 }
 .league-name {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #171E4F;
 }
 
@@ -27,7 +27,7 @@
     border-collapse: collapse;
 }
 
-.team-standing-table td, th {
+.team-standing-table td, .team-standing-table th {
     padding: 0.5rem 0;
     border-bottom: solid #e7e7e7 1px;
 }
@@ -35,7 +35,6 @@
 thead tr {
     background-color: #e7e7e7;
     color: #545454;
-    // border: solid #e7e7e7 1px;
 }
 
 .team-link {
@@ -45,4 +44,42 @@ thead tr {
     &:hover {
         color: #FF5722;
     }
+}
+
+.leader-board-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 2rem;
+    border-bottom: solid #e7e7e7 1px;
+    margin-bottom: 0.5rem;
+}
+
+.leader-board-item {
+    margin: 0.5rem 0;
+}
+
+.leader-board-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #3F51B5;
+}
+
+.leader-board-title-wrapper {
+    width: 100%;
+    padding: 0.5rem 0;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: solid #e7e7e7 1px;
+}
+
+.leader-board-table {
+    width: 100%;
+}
+
+.leader-board-table td, .leader-board-table th {
+    padding: 0.2rem 0;
+}
+
+.leader-board-table .name {
+    text-align: left;
 }

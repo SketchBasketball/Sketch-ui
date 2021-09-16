@@ -13,6 +13,18 @@ const defaultStandingTableHeader = [
     "+/-"
 ]
 
+const leaderBoardTitles = [
+    "Points Per Game",
+    "Rebounds Per Game",
+    "Assists Per Game",
+    "Blocks Per Game",
+    "Steals Per Game",
+    "Field Goal Percentage",
+    "Three Pointers Made",
+    "Three Point Percentage",
+    "Fantasy Points Per Game",
+]
+
 const sampleTableData = [
     {
         rank: 1,
@@ -97,4 +109,4 @@ const sampleTableData = [
 ]
 
 
-export {leagueDetailTopics, defaultStandingTableHeader, sampleTableData};
+export {leagueDetailTopics, defaultStandingTableHeader, sampleTableData, leaderBoardTitles};

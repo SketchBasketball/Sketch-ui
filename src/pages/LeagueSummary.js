@@ -1,6 +1,6 @@
 import "./LeagueSummary.scss"
 import ContentBox from "../components/ContentBox";
-import { defaultStandingTableHeader, sampleTableData } from "../const/leagueDetailConsts";
+import { defaultStandingTableHeader, sampleTableData, leaderBoardTitles } from "../const/leagueDetailConsts";
 import { Link } from "react-router-dom";
 
 const LeagueSummary = () => {
@@ -71,12 +71,87 @@ const LeagueSummary = () => {
                 </div>
               </ContentBox>
               <ContentBox title="Leader Board">
-                <div>
-                  <h3>Home~~~</h3>
-                  <h3>Home~~~</h3>
-                  <h3>Home~~~</h3>
-                  <h3>Home~~~</h3>
-                  <h3>Home~~~</h3>
+                <div className="league-name-wrapper">
+                    <span className='league-name'>Men's League</span>
+                </div>
+                <div className="leader-board-grid">
+                    {leaderBoardTitles.map((item, index) => {
+                        return (
+                        <div className="leader-board-item" key={index}>
+                            <div className="leader-board-title-wrapper">
+                                <span className='leader-board-title'>{item}</span>
+                            </div>
+                            <table className="leader-board-table">
+                                <tr>
+                                    <th>1.</th>
+                                    <th className="name">Stephen Curry</th>
+                                    <th>32.0</th>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td className="name">Bobby Lee</td>
+                                    <td>31.0</td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td className="name">Taemin Ha</td>
+                                    <td>26.0</td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td className="name">Jongha Kim</td>
+                                    <td>16.0</td>
+                                </tr>
+                                <tr>
+                                    <td>5.</td>
+                                    <td className="name">Michael Jordan</td>
+                                    <td>15.0</td>
+                                </tr>
+                            </table>
+                        </div>
+                    )
+                    })}
+                </div>  
+                <div className="league-name-wrapper">
+                    <span className='league-name'>Women's League</span>
+                </div>
+                <div className="leader-board-grid">
+                    {leaderBoardTitles.map((item, index) => {
+                        return (
+                            <div className="leader-board-item" key={index}>
+                                <div className="leader-board-title-wrapper">
+                                    <span className='leader-board-title'>{item}</span>
+                                </div>
+                                <table className="leader-board-table">
+                                    <tr>
+                                        <th>1.</th>
+                                        <th className="name">Stephen Curry</th>
+                                        <th>32.0</th>
+                                    </tr>
+                                    <tr>
+                                        <td>2.</td>
+                                        <td className="name">Bobby Lee</td>
+                                        <td>31.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3.</td>
+                                        <td className="name">Taemin Ha</td>
+                                        <td>26.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4.</td>
+                                        <td className="name">Jongha Kim</td>
+                                        <td>16.0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5.</td>
+                                        <td className="name">Michael Jordan</td>
+                                        <td>15.0</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        )
+                    })}
                 </div>
               </ContentBox>
               
