@@ -1,17 +1,17 @@
 .league-menu-link {
-    padding: 0.5rem;
-    margin: 0.5rem 0.2rem;
-    border: #757575 solid 1px;
-    border-radius: 0.4rem;
-    box-sizing: border-box;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    
-    font-weight: 600;
-    color: #757575;
-    text-decoration: none;
+  padding: 0.5rem;
+  margin: 0.5rem 0.2rem;
+  border: #757575 solid 1px;
+  border-radius: 0.4rem;
+  box-sizing: border-box;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-    &:hover {
-        color: #FF5722;
-        border: #FF5722 solid 1px;
-    }
+  font-weight: 600;
+  color: #757575;
+  text-decoration: none;
+
+  &:hover {
+    color: #ff5722;
+    border: #ff5722 solid 1px;
+  }
 }
