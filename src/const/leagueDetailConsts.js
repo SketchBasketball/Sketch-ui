@@ -108,5 +108,33 @@ const sampleTableData = [
     }
 ]
 
+const sampleLeaderBoardData = [
+    {
+        name: "Bobby Lee",
+        score: 32.0,
+        rank: 1,
+    },
+    {
+        name: "Michael Jordan",
+        score: 29.0,
+        rank: 2,
+    },
+    {
+        name: "Stephen Curry",
+        score: 25.0,
+        rank: 3,
+    },
+    {
+        name: "Taemin Ha",
+        score: 24.0,
+        rank: 4,
+    },
+    {
+        name: "Jongha Kim",
+        score: 22.0,
+        rank: 4,
+    },
+]
 
-export {leagueDetailTopics, defaultStandingTableHeader, sampleTableData, leaderBoardTitles};
+
+export {leagueDetailTopics, defaultStandingTableHeader, sampleTableData, leaderBoardTitles, sampleLeaderBoardData};

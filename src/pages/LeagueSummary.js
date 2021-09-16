@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 const LeagueSummary = () => {
     return (
         <div className='league-summary-wrapper'>
+            <div className="league-name-wrapper">
+                <span className='league-name'>League Main Page contents and layout to be determined</span>
+            </div>
             <ContentBox title="Standings">
                 <div className="league-name-wrapper">
                     <span className='league-name'>Men's League</span>
