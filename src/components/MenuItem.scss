@@ -1,10 +1,10 @@
 .menu-item {
-    font-size: 1rem;
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    &:hover {
-        color: #FF5722;
-    }
+  font-size: 1rem;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  &:hover {
+    color: #ff5722;
+  }
 }
-
