@@ -1,5 +1,5 @@
 import "./League.scss";
-import LeagueMenuItem from "../components/LeagueMenuItem";
+import LeagueMenuItem from "../components/SubMenuItem";
 import { Route, Switch } from "react-router-dom";
 import LeagueDetail from "./LeagueDetail";
 import LeagueSummary from "./LeagueSummary";

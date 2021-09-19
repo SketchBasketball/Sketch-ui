@@ -1,7 +1,7 @@
-import "./LeagueMenuItem.scss";
+import "./SubMenuItem.scss";
 import { NavLink } from "react-router-dom";
 
-const LeagueMenuItem = (props) => {
+const SubMenuItem = (props) => {
   return (
     <NavLink
       className="league-menu-link"
@@ -17,4 +17,4 @@ const LeagueMenuItem = (props) => {
   );
 };
 
-export default LeagueMenuItem;
+export default SubMenuItem;
