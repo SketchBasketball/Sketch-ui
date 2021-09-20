@@ -1,7 +1,7 @@
 import "./Schedule.scss";
 import LeagueMenuItem from "../components/SubMenuItem";
 import { Route, Switch } from "react-router-dom";
-import ScheduleCalendar from "./ScheduleCalendar";
+import ScheduleDetail from "./ScheduleDetail";
 import ScheduleList from "./ScheduleList";
 
 const Schedule = () => {
@@ -18,16 +18,14 @@ const Schedule = () => {
         <LeagueMenuItem name="U9 League" path="/Schedules/U9" />
         <LeagueMenuItem name="U7 League" path="/Schedules/U7" />
       </div>
-      <div className="schedule-content-wrapper">
-        <Switch>
-          <Route path="/Schedules" component={ScheduleCalendar} exact={true} />
-          <Route
-            path="/Schedules/:league"
-            component={ScheduleList}
-            exact={true}
-          />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/Schedules" component={ScheduleList} exact={true} />
+        <Route
+          path="/Schedules/:league"
+          component={ScheduleDetail}
+          exact={true}
+        />
+      </Switch>
     </div>
   );
 };
