@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const LeagueDetail = () => {
   const { league } = useParams();
   return (
-    <div className="league-summary-wrapper">
+    <div className="league-detail-wrapper">
       <ContentBox title={`Standings - ${league}`}>
         <div className="team-standing-table-wrapper">
           <table className="team-standing-table">

@@ -15,11 +15,24 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  overflow: auto;
+  white-space: nowrap;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* hide scroll bar for Chrome, Safari and Opera*/
+.league-menu-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .logo-wrapper {
   height: 4rem;
   padding: 0.5rem 1rem 0.5rem 0;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .Header-logo {
