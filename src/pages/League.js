@@ -4,10 +4,12 @@ import LeagueMenuItem from "../components/SubMenuItem";
 import { Route, Switch } from "react-router-dom";
 import LeagueDetail from "./LeagueDetail";
 import LeagueSummary from "./LeagueSummary";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const League = () => {
+  const [leagues, setLeagues] = useState([]);
+
   useEffect(() => {
     axios
       .get(
@@ -15,6 +17,7 @@ const League = () => {
       )
       .then((res) => {
         console.log(res);
+        setLeagues(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -24,14 +27,15 @@ const League = () => {
     <div className="league-wrapper">
       <div className="league-menu-wrapper">
         <LeagueMenuItem name="Summary" path="/Leagues" exact={true} />
-        <LeagueMenuItem name="Men's League" path="/Leagues/Men" />
-        <LeagueMenuItem name="Women's League" path="/Leagues/Women" />
-        <LeagueMenuItem name="Kid's League" path="/Leagues/Kid" />
-        <LeagueMenuItem name="U18 League" path="/Leagues/U18" />
-        <LeagueMenuItem name="U15 League" path="/Leagues/U15" />
-        <LeagueMenuItem name="U12 League" path="/Leagues/U12" />
-        <LeagueMenuItem name="U9 League" path="/Leagues/U9" />
-        <LeagueMenuItem name="U7 League" path="/Leagues/U7" />
+        {leagues.map((league, index) => {
+          return (
+            <LeagueMenuItem
+              key={index}
+              name={league.name}
+              path={`/Leagues/${league.name.replaceAll(" ", "-")}`}
+            />
+          );
+        })}
       </div>
       <div className="league-content-wrapper">
         <Switch>
