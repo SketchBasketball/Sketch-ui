@@ -1,3 +1,4 @@
+import React from "react";
 import "./Home.scss";
 import ContentBox from "../components/ContentBox";
 import mainTitlesAndRoutes from "../const/mainTitlesAndRoutes";

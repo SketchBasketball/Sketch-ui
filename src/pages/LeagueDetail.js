@@ -1,3 +1,4 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 import "./LeagueDetail.scss";
 import ContentBox from "../components/ContentBox";

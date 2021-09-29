@@ -1,3 +1,4 @@
+import React from "react";
 import "./Schedule.scss";
 import LeagueMenuItem from "../components/SubMenuItem";
 import { Route, Switch } from "react-router-dom";

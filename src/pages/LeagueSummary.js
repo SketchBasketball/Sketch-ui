@@ -1,3 +1,4 @@
+import React from "react";
 import "./LeagueDetail.scss";
 import ContentBox from "../components/ContentBox";
 import {

@@ -1,3 +1,4 @@
+import React from "react";
 import "./ScheduleList.scss";
 // import ContentBox from "../components/ContentBox";
 

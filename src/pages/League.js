@@ -1,10 +1,25 @@
+import React from "react";
 import "./League.scss";
 import LeagueMenuItem from "../components/SubMenuItem";
 import { Route, Switch } from "react-router-dom";
 import LeagueDetail from "./LeagueDetail";
 import LeagueSummary from "./LeagueSummary";
+import { useEffect } from "react";
+import axios from "axios";
 
 const League = () => {
+  useEffect(() => {
+    axios
+      .get(
+        "http://alb-sketchbball-dev-1018877792.ap-northeast-2.elb.amazonaws.com/leagues"
+      )
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   return (
     <div className="league-wrapper">
       <div className="league-menu-wrapper">
