@@ -4,25 +4,17 @@ import LeagueMenuItem from "../components/SubMenuItem";
 import { Route, Switch } from "react-router-dom";
 import LeagueDetail from "./LeagueDetail";
 import LeagueSummary from "./LeagueSummary";
-import { useEffect, useState } from "react";
-import axios from "axios";
-
+import { useDispatch, useSelector } from "react-redux";
+import { getLeagues } from "../store/actions/league";
+import { useEffect } from "react";
 const League = () => {
-  const [leagues, setLeagues] = useState([]);
+  const dispatch = useDispatch();
+  const { leagues } = useSelector((store) => store.leagueReducer);
 
   useEffect(() => {
-    axios
-      .get(
-        "http://alb-sketchbball-dev-1018877792.ap-northeast-2.elb.amazonaws.com/leagues"
-      )
-      .then((res) => {
-        console.log(res);
-        setLeagues(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    dispatch(getLeagues());
   }, []);
+
   return (
     <div className="league-wrapper">
       <div className="league-menu-wrapper">
