@@ -1,3 +1,4 @@
+import React from "react";
 import "./ScheduleDetail.scss";
 import { useParams } from "react-router-dom";
 

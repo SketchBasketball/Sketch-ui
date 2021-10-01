@@ -1,3 +1,4 @@
+import React from "react";
 import "./MenuItem.scss";
 import { NavLink } from "react-router-dom";
 

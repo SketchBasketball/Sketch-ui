@@ -1,3 +1,4 @@
+import React from "react";
 import { useHistory } from "react-router";
 import defaultHeaderMenu from "../const/defaultHeaderMenu";
 import "./Header.scss";
