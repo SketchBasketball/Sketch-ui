@@ -41,7 +41,6 @@ jobs:
 
       - name: Deploy # S3에 배포하기
         run: aws s3 sync ./build s3://sketchbball-dev
-        # --profile=s3_deploy
 
       - name: Clear AWS S3 Cache
-        run: aws cloudfront create-invalidation --profile=s3_deploy --distribution-id E4DAPD4XGASNJ --paths '/*'
+        run: aws cloudfront create-invalidation --distribution-id E4DAPD4XGASNJ --paths '/*'
