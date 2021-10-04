@@ -1,0 +1,49 @@
+name: React Dev Deploy
+on: 
+  pull_request:                               # TODO. dev Branch에서 push 이벤트가 일어났을 때만 실행
+    # branches:
+    #   - dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Cache modules
+        uses: actions/cache@v1
+        id: yarn-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn-
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-northeast-2
+      
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      
+      - name: Install dependencies
+        run: yarn install
+      
+      - name: Build
+        run: yarn build
+      
+      - name: Deploy                  # S3에 배포하기
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS-REGION: ap-northeast-2
+        run: |
+          aws s3 sync ./build s3://sketchbball-dev \
+            --profile=s3_deploy
+      
+      - name: Clear AWS S3 Cache
+        run: aws cloudfront create-invalidation --profile=s3_deploy --distribution-id E4DAPD4XGASNJ --paths '/*'
