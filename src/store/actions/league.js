@@ -5,9 +5,7 @@ export const GET_LEAGUES = "GET_LEAGUES";
 export function getLeagues() {
   return (dispatch) => {
     axios
-      .get(
-        "http://alb-sketchbball-dev-1018877792.ap-northeast-2.elb.amazonaws.com/leagues"
-      )
+      .get(`${process.env.REACT_APP_API_PATH}/leagues`)
       .then((res) => {
         dispatch({ type: GET_LEAGUES, data: res.data });
       })
