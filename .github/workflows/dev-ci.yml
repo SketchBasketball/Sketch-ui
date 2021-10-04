@@ -37,13 +37,8 @@ jobs:
         run: yarn build
       
       - name: Deploy                  # S3에 배포하기
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS-REGION: ap-northeast-2
         run: |
-          aws s3 sync ./build s3://sketchbball-dev \
-            --profile=s3_deploy
+          aws s3 sync ./build s3://sketchbball-dev --profile=s3_deploy
       
       - name: Clear AWS S3 Cache
         run: aws cloudfront create-invalidation --profile=s3_deploy --distribution-id E4DAPD4XGASNJ --paths '/*'
