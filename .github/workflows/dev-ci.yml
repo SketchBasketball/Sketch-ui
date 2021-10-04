@@ -1,10 +1,8 @@
 name: React Dev Deploy
-# on:
-#   push:       # TODO. dev Branch에서 push 이벤트가 일어났을 때만 실행
-#     branches:
-#       - dev
 on:
-  pull_request:       # TODO. dev Branch에서 push 이벤트가 일어났을 때만 실행
+  push:       # TODO. dev Branch에서 push 이벤트가 일어났을 때만 실행
+    branches:
+      - dev
 
 
 jobs:
