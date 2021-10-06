@@ -8,14 +8,21 @@
 .footer-content {
   max-width: 980px;
   width: 100%;
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
+  font-size: 0.6rem;
 }
 
 .footer-content-left {
-  font-size: 0.6rem;
+  margin: 1.5rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.footer-content-right {
+  margin: 1.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
