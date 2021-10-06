@@ -1,0 +1,21 @@
+.footer {
+  background-color: #171e4f;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content {
+  max-width: 980px;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-content-left {
+  font-size: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
