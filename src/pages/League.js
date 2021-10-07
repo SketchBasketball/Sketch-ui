@@ -23,8 +23,8 @@ const League = () => {
           return (
             <LeagueMenuItem
               key={index}
-              name={league.name}
-              path={`/Leagues/${league.name.replaceAll(" ", "-")}`}
+              name={league.abv}
+              path={`/Leagues/${league.path}`}
             />
           );
         })}
