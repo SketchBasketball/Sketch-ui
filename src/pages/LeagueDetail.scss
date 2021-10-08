@@ -1,5 +1,5 @@
 .league-detail-wrapper {
-  max-width: 980px;
+  max-width: 1080px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -19,6 +19,7 @@
 .team-standing-table th {
   padding: 0.5rem 0;
   border-bottom: solid #e7e7e7 1px;
+  text-align: center;
 }
 
 thead tr {
@@ -67,6 +68,7 @@ thead tr {
 .leader-board-table td,
 .leader-board-table th {
   padding: 0.2rem 0;
+  text-align: center;
 }
 
 .leader-board-table .name {

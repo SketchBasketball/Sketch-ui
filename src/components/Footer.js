@@ -6,11 +6,9 @@ const Footer = (props) => {
     <div className="footer">
       <div className="footer-content">
         <div className="footer-content-left">
+          <span>Copyright © 2021 SKETCH Basketball. All rights reserved.</span>
           <span>
-            Copyright © 2021 SKETCH Basketball League. All rights reserved.
-          </span>
-          <span>
-            No portion of aicbl.com may be duplicated, redistributed or
+            No portion of sketchbball.com may be duplicated, redistributed or
             manipulated in any form.
           </span>
           <span>
