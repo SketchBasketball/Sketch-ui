@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Schedule from "./pages/Schedule";
 import League from "./pages/League";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/schedules" component={Schedule} />
         <Route path="/leagues" component={League} />
       </Switch>
+      <Footer />
     </div>
   );
 }
