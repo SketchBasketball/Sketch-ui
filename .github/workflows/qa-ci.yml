@@ -38,4 +38,4 @@ jobs:
         run: aws s3 sync ./build s3://sketchbball-qa
 
       - name: Clear AWS S3 Cache
-        run: aws cloudfront create-invalidation --distribution-id E4DAPD4XGASNJ --paths '/*'
+        run: aws cloudfront create-invalidation --distribution-id E2D740VF1EA5NP --paths '/*'
