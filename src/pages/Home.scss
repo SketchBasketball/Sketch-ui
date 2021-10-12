@@ -7,10 +7,11 @@
 
 .schedule-bar-wrapper {
   margin: 0 0.5rem;
-  max-width: 1080px;
+  max-width: calc(1080px - 1rem);
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .schedule-bar {
