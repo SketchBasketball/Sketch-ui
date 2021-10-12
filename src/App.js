@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Schedule from "./pages/Schedule";
 import League from "./pages/League";
 import Footer from "./components/Footer";
+import Error from "./pages/Error";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" component={Home} exact={true} />
         <Route path="/schedules" component={Schedule} />
         <Route path="/leagues" component={League} />
+        <Route path="*" component={Error} />
       </Switch>
       <Footer />
     </div>

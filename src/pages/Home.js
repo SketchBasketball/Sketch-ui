@@ -6,17 +6,26 @@ import mainTitlesAndRoutes from "../const/mainTitlesAndRoutes";
 function Home() {
   return (
     <div className="home-wrapper">
-      <div className="coming-schedule-wrapper">
-        <div>Upcoming Events In 7 days</div>
-        <div>schedule1</div>
-        <div>schedule2</div>
-        <div>schedule3</div>
-        <div>schedule4</div>
-        <div>schedule5</div>
-        <div>schedule6</div>
-        <div>schedule7</div>
-        <div>schedule8</div>
+      <div className="schedule-bar-wrapper">
+        <div className="schedule-title">Upcoming Matches</div>
+        <div className="schedule-bar">
+          <div className="schedule-content">schedule1111</div>
+          <div className="schedule-content">schedule2</div>
+          <div className="schedule-content">schedule3</div>
+          <div className="schedule-content">schedule4</div>
+          <div className="schedule-content">schedule5</div>
+          <div className="schedule-content">schedule6</div>
+          <div className="schedule-content">schedule7</div>
+          <div className="schedule-content">schedule8</div>
+          <div className="schedule-content">schedule6</div>
+          <div className="schedule-content">schedule7</div>
+          <div className="schedule-content">schedule8</div>
+          <div className="schedule-content">schedule6</div>
+          <div className="schedule-content">schedule7</div>
+          <div className="schedule-content">schedule8</div>
+        </div>
       </div>
+
       <div className="content-wrapper">
         {mainTitlesAndRoutes.map((item, index) => {
           return (
