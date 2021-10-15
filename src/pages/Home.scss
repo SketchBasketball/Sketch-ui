@@ -30,12 +30,13 @@
 .schedule-bar::-webkit-scrollbar {
   display: none;
 }
+
 .schedule-title {
   display: flex;
   align-items: center;
-  height: 5rem;
+  // height: 5rem;
   padding: 0.5rem;
-  border: #bdbdbd solid 1px;
+  border-right: #bdbdbd solid 1px;
   background-color: #ffffff;
   color: #171e4f;
   font-weight: 700;
@@ -44,11 +45,32 @@
 }
 
 .schedule-content {
-  height: 5rem;
-  width: 10rem;
+  font-size: 0.8rem;
+  // height: 5rem;
+  width: 100%;
   padding: 0.5rem;
-  border: #bdbdbd solid 1px;
+  border-right: #bdbdbd solid 1px;
   background-color: #ffffff;
+  line-height: 1.5;
+}
+
+.schedule-content .league-name {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #171e4f;
+}
+.schedule-content .team-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.schedule-content .team-info .team-name {
+  font-weight: 600;
+}
+
+.match-etc {
+  color: #757575;
 }
 
 .content-wrapper {
