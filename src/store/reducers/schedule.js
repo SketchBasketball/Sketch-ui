@@ -9,6 +9,7 @@ const initialState = {
   schedules: [],
   isLoading: true,
   isError: false,
+  isEndOfPage: false,
 };
 
 export default function scheduleReducer(state = initialState, action) {
@@ -17,6 +18,7 @@ export default function scheduleReducer(state = initialState, action) {
       return {
         ...state,
         isLoading: true,
+        schedules: [],
       };
     case GET_SCHEDULES_IN_PAGES_SUCCESS:
       return {
@@ -24,17 +26,22 @@ export default function scheduleReducer(state = initialState, action) {
         schedules: action.data,
         pages: action.pages,
         isLoading: false,
+        isEndOfPage: false,
+        isError: false,
       };
     case GET_SCHEDULES_IN_PAGES_NO_MORE_CONTENT:
       return {
         ...state,
         schedules: action.data,
         isLoading: false,
+        isEndOfPage: true,
+        isError: false,
       };
     case GET_SCHEDULES_IN_PAGES_FAIL:
       return {
         ...state,
         isLoading: false,
+        isEndOfPage: false,
         isError: true,
       };
     default:

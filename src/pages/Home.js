@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getMainSchedules } from "../store/actions/main";
 import { useEffect } from "react";
 import Error from "./Error";
+import Loader from "react-loader-spinner";
 
 function Home() {
   const dispatch = useDispatch();
@@ -26,7 +27,9 @@ function Home() {
         <div className="schedule-title">Upcoming Matches</div>
         <div className="schedule-bar">
           {isLoading ? (
-            <div className="schedule-content">Loading...</div>
+            <div className="schedule-bar-loader-wrapper">
+              <Loader type="Oval" color="#ff5722" secondaryColor="#757575" />
+            </div>
           ) : (
             schedules.map((item, index) => {
               return (

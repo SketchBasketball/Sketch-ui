@@ -3,10 +3,13 @@ import "./ScheduleList.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { getSchedulesInPages } from "../store/actions/schedule";
 import { useEffect } from "react";
+import Loader from "react-loader-spinner";
 
 const ScheduleList = () => {
   const dispatch = useDispatch();
-  const { pages, schedules } = useSelector((store) => store.scheduleReducer);
+  const { pages, schedules, isLoading, isEndOfPage } = useSelector(
+    (store) => store.scheduleReducer
+  );
   useEffect(() => {
     dispatch(getSchedulesInPages(0));
   }, []);
@@ -34,6 +37,16 @@ const ScheduleList = () => {
           {"Next >"}
         </div>
       </div>
+      {isLoading ? (
+        <div className="schedule-content-loader-wrapper">
+          <Loader type="Oval" color="#ff5722" secondaryColor="#757575" />
+        </div>
+      ) : isEndOfPage ? (
+        <div className="end-page">
+          <span>No more schedules to show :(</span>
+          <span>Please try again next time</span>
+        </div>
+      ) : null}
       <div className="schedule-list-grid">
         {schedules.map((item, index) => {
           return (

@@ -34,7 +34,7 @@
 .schedule-title {
   display: flex;
   align-items: center;
-  // height: 5rem;
+  height: 6rem;
   padding: 0.5rem;
   border-right: #bdbdbd solid 1px;
   background-color: #ffffff;
@@ -42,6 +42,15 @@
   font-weight: 700;
   line-height: 1.5;
   text-align: center;
+}
+
+.schedule-bar-loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-right: #bdbdbd solid 1px;
+  background-color: #ffffff;
 }
 
 .schedule-content {
