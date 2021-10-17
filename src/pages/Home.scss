@@ -45,8 +45,11 @@
 }
 
 .schedule-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-size: 0.8rem;
-  // height: 5rem;
+  height: 6rem;
   width: 100%;
   padding: 0.5rem;
   border-right: #bdbdbd solid 1px;

@@ -1,42 +1,72 @@
 import React from "react";
 import "./ScheduleList.scss";
-// import ContentBox from "../components/ContentBox";
-
-const temp = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+import { useDispatch, useSelector } from "react-redux";
+import { getSchedulesInPages } from "../store/actions/schedule";
+import { useEffect } from "react";
 
 const ScheduleList = () => {
+  const dispatch = useDispatch();
+  const { pages, schedules } = useSelector((store) => store.scheduleReducer);
+  useEffect(() => {
+    dispatch(getSchedulesInPages(0));
+  }, []);
+
+  function handleNavButtonClick(pages) {
+    dispatch(getSchedulesInPages(pages));
+  }
+
   return (
     <div className="schedule-list-wrapper">
       <div className="schedule-bav-bar">
-        <span>{"< Prev"}</span>
-        <span>Schedule</span>
-        <span>{"Next >"}</span>
+        <div
+          className="nav-button"
+          onClick={() => handleNavButtonClick(pages - 1)}
+        >
+          {"< Prev"}
+        </div>
+        <div className="nav-button" onClick={() => handleNavButtonClick(0)}>
+          Schedule
+        </div>
+        <div
+          className="nav-button"
+          onClick={() => handleNavButtonClick(pages + 1)}
+        >
+          {"Next >"}
+        </div>
       </div>
       <div className="schedule-list-grid">
-        {temp.map((item) => {
+        {schedules.map((item, index) => {
           return (
-            <div className="match-box" key={item}>
+            <div className="match-box" key={index}>
               <div className="match-box-header">
-                <span className="match-box-header-item">2021-09-20</span>
+                <span className="match-box-header-item">
+                  {item.scheduled_at.substr(0, 10)}
+                </span>
                 <span className="match-box-header-item">THU</span>
               </div>
               <div className="match-box-detail-wrapper">
-                <div className="match-box-detail-header">Men's League</div>
+                <div className="match-box-detail-header">
+                  {item.league_name}
+                </div>
                 <div className="match-box-detail">
-                  <div>
+                  <div className="team-wrapper">
                     <div className="temp-icon-a"></div>
-                    <div className="team-title">Team A</div>
+                    <div className="team-title">{item.home_team_name}</div>
                   </div>
                   <div className="score-wrapper">
-                    <span>23 : 7</span>
+                    <span>
+                      {item.home_team_score} : {item.away_team_score}
+                    </span>
                   </div>
-                  <div>
+                  <div className="team-wrapper">
                     <div className="temp-icon-b"></div>
-                    <div className="team-title">Team B</div>
+                    <div className="team-title">{item.away_team_name}</div>
                   </div>
                 </div>
                 <div className="match-box-venue-time">
-                  <span>Kennedy Town Sports Centre @ 7:00 PM</span>
+                  <span>
+                    {item.location} @ {item.scheduled_at.substr(11, 5)}
+                  </span>
                 </div>
               </div>
             </div>
