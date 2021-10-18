@@ -17,6 +17,7 @@ export function getSchedulesInPages(pages) {
           dispatch({
             type: GET_SCHEDULES_IN_PAGES_NO_MORE_CONTENT,
             data: res.data,
+            pages: pages,
           });
         } else {
           dispatch({

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getSchedulesInPages } from "../store/actions/schedule";
 import { useEffect } from "react";
 import Loader from "react-loader-spinner";
+import noContent from "../logo/no_content.png";
 
 const ScheduleList = () => {
   const dispatch = useDispatch();
@@ -43,8 +44,7 @@ const ScheduleList = () => {
         </div>
       ) : isEndOfPage ? (
         <div className="end-page">
-          <span>No more schedules to show :(</span>
-          <span>Please try again next time</span>
+          <img src={noContent} className="no-content" alt="no-content" />
         </div>
       ) : null}
       <div className="schedule-list-grid">

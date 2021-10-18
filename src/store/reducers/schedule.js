@@ -30,13 +30,25 @@ export default function scheduleReducer(state = initialState, action) {
         isError: false,
       };
     case GET_SCHEDULES_IN_PAGES_NO_MORE_CONTENT:
-      return {
-        ...state,
-        schedules: action.data,
-        isLoading: false,
-        isEndOfPage: true,
-        isError: false,
-      };
+      if (state.isEndOfPage) {
+        return {
+          ...state,
+          schedules: action.data,
+          isLoading: false,
+          isEndOfPage: true,
+          isError: false,
+        };
+      } else {
+        return {
+          ...state,
+          schedules: action.data,
+          pages: action.pages,
+          isLoading: false,
+          isEndOfPage: true,
+          isError: false,
+        };
+      }
+
     case GET_SCHEDULES_IN_PAGES_FAIL:
       return {
         ...state,
