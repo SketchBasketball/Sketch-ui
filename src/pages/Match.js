@@ -219,6 +219,7 @@ const Match = () => {
               rows={rows}
               columns={columns}
               autoHeight={true}
+              rowHeight={30}
             />
           </div>
         </ContentBox>
