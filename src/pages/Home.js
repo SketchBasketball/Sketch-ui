@@ -28,7 +28,13 @@ function Home() {
         <div className="schedule-bar">
           {isLoading ? (
             <div className="schedule-bar-loader-wrapper">
-              <Loader type="Oval" color="#ff5722" secondaryColor="#757575" />
+              <Loader
+                type="Oval"
+                color="#ff5722"
+                secondaryColor="#757575"
+                width={40}
+                height={40}
+              />
             </div>
           ) : (
             schedules.map((item, index) => {

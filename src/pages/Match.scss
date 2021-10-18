@@ -1,0 +1,14 @@
+.match-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.match-content-wrapper {
+  max-width: 1080px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
