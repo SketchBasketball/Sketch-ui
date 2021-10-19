@@ -10,10 +10,13 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  font-size: 0.8rem;
 }
 
 .data-grid-wrapper {
   width: 100%;
   margin-bottom: 1rem;
+}
+
+.MuiDataGrid-footerContainer {
+  display: none !important;
 }

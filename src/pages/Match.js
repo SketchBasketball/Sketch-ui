@@ -3,132 +3,18 @@ import "./Match.scss";
 import { useParams } from "react-router-dom";
 import ContentBox from "../components/ContentBox";
 import { DataGrid } from "@mui/x-data-grid";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getMatchDetails } from "../store/actions/match";
 
 const Match = () => {
   const { id } = useParams();
+  const dispatch = useDispatch();
+  const { matchDetails } = useSelector((store) => store.matchReducer);
 
-  const rows = [
-    {
-      id: 0,
-      name: "Vic PS Chan",
-      minutes: 0,
-      points: 3,
-      assists: 0,
-      def_rebounds: 2,
-      off_rebounds: 0,
-      rebounds: 2,
-      field_goal_try: 6,
-      field_goal_made: 1,
-      three_point_try: 0,
-      three_point_made: 1,
-      steals: 2,
-      blocks: 1,
-      fouls: 3,
-      turnovers: 4,
-      is_starter: false,
-      is_mvp: false,
-    },
-    {
-      id: 1,
-      name: "Dan PS Zhao",
-      minutes: 0,
-      points: 8,
-      assists: 1,
-      def_rebounds: 9,
-      off_rebounds: 1,
-      rebounds: 10,
-      field_goal_try: 12,
-      field_goal_made: 2,
-      three_point_try: 0,
-      three_point_made: 0,
-      steals: 0,
-      blocks: 1,
-      fouls: 2,
-      turnovers: 1,
-      is_starter: false,
-      is_mvp: false,
-    },
-    {
-      id: 2,
-      name: "John PS Koshy",
-      minutes: 0,
-      points: 4,
-      assists: 1,
-      def_rebounds: 0,
-      off_rebounds: 0,
-      rebounds: 0,
-      field_goal_try: 4,
-      field_goal_made: 2,
-      three_point_try: 0,
-      three_point_made: 0,
-      steals: 0,
-      blocks: 0,
-      fouls: 3,
-      turnovers: 2,
-      is_starter: false,
-      is_mvp: false,
-    },
-    {
-      id: 3,
-      name: "Way PS Chang",
-      minutes: 0,
-      points: 8,
-      assists: 1,
-      def_rebounds: 6,
-      off_rebounds: 0,
-      rebounds: 6,
-      field_goal_try: 8,
-      field_goal_made: 3,
-      three_point_try: 0,
-      three_point_made: 0,
-      steals: 1,
-      blocks: 0,
-      fouls: 4,
-      turnovers: 1,
-      is_starter: false,
-      is_mvp: false,
-    },
-    {
-      id: 4,
-      name: "Samuel PS Song",
-      minutes: 0,
-      points: 16,
-      assists: 0,
-      def_rebounds: 9,
-      off_rebounds: 0,
-      rebounds: 9,
-      field_goal_try: 13,
-      field_goal_made: 6,
-      three_point_try: 0,
-      three_point_made: 0,
-      steals: 0,
-      blocks: 0,
-      fouls: 0,
-      turnovers: 2,
-      is_starter: false,
-      is_mvp: false,
-    },
-    {
-      id: 5,
-      name: "Kiwan PS Chung",
-      minutes: 0,
-      points: 4,
-      assists: 0,
-      def_rebounds: 3,
-      off_rebounds: 0,
-      rebounds: 3,
-      field_goal_try: 3,
-      field_goal_made: 2,
-      three_point_try: 0,
-      three_point_made: 0,
-      steals: 1,
-      blocks: 0,
-      fouls: 2,
-      turnovers: 0,
-      is_starter: false,
-      is_mvp: false,
-    },
-  ];
+  useEffect(() => {
+    dispatch(getMatchDetails(id));
+  }, []);
 
   const columns = [
     { field: "name", headerName: "PLAYER", flex: 2, minWidth: 160 },
@@ -151,24 +37,29 @@ const Match = () => {
   return (
     <div className="match-container">
       <div className="match-content-wrapper">
-        <ContentBox title="Team A">
-          <h3>{id}</h3>
+        {matchDetails ? matchDetails.league : null}
+        <ContentBox title={matchDetails ? matchDetails.home_team.name : null}>
           <div className="data-grid-wrapper">
             <DataGrid
-              rows={rows}
+              rows={matchDetails ? matchDetails.home_team.match_stats : []}
               columns={columns}
               autoHeight={true}
               rowHeight={30}
+              pageSize={100}
+              rowsPerPageOptions={[100]}
             />
           </div>
         </ContentBox>
-        <ContentBox title="Team B">
-          <div>
-            <h3>Home~~~</h3>
-            <h3>Home~~~</h3>
-            <h3>Home~~~</h3>
-            <h3>Home~~~</h3>
-            <h3>Home~~~</h3>
+        <ContentBox title={matchDetails ? matchDetails.away_team.name : null}>
+          <div className="data-grid-wrapper">
+            <DataGrid
+              rows={matchDetails ? matchDetails.away_team.match_stats : []}
+              columns={columns}
+              autoHeight={true}
+              rowHeight={30}
+              pageSize={100}
+              rowsPerPageOptions={[100]}
+            />
           </div>
         </ContentBox>
       </div>
