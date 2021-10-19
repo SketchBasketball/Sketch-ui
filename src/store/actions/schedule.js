@@ -10,7 +10,7 @@ export function getSchedulesInPages(pages) {
   return (dispatch) => {
     dispatch({ type: GET_SCHEDULES_IN_PAGES });
     axios
-      .get(`${process.env.REACT_APP_API_PATH}/schedules/page?num=${pages}`)
+      .get(`${process.env.REACT_APP_API_PATH}/schedules/pages?num=${pages}`)
       .then((res) => {
         if (res.data.length == 0) {
           dispatch({
