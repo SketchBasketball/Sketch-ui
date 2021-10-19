@@ -1,0 +1,27 @@
+.league-summary-wrapper {
+  max-width: 1080px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.league-summary-grid {
+  column-gap: 2rem;
+  margin-bottom: 1rem;
+  display: grid;
+  @media only screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: auto auto;
+  }
+}
+
+.league-name-wrapper {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3f51b5;
+  padding: 0.5rem 0 0;
+}

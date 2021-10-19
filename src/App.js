@@ -8,6 +8,7 @@ import League from "./pages/League";
 import Footer from "./components/Footer";
 import Error from "./pages/Error";
 import Match from "./pages/Match";
+import Sponsor from "./pages/Sponsor";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/schedules" component={Schedule} />
         <Route path="/leagues" component={League} />
         <Route path="/matches/:id" component={Match} />
+        <Route path="/sponsors" component={Sponsor} />
         <Route path="*" component={Error} />
       </Switch>
       <Footer />

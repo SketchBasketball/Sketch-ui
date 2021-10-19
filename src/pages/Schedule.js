@@ -2,7 +2,6 @@ import React from "react";
 import "./Schedule.scss";
 import LeagueMenuItem from "../components/SubMenuItem";
 import { Route, Switch } from "react-router-dom";
-import ScheduleDetail from "./ScheduleDetail";
 import ScheduleList from "./ScheduleList";
 import { useDispatch, useSelector } from "react-redux";
 import { getLeagues } from "../store/actions/league";
@@ -33,7 +32,7 @@ const Schedule = () => {
         <Route path="/Schedules" component={ScheduleList} exact={true} />
         <Route
           path="/Schedules/:league"
-          component={ScheduleDetail}
+          component={ScheduleList}
           exact={true}
         />
       </Switch>

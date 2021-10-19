@@ -5,18 +5,21 @@ import { getSchedulesInPages } from "../store/actions/schedule";
 import { useEffect } from "react";
 import Loader from "react-loader-spinner";
 import noContent from "../logo/no_content.png";
+import { useParams } from "react-router-dom";
 
 const ScheduleList = () => {
   const dispatch = useDispatch();
   const { pages, schedules, isLoading, isEndOfPage } = useSelector(
     (store) => store.scheduleReducer
   );
+  const { league } = useParams();
+
   useEffect(() => {
-    dispatch(getSchedulesInPages(0));
-  }, []);
+    dispatch(getSchedulesInPages(league, 0));
+  }, [league]);
 
   function handleNavButtonClick(pages) {
-    dispatch(getSchedulesInPages(pages));
+    dispatch(getSchedulesInPages(league, pages));
   }
 
   return (
@@ -29,7 +32,7 @@ const ScheduleList = () => {
           {"< Prev"}
         </div>
         <div className="nav-button" onClick={() => handleNavButtonClick(0)}>
-          Schedule
+          {league ? league : "Summary"}
         </div>
         <div
           className="nav-button"
