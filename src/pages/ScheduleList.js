@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Loader from "react-loader-spinner";
 import noContent from "../logo/no_content.png";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router";
 
 const ScheduleList = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,11 @@ const ScheduleList = () => {
     (store) => store.scheduleReducer
   );
   const { league } = useParams();
+  const history = useHistory();
+
+  const scheduleClickHandler = (match_id) => {
+    history.push(`/matches/${match_id}`);
+  };
 
   useEffect(() => {
     dispatch(getSchedulesInPages(league, 0));
@@ -24,7 +30,7 @@ const ScheduleList = () => {
 
   return (
     <div className="schedule-list-wrapper">
-      <div className="schedule-bav-bar">
+      <div className="schedule-nav-bar">
         <div
           className="nav-button"
           onClick={() => handleNavButtonClick(pages - 1)}
@@ -53,7 +59,11 @@ const ScheduleList = () => {
       <div className="schedule-list-grid">
         {schedules.map((item, index) => {
           return (
-            <div className="match-box" key={index}>
+            <div
+              className="match-box"
+              key={index}
+              onClick={() => scheduleClickHandler(item.match_id)}
+            >
               <div className="match-box-header">
                 <span className="match-box-header-item">
                   {item.scheduled_at.substr(0, 10)}

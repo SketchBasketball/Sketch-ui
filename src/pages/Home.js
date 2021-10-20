@@ -7,12 +7,18 @@ import { getMainSchedules } from "../store/actions/main";
 import { useEffect } from "react";
 import Error from "./Error";
 import Loader from "react-loader-spinner";
+import { useHistory } from "react-router";
 
 function Home() {
   const dispatch = useDispatch();
+  const history = useHistory();
   const { schedules, isLoading, isError } = useSelector(
     (store) => store.mainReducer
   );
+
+  const scheduleClickHandler = (match_id) => {
+    history.push(`/matches/${match_id}`);
+  };
 
   useEffect(() => {
     if (isError) return <Error />;
@@ -39,7 +45,11 @@ function Home() {
           ) : (
             schedules.map((item, index) => {
               return (
-                <div className="schedule-content" key={index}>
+                <div
+                  className="schedule-content"
+                  key={index}
+                  onClick={() => scheduleClickHandler(item.match_id)}
+                >
                   <div className="league-name">
                     <div>{item.league_name}</div>
                     <div>League</div>

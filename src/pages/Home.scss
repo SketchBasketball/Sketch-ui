@@ -64,6 +64,11 @@
   border-right: #bdbdbd solid 1px;
   background-color: #ffffff;
   line-height: 1.5;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+  }
 }
 
 .schedule-content .league-name {
