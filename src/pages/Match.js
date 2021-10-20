@@ -7,7 +7,10 @@ import { useEffect } from "react";
 import { getMatchDetails } from "../store/actions/match";
 import YoutubeEmbed from "../components/YoutubeEmbed";
 import bball from "../logo/bball.png";
+import pogSample from "../logo/pog_sample.png";
 import matchStatDefaultHeader from "../const/matchStatDefaultHeader";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 const Match = () => {
   const { id } = useParams();
@@ -17,6 +20,8 @@ const Match = () => {
   useEffect(() => {
     dispatch(getMatchDetails(id));
   }, []);
+
+  const temp = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   return (
     <div className="match-container">
@@ -37,6 +42,41 @@ const Match = () => {
             <div className="game-mvp"></div>
           </div>
           <YoutubeEmbed embedId="brYFEuj7asU" />
+        </div>
+        <div className="images-wrapper">
+          <div className="carousel-wrapper">
+            <Carousel showArrows={true} infiniteLoop={true} autoPlay={true}>
+              {temp.map((item) => {
+                return (
+                  <div key={item}>
+                    <img
+                      src="https://cdn.discordapp.com/attachments/886552888254529598/900225239177363486/team.jpeg"
+                      className="carousel-item"
+                      alt="carousel-item"
+                    />
+                  </div>
+                );
+              })}
+            </Carousel>
+          </div>
+          <div className="mvp-image-wrapper">
+            <img src={pogSample} className="mvp-image" alt="home-logo" />
+          </div>
+          <div className="carousel-wrapper">
+            <Carousel showArrows={true} infiniteLoop={true} autoPlay={true}>
+              {temp.map((item) => {
+                return (
+                  <div key={item}>
+                    <img
+                      src="https://cdn.discordapp.com/attachments/886552888254529598/900225239177363486/team.jpeg"
+                      className="carousel-item"
+                      alt="carousel-item"
+                    />
+                  </div>
+                );
+              })}
+            </Carousel>
+          </div>
         </div>
         <div className="data-grid-wrapper">
           <span>{matchDetails ? matchDetails.home_team.name : null}</span>

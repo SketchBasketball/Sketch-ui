@@ -57,9 +57,43 @@
 
 .home-logo,
 .away-logo {
-  height: 4rem;
+  height: 6rem;
   width: auto;
   margin: 0.5rem;
+}
+
+.images-wrapper {
+  display: grid;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+  margin: 0.5rem;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: auto;
+  }
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.mvp-image-wrapper {
+  position: relative;
+  width: 100%;
+}
+.mvp-image {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.carousel-item {
+  position: relative;
+  min-width: 0;
 }
 
 .data-grid-wrapper {
