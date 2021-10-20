@@ -45,6 +45,10 @@ const Match = () => {
         </div>
         <div className="images-wrapper">
           <div className="carousel-wrapper">
+            <span>
+              Shooting Chart -{" "}
+              {matchDetails ? matchDetails.home_team.name : null}
+            </span>
             <Carousel showArrows={true} infiniteLoop={true} autoPlay={true}>
               {temp.map((item) => {
                 return (
@@ -60,9 +64,14 @@ const Match = () => {
             </Carousel>
           </div>
           <div className="mvp-image-wrapper">
+            <span>MVP</span>
             <img src={pogSample} className="mvp-image" alt="home-logo" />
           </div>
           <div className="carousel-wrapper">
+            <span>
+              Shooting Chart -{" "}
+              {matchDetails ? matchDetails.away_team.name : null}
+            </span>
             <Carousel showArrows={true} infiniteLoop={true} autoPlay={true}>
               {temp.map((item) => {
                 return (
