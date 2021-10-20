@@ -39,6 +39,7 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 0.5rem;
   @media only screen and (max-width: 768px) {
     margin-bottom: 0.5rem;
@@ -80,31 +81,30 @@
   }
 }
 
-.mvp-image-wrapper {
+.grid-item-wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   position: relative;
+  width: 100%;
+  min-width: 0;
 
   span {
     font-size: 1rem;
     font-weight: 700;
     color: #171e4f;
+    margin: 0.5rem 0;
   }
 }
+
+.carousel-root {
+  width: 100%;
+}
+
 .mvp-image {
   width: 100%;
   min-width: 0;
-}
-
-.carousel-wrapper {
-  width: 100%;
-  min-width: 0;
-  span {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #171e4f;
-  }
+  margin-bottom: 2rem;
 }
 
 .carousel-item {

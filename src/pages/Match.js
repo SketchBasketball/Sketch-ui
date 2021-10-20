@@ -41,10 +41,10 @@ const Match = () => {
             </div>
             <div className="game-mvp"></div>
           </div>
-          <YoutubeEmbed embedId="brYFEuj7asU" />
+          <YoutubeEmbed embedId="P5aaWMKD8IQ" />
         </div>
         <div className="images-wrapper">
-          <div className="carousel-wrapper">
+          <div className="grid-item-wrapper">
             <span>
               Shooting Chart -{" "}
               {matchDetails ? matchDetails.home_team.name : null}
@@ -63,11 +63,11 @@ const Match = () => {
               })}
             </Carousel>
           </div>
-          <div className="mvp-image-wrapper">
+          <div className="grid-item-wrapper">
             <span>MVP</span>
             <img src={pogSample} className="mvp-image" alt="home-logo" />
           </div>
-          <div className="carousel-wrapper">
+          <div className="grid-item-wrapper">
             <span>
               Shooting Chart -{" "}
               {matchDetails ? matchDetails.away_team.name : null}
