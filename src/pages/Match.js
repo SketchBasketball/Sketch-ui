@@ -1,11 +1,13 @@
 import React from "react";
 import "./Match.scss";
 import { useParams } from "react-router-dom";
-import ContentBox from "../components/ContentBox";
 import { DataGrid } from "@mui/x-data-grid";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getMatchDetails } from "../store/actions/match";
+import YoutubeEmbed from "../components/YoutubeEmbed";
+import bball from "../logo/bball.png";
+import matchStatDefaultHeader from "../const/matchStatDefaultHeader";
 
 const Match = () => {
   const { id } = useParams();
@@ -16,52 +18,48 @@ const Match = () => {
     dispatch(getMatchDetails(id));
   }, []);
 
-  const columns = [
-    { field: "name", headerName: "PLAYER", flex: 2, minWidth: 160 },
-    { field: "minutes", headerName: "MIN", flex: 1, minWidth: 80 },
-    { field: "points", headerName: "PTS", flex: 1, minWidth: 80 },
-    { field: "assists", headerName: "AST", flex: 1, minWidth: 80 },
-    { field: "def_rebounds", headerName: "DREB", flex: 1, minWidth: 80 },
-    { field: "off_rebounds", headerName: "OREB", flex: 1, minWidth: 80 },
-    { field: "rebounds", headerName: "REB", flex: 1, minWidth: 80 },
-    { field: "field_goal_try", headerName: "FGA", flex: 1, minWidth: 80 },
-    { field: "field_goal_made", headerName: "FGM", flex: 1, minWidth: 80 },
-    { field: "three_point_try", headerName: "3PA", flex: 1, minWidth: 80 },
-    { field: "three_point_made", headerName: "3PM", flex: 1, minWidth: 80 },
-    { field: "steals", headerName: "STL", flex: 1, minWidth: 80 },
-    { field: "blocks", headerName: "BLK", flex: 1, minWidth: 80 },
-    { field: "fouls", headerName: "PF", flex: 1, minWidth: 80 },
-    { field: "turnovers", headerName: "TO", flex: 1, minWidth: 80 },
-  ];
-
   return (
     <div className="match-container">
       <div className="match-content-wrapper">
-        {matchDetails ? matchDetails.league : null}
-        <ContentBox title={matchDetails ? matchDetails.home_team.name : null}>
-          <div className="data-grid-wrapper">
-            <DataGrid
-              rows={matchDetails ? matchDetails.home_team.match_stats : []}
-              columns={columns}
-              autoHeight={true}
-              rowHeight={30}
-              pageSize={100}
-              rowsPerPageOptions={[100]}
-            />
+        <div className="game-result-wrapper">
+          <div className="game-result">
+            <div className="game-score-wrapper">
+              <div className="team-wrapper">
+                <img src={bball} className="home-logo" alt="home-logo" />
+                <span>{matchDetails ? matchDetails.home_team.name : null}</span>
+              </div>
+              <div className="game-score">12 : 44</div>
+              <div className="team-wrapper">
+                <img src={bball} className="away-logo" alt="away-logo" />
+                <span>{matchDetails ? matchDetails.away_team.name : null}</span>
+              </div>
+            </div>
+            <div className="game-mvp"></div>
           </div>
-        </ContentBox>
-        <ContentBox title={matchDetails ? matchDetails.away_team.name : null}>
-          <div className="data-grid-wrapper">
-            <DataGrid
-              rows={matchDetails ? matchDetails.away_team.match_stats : []}
-              columns={columns}
-              autoHeight={true}
-              rowHeight={30}
-              pageSize={100}
-              rowsPerPageOptions={[100]}
-            />
-          </div>
-        </ContentBox>
+          <YoutubeEmbed embedId="brYFEuj7asU" />
+        </div>
+        <div className="data-grid-wrapper">
+          <span>{matchDetails ? matchDetails.home_team.name : null}</span>
+          <DataGrid
+            rows={matchDetails ? matchDetails.home_team.match_stats : []}
+            columns={matchStatDefaultHeader}
+            autoHeight={true}
+            rowHeight={30}
+            pageSize={100}
+            rowsPerPageOptions={[100]}
+          />
+        </div>
+        <div className="data-grid-wrapper">
+          <span>{matchDetails ? matchDetails.away_team.name : null}</span>
+          <DataGrid
+            rows={matchDetails ? matchDetails.away_team.match_stats : []}
+            columns={matchStatDefaultHeader}
+            autoHeight={true}
+            rowHeight={30}
+            pageSize={100}
+            rowsPerPageOptions={[100]}
+          />
+        </div>
       </div>
     </div>
   );
