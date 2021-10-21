@@ -14,7 +14,7 @@ export function getSchedulesInPages(leagueName, pages) {
         .get(
           `${
             process.env.REACT_APP_API_PATH
-          }/schedules/league?name=${leagueName.replaceAll(
+          }/schedules/leagues?name=${leagueName.replaceAll(
             "-",
             " "
           )}&page_number=${pages}`
