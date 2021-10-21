@@ -95,16 +95,15 @@
     color: #171e4f;
     margin: 0.5rem 0;
   }
+  .carousel-root {
+    width: 100%;
+  }
 }
 
 .slide,
 .slide-selected {
   display: flex;
   justify-content: center;
-}
-
-.carousel-root {
-  width: 100%;
 }
 
 .mvp-image {
