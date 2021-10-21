@@ -2,79 +2,18 @@ import React from "react";
 import "./Home.scss";
 import ContentBox from "../components/ContentBox";
 import mainTitlesAndRoutes from "../const/mainTitlesAndRoutes";
-import { useDispatch, useSelector } from "react-redux";
-import { getMainSchedules } from "../store/actions/main";
-import { useEffect } from "react";
-import Error from "./Error";
-import Loader from "react-loader-spinner";
-import { useHistory } from "react-router";
+// import { useDispatch, useSelector } from "react-redux";
+// import { getMainSchedules } from "../store/actions/main";
+// import { useEffect } from "react";
+// import Error from "./Error";
+// import Loader from "react-loader-spinner";
+// import HomeScheduleItem from "../components/HomeScheduleItem";
+import HomeSchedule from "../components/HomeSchedule";
 
 function Home() {
-  const dispatch = useDispatch();
-  const history = useHistory();
-  const { schedules, isLoading, isError } = useSelector(
-    (store) => store.mainReducer
-  );
-
-  const scheduleClickHandler = (match_id) => {
-    history.push(`/matches/${match_id}`);
-  };
-
-  useEffect(() => {
-    if (isError) return <Error />;
-  }, [isError]);
-
-  useEffect(() => {
-    dispatch(getMainSchedules());
-  }, []);
   return (
     <div className="home-wrapper">
-      <div className="schedule-bar-wrapper">
-        <div className="schedule-title">Upcoming Matches</div>
-        <div className="schedule-bar">
-          {isLoading ? (
-            <div className="schedule-bar-loader-wrapper">
-              <Loader
-                type="Oval"
-                color="#ff5722"
-                secondaryColor="#757575"
-                width={40}
-                height={40}
-              />
-            </div>
-          ) : (
-            schedules.map((item, index) => {
-              return (
-                <div
-                  className="schedule-content"
-                  key={index}
-                  onClick={() => scheduleClickHandler(item.match_id)}
-                >
-                  <div className="league-name">
-                    <div>{item.league_name}</div>
-                    <div>League</div>
-                    {/* <div>{item.match_type}</div> */}
-                  </div>
-
-                  <div className="team-info">
-                    <div className="team-name">{item.home_team_name}</div>
-                    <div>{item.home_team_score}</div>
-                  </div>
-                  <div className="team-info">
-                    <div className="team-name">{item.away_team_name}</div>
-                    <div>{item.away_team_score}</div>
-                  </div>
-                  <div className="match-etc">📍 {item.location}</div>
-                  <div className="match-etc">
-                    @ {item.scheduled_at.substr(0, 10)}{" "}
-                    {item.scheduled_at.substr(11, 5)}
-                  </div>
-                </div>
-              );
-            })
-          )}
-        </div>
-      </div>
+      <HomeSchedule />
 
       <div className="content-wrapper">
         {mainTitlesAndRoutes.map((item, index) => {

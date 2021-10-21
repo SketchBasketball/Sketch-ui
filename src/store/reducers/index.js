@@ -1,13 +1,13 @@
 import leagueReducer from "./league";
 import scheduleReducer from "./schedule";
-import mainReducer from "./main";
+import mainScheduleReducer from "./mainSchedule";
 import matchReducer from "./match";
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
   leagueReducer,
   scheduleReducer,
-  mainReducer,
+  mainScheduleReducer,
   matchReducer,
 });
 
