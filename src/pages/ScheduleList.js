@@ -66,9 +66,11 @@ const ScheduleList = () => {
             >
               <div className="match-box-header">
                 <span className="match-box-header-item">
-                  {item.scheduled_at.substr(0, 10)}
+                  {item.scheduled_at.date}
                 </span>
-                <span className="match-box-header-item">THU</span>
+                <span className="match-box-header-item">
+                  {item.scheduled_at.day}
+                </span>
               </div>
               <div className="match-box-detail-wrapper">
                 <div className="match-box-detail-header">
@@ -91,7 +93,7 @@ const ScheduleList = () => {
                 </div>
                 <div className="match-box-venue-time">
                   <span>
-                    {item.location} @ {item.scheduled_at.substr(11, 5)}
+                    {item.location} @ {item.scheduled_at.time}
                   </span>
                 </div>
               </div>

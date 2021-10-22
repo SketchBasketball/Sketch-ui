@@ -15,8 +15,7 @@ const HomeScheduleItem = ({ item }) => {
     >
       <div className="league-name">
         <div>{item.league_name}</div>
-        <div>League</div>
-        {/* <div>{item.match_type}</div> */}
+        <div>{item.match_type}</div>
       </div>
 
       <div className="team-info">
@@ -29,7 +28,7 @@ const HomeScheduleItem = ({ item }) => {
       </div>
       <div className="match-etc">📍 {item.location}</div>
       <div className="match-etc">
-        @ {item.scheduled_at.substr(0, 10)} {item.scheduled_at.substr(11, 5)}
+        @ {item.scheduled_at.date} {item.scheduled_at.time}
       </div>
     </div>
   );
