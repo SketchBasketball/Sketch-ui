@@ -33,10 +33,12 @@ const HomeSchedule = () => {
           <div className="schedule-bar-loader-wrapper">
             <span>Error: please try again</span>
           </div>
-        ) : (
+        ) : schedules.length ? (
           schedules.map((item, index) => {
             return <HomeScheduleItem item={item} key={index} />;
           })
+        ) : (
+          <div className="no-content-div">no schedules</div>
         )}
       </div>
     </div>

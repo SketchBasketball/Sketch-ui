@@ -45,3 +45,12 @@
   border-right: #bdbdbd solid 1px;
   background-color: #ffffff;
 }
+
+.no-content-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #ff5722;
+  width: 100%;
+}

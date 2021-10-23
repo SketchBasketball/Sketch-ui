@@ -31,7 +31,10 @@ const Match = () => {
                 <img src={bball} className="home-logo" alt="home-logo" />
                 <span>{matchDetails ? matchDetails.home_team.name : null}</span>
               </div>
-              <div className="game-score">12 : 44</div>
+              <div className="game-score">
+                {matchDetails ? matchDetails.home_score : "--"} :{" "}
+                {matchDetails ? matchDetails.away_score : "--"}
+              </div>
               <div className="team-wrapper">
                 <img src={bball} className="away-logo" alt="away-logo" />
                 <span>{matchDetails ? matchDetails.away_team.name : null}</span>
@@ -39,7 +42,9 @@ const Match = () => {
             </div>
             <div className="game-mvp"></div>
           </div>
-          <YoutubeEmbed embedId="P5aaWMKD8IQ" />
+          <YoutubeEmbed
+            embedId={matchDetails ? matchDetails.match_videos : "P5aaWMKD8IQ"}
+          />
         </div>
         <div className="images-wrapper">
           <div className="grid-item-wrapper">
