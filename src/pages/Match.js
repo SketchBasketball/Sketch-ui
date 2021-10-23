@@ -21,8 +21,6 @@ const Match = () => {
     dispatch(getMatchDetails(id));
   }, []);
 
-  const temp = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
   return (
     <div className="match-container">
       <div className="match-content-wrapper">
@@ -50,17 +48,19 @@ const Match = () => {
               {matchDetails ? matchDetails.home_team.name : null}
             </span>
             <Carousel showArrows={true} infiniteLoop={true} autoPlay={true}>
-              {temp.map((item) => {
-                return (
-                  <div key={item}>
-                    <img
-                      src="https://cdn.discordapp.com/attachments/886552888254529598/900225239177363486/team.jpeg"
-                      className="carousel-item"
-                      alt="carousel-item"
-                    />
-                  </div>
-                );
-              })}
+              {matchDetails
+                ? matchDetails.home_shooting_chart.map((item) => {
+                    return (
+                      <div key={item}>
+                        <img
+                          src={item.shooting_chart}
+                          className="carousel-item"
+                          alt="carousel-item"
+                        />
+                      </div>
+                    );
+                  })
+                : null}
             </Carousel>
           </div>
           <div className="grid-item-wrapper">
@@ -73,17 +73,19 @@ const Match = () => {
               {matchDetails ? matchDetails.away_team.name : null}
             </span>
             <Carousel showArrows={true} infiniteLoop={true} autoPlay={true}>
-              {temp.map((item) => {
-                return (
-                  <div key={item}>
-                    <img
-                      src="https://cdn.discordapp.com/attachments/886552888254529598/900225239177363486/team.jpeg"
-                      className="carousel-item"
-                      alt="carousel-item"
-                    />
-                  </div>
-                );
-              })}
+              {matchDetails
+                ? matchDetails.away_shooting_chart.map((item) => {
+                    return (
+                      <div key={item}>
+                        <img
+                          src={item.shooting_chart}
+                          className="carousel-item"
+                          alt="carousel-item"
+                        />
+                      </div>
+                    );
+                  })
+                : null}
             </Carousel>
           </div>
         </div>
