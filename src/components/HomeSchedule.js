@@ -38,7 +38,7 @@ const HomeSchedule = () => {
             return <HomeScheduleItem item={item} key={index} />;
           })
         ) : (
-          <div className="no-content-div">no schedules</div>
+          <div className="no-content-div">TBA</div>
         )}
       </div>
     </div>

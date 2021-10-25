@@ -5,7 +5,7 @@ import "./Home.scss";
 import HomeSchedule from "../components/HomeSchedule";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import tempImg from "../logo/404.png";
+import banner3 from "../logo/banner3.png";
 import YoutubeEmbed from "../components/YoutubeEmbed";
 import {
   defaultStandingTableHeader,
@@ -24,17 +24,24 @@ function Home() {
           autoPlay={true}
           showThumbs={false}
         >
-          {temp.map((item) => {
+          <div>
+            <img
+              src={banner3}
+              className="main-carousel-item"
+              alt="main-carousel-item"
+            />
+          </div>
+          {/* {temp.map((item) => {
             return (
               <div key={item}>
                 <img
-                  src={tempImg}
+                  src={banner3}
                   className="main-carousel-item"
                   alt="main-carousel-item"
                 />
               </div>
             );
-          })}
+          })} */}
         </Carousel>
       </div>
       <HomeSchedule />
