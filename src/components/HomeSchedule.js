@@ -17,7 +17,9 @@ const HomeSchedule = ({ title }) => {
   }, []);
   return (
     <div className="schedule-bar-wrapper">
-      <div className="schedule-title">{title ? title : null}</div>
+      <div className="schedule-title">
+        <div className="schedule-title-wrapper">{title ? title : null}</div>
+      </div>
       <div className="schedule-bar">
         {isLoading ? (
           <div className="schedule-bar-loader-wrapper">

@@ -7,6 +7,22 @@
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.schedule-title {
+  display: flex;
+  align-items: center;
+  height: 6rem;
+  padding: 0.5rem;
+  border-right: #bdbdbd solid 1px;
+  background-color: #ffffff;
+  color: #171e4f;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.schedule-title-wrapper {
+  width: 8rem;
+  text-align: center;
+}
+
 .schedule-bar {
   width: 100%;
   display: flex;
@@ -22,19 +38,6 @@
 /* hide scroll bar for Chrome, Safari and Opera*/
 .schedule-bar::-webkit-scrollbar {
   display: none;
-}
-
-.schedule-title {
-  display: flex;
-  align-items: center;
-  height: 6rem;
-  padding: 0.5rem;
-  border-right: #bdbdbd solid 1px;
-  background-color: #ffffff;
-  color: #171e4f;
-  font-weight: 700;
-  line-height: 1.5;
-  text-align: center;
 }
 
 .schedule-bar-loader-wrapper {
