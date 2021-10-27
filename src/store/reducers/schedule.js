@@ -10,6 +10,8 @@ const initialState = {
   isLoading: true,
   isError: false,
   isEndOfPage: false,
+  hasPrev: true,
+  hasNext: true,
 };
 
 export default function scheduleReducer(state = initialState, action) {
@@ -19,6 +21,8 @@ export default function scheduleReducer(state = initialState, action) {
         ...state,
         isLoading: true,
         schedules: [],
+        hasPrev: true,
+        hasNext: true,
       };
     case GET_SCHEDULES_IN_PAGES_SUCCESS:
       return {
@@ -28,26 +32,20 @@ export default function scheduleReducer(state = initialState, action) {
         isLoading: false,
         isEndOfPage: false,
         isError: false,
+        hasNext: action.hasNext,
+        hasPrev: action.hasPrev,
       };
     case GET_SCHEDULES_IN_PAGES_NO_MORE_CONTENT:
-      if (state.isEndOfPage) {
-        return {
-          ...state,
-          schedules: action.data,
-          isLoading: false,
-          isEndOfPage: true,
-          isError: false,
-        };
-      } else {
-        return {
-          ...state,
-          schedules: action.data,
-          pages: action.pages,
-          isLoading: false,
-          isEndOfPage: true,
-          isError: false,
-        };
-      }
+      return {
+        ...state,
+        schedules: action.data,
+        isLoading: false,
+        isEndOfPage: true,
+        isError: false,
+        pages: action.pages,
+        hasNext: action.hasNext,
+        hasPrev: action.hasPrev,
+      };
 
     case GET_SCHEDULES_IN_PAGES_FAIL:
       return {
@@ -55,6 +53,8 @@ export default function scheduleReducer(state = initialState, action) {
         isLoading: false,
         isEndOfPage: false,
         isError: true,
+        hasPrev: false,
+        hasNext: false,
       };
     default:
       return state;
