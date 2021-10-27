@@ -10,7 +10,6 @@
   margin-bottom: 1rem;
   display: grid;
   @media only screen and (max-width: 768px) {
-    display: grid;
     grid-template-columns: 1fr;
   }
   /* Small devices (portrait tablets and large phones, 600px and up) */

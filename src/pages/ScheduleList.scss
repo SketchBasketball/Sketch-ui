@@ -21,10 +21,7 @@
 
 .schedule-list-grid {
   @media only screen and (max-width: 600px) {
-    display: grid;
     grid-template-columns: 1fr;
-    column-gap: 1rem;
-    margin-bottom: 1rem;
   }
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -91,6 +88,8 @@
 }
 
 .nav-button {
+  text-decoration: none;
+  color: #171e4f;
   &:hover {
     color: #ff5722;
     cursor: pointer;

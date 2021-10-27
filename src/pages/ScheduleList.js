@@ -5,7 +5,7 @@ import { getSchedulesInPages } from "../store/actions/schedule";
 import { useEffect } from "react";
 import Loader from "react-loader-spinner";
 import noContent from "../logo/no_content.png";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { useHistory } from "react-router";
 
 const ScheduleList = () => {
@@ -15,37 +15,35 @@ const ScheduleList = () => {
   );
   const { league } = useParams();
   const history = useHistory();
+  const location = useLocation();
+  const pageNum = new URLSearchParams(location.search).get("page");
 
   const scheduleClickHandler = (match_id) => {
     history.push(`/matches/${match_id}`);
   };
 
   useEffect(() => {
-    dispatch(getSchedulesInPages(league, 0));
-  }, [league]);
-
-  function handleNavButtonClick(pages) {
-    dispatch(getSchedulesInPages(league, pages));
-  }
+    dispatch(getSchedulesInPages(league, pageNum ? +pageNum : 0));
+  }, [league, pageNum]);
 
   return (
     <div className="schedule-list-wrapper">
       <div className="schedule-nav-bar">
-        <div
+        <Link
           className="nav-button"
-          onClick={() => handleNavButtonClick(pages - 1)}
+          to={`${location.pathname}?page=${pages - 1}`}
         >
           {"< Prev"}
-        </div>
-        <div className="nav-button" onClick={() => handleNavButtonClick(0)}>
+        </Link>
+        <Link className="nav-button" to={`${location.pathname}?page=0`}>
           {league ? league : "Summary"}
-        </div>
-        <div
+        </Link>
+        <Link
           className="nav-button"
-          onClick={() => handleNavButtonClick(pages + 1)}
+          to={`${location.pathname}?page=${pages + 1}`}
         >
           {"Next >"}
-        </div>
+        </Link>
       </div>
       {isLoading ? (
         <div className="schedule-content-loader-wrapper">

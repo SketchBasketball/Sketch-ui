@@ -3,7 +3,7 @@ import "./YoutubeEmbed.scss";
 
 const YoutubeEmbed = ({ embedId }) => {
   return (
-    <div className="youtube-wrapper">
+    <div className="youtube-wrapper" key={embedId}>
       <iframe
         width="853"
         height="480"

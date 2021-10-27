@@ -5,13 +5,10 @@ import { DataGrid } from "@mui/x-data-grid";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getMatchDetails } from "../store/actions/match";
-import YoutubeEmbed from "../components/YoutubeEmbed";
-import bball from "../logo/bball.png";
-import pogSample from "../logo/pog_sample.png";
 import matchStatDefaultHeader from "../const/matchStatDefaultHeader";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-
+import GameResult from "../components/GameResult";
 const Match = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -24,36 +21,15 @@ const Match = () => {
   return (
     <div className="match-container">
       <div className="match-content-wrapper">
-        <div className="game-result-wrapper">
-          <div className="game-result">
-            <div className="game-score-wrapper">
-              <div className="team-wrapper">
-                <img src={bball} className="home-logo" alt="home-logo" />
-                <span>{matchDetails ? matchDetails.home_team.name : null}</span>
-              </div>
-              <div className="game-score">
-                {matchDetails ? matchDetails.home_score : "--"} :{" "}
-                {matchDetails ? matchDetails.away_score : "--"}
-              </div>
-              <div className="team-wrapper">
-                <img src={bball} className="away-logo" alt="away-logo" />
-                <span>{matchDetails ? matchDetails.away_team.name : null}</span>
-              </div>
-            </div>
-            <div className="game-mvp"></div>
-          </div>
-          <YoutubeEmbed
-            embedId={matchDetails ? matchDetails.match_videos : "P5aaWMKD8IQ"}
-          />
-        </div>
+        <GameResult matchDetails={matchDetails} />
         <div className="images-wrapper">
           <div className="grid-item-wrapper">
             <span>
               Shooting Chart -{" "}
-              {matchDetails ? matchDetails.home_team.name : null}
+              {matchDetails?.home_team ? matchDetails.home_team.name : null}
             </span>
             <Carousel showArrows={true} infiniteLoop={true} autoPlay={true}>
-              {matchDetails
+              {matchDetails?.home_shooting_chart
                 ? matchDetails.home_shooting_chart.map((item) => {
                     return (
                       <div key={item}>
@@ -70,15 +46,19 @@ const Match = () => {
           </div>
           <div className="grid-item-wrapper">
             <span>MVP</span>
-            <img src={pogSample} className="mvp-image" alt="home-logo" />
+            <img
+              src={matchDetails?.mvp ? matchDetails.mvp.mvp_photo : null}
+              className="mvp-image"
+              alt="home-logo"
+            />
           </div>
           <div className="grid-item-wrapper">
             <span>
               Shooting Chart -{" "}
-              {matchDetails ? matchDetails.away_team.name : null}
+              {matchDetails?.away_team ? matchDetails.away_team.name : null}
             </span>
             <Carousel showArrows={true} infiniteLoop={true} autoPlay={true}>
-              {matchDetails
+              {matchDetails?.away_shooting_chart
                 ? matchDetails.away_shooting_chart.map((item) => {
                     return (
                       <div key={item}>

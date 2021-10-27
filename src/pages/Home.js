@@ -16,7 +16,7 @@ function Home() {
 
   return (
     <div className="home-wrapper">
-      <HomeSchedule />
+      <HomeSchedule title="Upcoming Matches" />
       <div className="home-carousel-wrapper">
         <Carousel
           showArrows={true}
@@ -44,7 +44,7 @@ function Home() {
           })} */}
         </Carousel>
       </div>
-      <HomeSchedule />
+      <HomeSchedule title="Game Results" />
       <div className="content-wrapper">
         <div className="main-content-box">
           <div className="main-grid-item-wrapper">

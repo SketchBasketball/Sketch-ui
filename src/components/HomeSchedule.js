@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import Loader from "react-loader-spinner";
 import HomeScheduleItem from "../components/HomeScheduleItem";
 
-const HomeSchedule = () => {
+const HomeSchedule = ({ title }) => {
   const dispatch = useDispatch();
   const { schedules, isLoading, isError } = useSelector(
     (store) => store.mainScheduleReducer
@@ -17,7 +17,7 @@ const HomeSchedule = () => {
   }, []);
   return (
     <div className="schedule-bar-wrapper">
-      <div className="schedule-title">Upcoming Matches</div>
+      <div className="schedule-title">{title ? title : null}</div>
       <div className="schedule-bar">
         {isLoading ? (
           <div className="schedule-bar-loader-wrapper">

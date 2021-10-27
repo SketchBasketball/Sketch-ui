@@ -20,10 +20,18 @@ const Footer = (props) => {
           <span>Hong Kong Web Design by BobbyL</span>
         </div>
         <div className="footer-content-right">
-          <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.instagram.com/sketchbball/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={igLogo} className="ig-logo" alt="ig-logo" />
           </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.facebook.com/search/top?q=sketch-basketball%20competition"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={fbLogo} className="fb-logo" alt="fb-logo" />
           </a>
         </div>

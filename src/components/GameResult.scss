@@ -1,0 +1,59 @@
+.game-result-wrapper {
+  display: grid;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+  margin: 0.5rem;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: auto;
+  }
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.game-score-wrapper .team-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.game-result {
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem;
+  @media only screen and (max-width: 768px) {
+    margin-bottom: 0.5rem;
+  }
+  .match-title {
+    color: #171e4f;
+    font-weight: 600;
+  }
+  .match-sub-title {
+    color: #171e4f;
+    font-weight: 500;
+  }
+}
+
+.game-score-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.game-score {
+  font-size: 3rem;
+}
+
+.home-logo,
+.away-logo {
+  height: 6rem;
+  width: auto;
+  margin: 0.5rem;
+}
