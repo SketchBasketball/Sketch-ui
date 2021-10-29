@@ -23,6 +23,12 @@
 .footer-content-right {
   margin: 1.5rem 0.5rem;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.fb-logo,
+.ig-logo {
+  margin: 0.5rem;
+  height: 2rem;
+  width: auto;
 }

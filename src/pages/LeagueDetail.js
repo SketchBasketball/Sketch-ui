@@ -55,24 +55,26 @@ const LeagueDetail = () => {
                   <span className="leader-board-title">{item}</span>
                 </div>
                 <table className="leader-board-table">
-                  {sampleLeaderBoardData.map((item, index) => {
-                    if (index === 0) {
+                  <tbody>
+                    {sampleLeaderBoardData.map((item, index) => {
+                      if (index === 0) {
+                        return (
+                          <tr key={index}>
+                            <th>{item.rank}.</th>
+                            <th className="name">{item.name}</th>
+                            <th>{item.score}</th>
+                          </tr>
+                        );
+                      }
                       return (
                         <tr key={index}>
-                          <th>{item.rank}.</th>
-                          <th className="name">{item.name}</th>
-                          <th>{item.score}</th>
+                          <td>{item.rank}.</td>
+                          <td className="name">{item.name}</td>
+                          <td>{item.score}</td>
                         </tr>
                       );
-                    }
-                    return (
-                      <tr key={index}>
-                        <td>{item.rank}.</td>
-                        <td className="name">{item.name}</td>
-                        <td>{item.score}</td>
-                      </tr>
-                    );
-                  })}
+                    })}
+                  </tbody>
                 </table>
               </div>
             );

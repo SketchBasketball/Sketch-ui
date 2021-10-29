@@ -1,0 +1,36 @@
+.schedule-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.8rem;
+  height: 6rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-right: #bdbdbd solid 1px;
+  background-color: #ffffff;
+  line-height: 1.5;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+  }
+}
+
+.schedule-content .league-name {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  color: #171e4f;
+}
+.schedule-content .team-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.schedule-content .team-info .team-name {
+  font-weight: 600;
+}
+
+.match-etc {
+  color: #757575;
+}
