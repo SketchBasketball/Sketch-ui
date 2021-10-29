@@ -10,7 +10,6 @@ export function getMatchDetails(id) {
     axios
       .get(`${process.env.REACT_APP_API_PATH}/matches/${id}`)
       .then((res) => {
-        console.log(res.data);
         dispatch({ type: GET_MATCH_DETAILS_SUCCESS, data: res.data });
       })
       .catch((err) => {
