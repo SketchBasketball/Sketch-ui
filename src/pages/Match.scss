@@ -67,7 +67,7 @@
   min-width: 0;
 }
 
-.data-grid-wrapper {
+.box-score-wrapper {
   background-color: #fff;
   margin: 0.5rem;
   display: flex;
@@ -87,16 +87,9 @@
   display: none !important;
 }
 
-// .MuiDataGrid-cell:not([aria-colindex="1"]) {
-//   text-align: center !important;
-// }
-
-// .carousel.carousel-slider .control-arrow,
 .carousel .thumbs-wrapper .control-prev.control-arrow,
 .carousel .thumbs-wrapper .control-next.control-arrow {
   background-color: rgba(0, 0, 0, 0.3) !important;
   height: 100%;
   top: 0;
 }
-
-// .carousel .control-arrow

@@ -74,7 +74,7 @@ const Match = () => {
             </Carousel>
           </div>
         </div>
-        <div className="data-grid-wrapper">
+        <div className="box-score-wrapper">
           <span>{matchDetails ? matchDetails.home_team.name : null}</span>
           <DataGrid
             rows={matchDetails ? matchDetails.home_team.match_stats : []}
@@ -85,7 +85,7 @@ const Match = () => {
             rowsPerPageOptions={[100]}
           />
         </div>
-        <div className="data-grid-wrapper">
+        <div className="box-score-wrapper">
           <span>{matchDetails ? matchDetails.away_team.name : null}</span>
           <DataGrid
             rows={matchDetails ? matchDetails.away_team.match_stats : []}
