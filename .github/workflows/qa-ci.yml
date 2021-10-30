@@ -1,4 +1,4 @@
-name: React QA Deploy
+name: SKETCH UI QA Deploy
 on:
   workflow_dispatch:
 
