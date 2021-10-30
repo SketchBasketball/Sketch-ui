@@ -5,35 +5,11 @@
   flex-direction: column;
 }
 
-.team-standing-table-wrapper {
-  width: 100%;
-  padding: 0 0 1rem 0;
-}
-
-.team-standing-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.team-standing-table td,
-.team-standing-table th {
-  padding: 0.5rem 0;
-  border-bottom: solid #e7e7e7 1px;
-  text-align: center;
-}
-
-thead tr {
-  background-color: #e7e7e7;
-  color: #545454;
-}
-
-.team-link {
-  text-decoration: none;
-  color: #000;
-
-  &:hover {
-    color: #ff5722;
-  }
+.standings-loading-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
 }
 
 .leader-board-grid {

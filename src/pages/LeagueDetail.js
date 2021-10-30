@@ -3,47 +3,41 @@ import { useParams } from "react-router-dom";
 import "./LeagueDetail.scss";
 import ContentBox from "../components/ContentBox";
 import {
-  defaultStandingTableHeader,
-  sampleTableData,
   leaderBoardTitles,
   sampleLeaderBoardData,
 } from "../const/leagueDetailConsts";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getLeagueStandings } from "../store/actions/leagueStanding";
+import { useEffect } from "react";
+import Loader from "react-loader-spinner";
+import StandingTable from "../components/StandingTable";
 
 const LeagueDetail = () => {
   const { league } = useParams();
+  const dispatch = useDispatch();
+  const { standings } = useSelector((store) => store.leagueStandingReducer);
+
+  useEffect(() => {
+    dispatch(getLeagueStandings(league.replaceAll("-", " ")));
+  }, []);
+
   return (
     <div className="league-detail-wrapper">
       <ContentBox title={`Standings - ${league}`}>
         <div className="team-standing-table-wrapper">
-          <table className="team-standing-table">
-            <thead className="team-standing-table-header">
-              <tr>
-                {defaultStandingTableHeader.map((item, index) => {
-                  return <th key={index}>{item}</th>;
-                })}
-              </tr>
-            </thead>
-            <tbody>
-              {sampleTableData.map((item, index) => {
-                return (
-                  <tr key={index}>
-                    <td>{item.rank}.</td>
-                    <td className="name">
-                      <Link className="team-link" to={`/Teams/${item.path}`}>
-                        {item.name}
-                      </Link>
-                    </td>
-                    <td>{item.win}</td>
-                    <td>{item.loss}</td>
-                    <td>{item.winRate}</td>
-                    <td>{item.gb}</td>
-                    <td>{item.goalDiff}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          {standings.length ? (
+            <StandingTable standings={standings} />
+          ) : (
+            <div className="standings-loading-div">
+              <Loader
+                type="Oval"
+                color="#ff5722"
+                secondaryColor="#757575"
+                width={40}
+                height={40}
+              />
+            </div>
+          )}
         </div>
       </ContentBox>
       <ContentBox title={`Leader Board - ${league}`}>

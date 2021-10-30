@@ -1,16 +1,12 @@
 import React from "react";
 import "./Home.scss";
-// import { useDispatch, useSelector } from "react-redux";
-// import { useEffect } from "react";
 import HomeSchedule from "../components/HomeSchedule";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import banner3 from "../logo/banner3.png";
 import YoutubeEmbed from "../components/YoutubeEmbed";
-import {
-  defaultStandingTableHeader,
-  sampleTableData,
-} from "../const/leagueDetailConsts";
+import { sampleTableData } from "../const/leagueDetailConsts";
+import StandingTable from "../components/StandingTable";
 function Home() {
   const temp = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -58,30 +54,7 @@ function Home() {
                 return (
                   <div className="main-carousel-item" key={item}>
                     <span>league name</span>
-                    <table className="main-team-standing-table" key={item}>
-                      <thead className="team-standing-table-header">
-                        <tr>
-                          {defaultStandingTableHeader.map((item, index) => {
-                            return <th key={index}>{item}</th>;
-                          })}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {sampleTableData.map((item, index) => {
-                          return (
-                            <tr key={index}>
-                              <td>{item.rank}.</td>
-                              <td className="name">{item.name}</td>
-                              <td>{item.win}</td>
-                              <td>{item.loss}</td>
-                              <td>{item.winRate}</td>
-                              <td>{item.gb}</td>
-                              <td>{item.goalDiff}</td>
-                            </tr>
-                          );
-                        })}
-                      </tbody>
-                    </table>
+                    <StandingTable standings={sampleTableData} />
                   </div>
                 );
               })}
