@@ -28,7 +28,7 @@ const Footer = (props) => {
             <img src={igLogo} className="ig-logo" alt="ig-logo" />
           </a>
           <a
-            href="https://www.facebook.com/search/top?q=sketch-basketball%20competition"
+            href="https://www.facebook.com/sketchballcompetition/"
             target="_blank"
             rel="noreferrer"
           >
