@@ -1,20 +1,9 @@
 import React from "react";
 import "./HomeSchedule.scss";
-import { useDispatch, useSelector } from "react-redux";
-import { getMainSchedules } from "../store/actions/mainSchedule";
-import { useEffect } from "react";
 import Loader from "react-loader-spinner";
 import HomeScheduleItem from "../components/HomeScheduleItem";
 
-const HomeSchedule = ({ title }) => {
-  const dispatch = useDispatch();
-  const { schedules, isLoading, isError } = useSelector(
-    (store) => store.mainScheduleReducer
-  );
-
-  useEffect(() => {
-    dispatch(getMainSchedules());
-  }, []);
+const HomeSchedule = ({ title, games, isLoading }) => {
   return (
     <div className="schedule-bar-wrapper">
       <div className="schedule-title">
@@ -31,12 +20,8 @@ const HomeSchedule = ({ title }) => {
               height={40}
             />
           </div>
-        ) : isError ? (
-          <div className="schedule-bar-loader-wrapper">
-            <span>Error: please try again</span>
-          </div>
-        ) : schedules.length ? (
-          schedules.map((item, index) => {
+        ) : games?.length ? (
+          games.map((item, index) => {
             return <HomeScheduleItem item={item} key={index} />;
           })
         ) : (

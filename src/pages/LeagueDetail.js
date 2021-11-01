@@ -2,84 +2,66 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import "./LeagueDetail.scss";
 import ContentBox from "../components/ContentBox";
+import { useDispatch, useSelector } from "react-redux";
 import {
-  defaultStandingTableHeader,
-  sampleTableData,
-  leaderBoardTitles,
-  sampleLeaderBoardData,
-} from "../const/leagueDetailConsts";
-import { Link } from "react-router-dom";
+  getLeagueStandings,
+  getLeaderBoard,
+} from "../store/actions/leagueStanding";
+import { useEffect } from "react";
+import Loader from "react-loader-spinner";
+import StandingTable from "../components/StandingTable";
+import LeaderBoardBox from "../components/LeaderBoardBox";
 
 const LeagueDetail = () => {
   const { league } = useParams();
+  const dispatch = useDispatch();
+  const { standings, leaderBoard } = useSelector(
+    (store) => store.leagueStandingReducer
+  );
+
+  useEffect(() => {
+    let leagueName = league.replaceAll("-", " ");
+    dispatch(getLeagueStandings(leagueName));
+    dispatch(getLeaderBoard(leagueName));
+  }, []);
+
   return (
     <div className="league-detail-wrapper">
       <ContentBox title={`Standings - ${league}`}>
         <div className="team-standing-table-wrapper">
-          <table className="team-standing-table">
-            <thead className="team-standing-table-header">
-              <tr>
-                {defaultStandingTableHeader.map((item, index) => {
-                  return <th key={index}>{item}</th>;
-                })}
-              </tr>
-            </thead>
-            <tbody>
-              {sampleTableData.map((item, index) => {
-                return (
-                  <tr key={index}>
-                    <td>{item.rank}.</td>
-                    <td className="name">
-                      <Link className="team-link" to={`/Teams/${item.path}`}>
-                        {item.name}
-                      </Link>
-                    </td>
-                    <td>{item.win}</td>
-                    <td>{item.loss}</td>
-                    <td>{item.winRate}</td>
-                    <td>{item.gb}</td>
-                    <td>{item.goalDiff}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          {standings.length ? (
+            <StandingTable standings={standings} />
+          ) : (
+            <div className="standings-loading-div">
+              <Loader
+                type="Oval"
+                color="#ff5722"
+                secondaryColor="#757575"
+                width={40}
+                height={40}
+              />
+            </div>
+          )}
         </div>
       </ContentBox>
       <ContentBox title={`Leader Board - ${league}`}>
-        <div className="leader-board-grid">
-          {leaderBoardTitles.map((item, index) => {
-            return (
-              <div className="leader-board-item" key={index}>
-                <div className="leader-board-title-wrapper">
-                  <span className="leader-board-title">{item}</span>
-                </div>
-                <table className="leader-board-table">
-                  <tbody>
-                    {sampleLeaderBoardData.map((item, index) => {
-                      if (index === 0) {
-                        return (
-                          <tr key={index}>
-                            <th>{item.rank}.</th>
-                            <th className="name">{item.name}</th>
-                            <th>{item.score}</th>
-                          </tr>
-                        );
-                      }
-                      return (
-                        <tr key={index}>
-                          <td>{item.rank}.</td>
-                          <td className="name">{item.name}</td>
-                          <td>{item.score}</td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
-            );
-          })}
-        </div>
+        {leaderBoard.length ? (
+          <div className="leader-board-grid">
+            {leaderBoard.map((item, index) => {
+              return <LeaderBoardBox key={index} leaders={item} />;
+            })}
+          </div>
+        ) : (
+          <div className="standings-loading-div">
+            <Loader
+              type="Oval"
+              color="#ff5722"
+              secondaryColor="#757575"
+              width={40}
+              height={40}
+            />
+          </div>
+        )}
       </ContentBox>
     </div>
   );

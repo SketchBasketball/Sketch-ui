@@ -1,6 +1,8 @@
-name: SKETCH UI QA Deploy
+name: SKETCH UI Prod Deploy
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - master
 
 jobs:
   deploy:
@@ -32,10 +34,10 @@ jobs:
         run: yarn install
 
       - name: Build
-        run: yarn build:dev
+        run: yarn build:prod
 
-      - name: Deploy
-        run: aws s3 sync ./build s3://sketchbball-qa
+      - name: Deploy # S3에 배포하기
+        run: aws s3 sync ./build s3://sketchbball-prod
 
       - name: Clear AWS S3 Cache
-        run: aws cloudfront create-invalidation --distribution-id E2D740VF1EA5NP --paths '/*'
+        run: aws cloudfront create-invalidation --distribution-id E25V2SANSJGWHV --paths '/*'
