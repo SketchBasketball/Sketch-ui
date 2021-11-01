@@ -34,7 +34,7 @@ jobs:
         run: yarn install
 
       - name: Build
-        run: yarn build
+        run: yarn build:prod
 
       - name: Deploy # S3에 배포하기
         run: aws s3 sync ./build s3://sketchbball-prod

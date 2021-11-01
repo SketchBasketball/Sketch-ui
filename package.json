@@ -23,9 +23,8 @@
     "sass": "^1.39.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "build:dev": "react-scripts build REACT_APP_API_PATH=https://api.sketchbball.com ",
+    "start": "REACT_APP_API_PATH=https://dev.api.sketchbball.com react-scripts start",
+    "build:dev": "REACT_APP_API_PATH=https://dev.api.sketchbball.com react-scripts build",
     "build:prod": "REACT_APP_API_PATH=https://api.sketchbball.com react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
