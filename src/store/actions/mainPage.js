@@ -8,7 +8,7 @@ export function getMainPage() {
   return (dispatch) => {
     dispatch({ type: GET_MAIN });
     axios
-      .get(`${process.env.REACT_APP_API_PATH}/main`)
+      .get(`${process.env.REACT_APP_API_PATH}/home`)
       .then((res) => {
         dispatch({
           type: GET_MAIN_SUCCESS,
