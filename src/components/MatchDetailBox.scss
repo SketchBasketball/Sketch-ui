@@ -1,0 +1,65 @@
+.images-wrapper {
+  display: grid;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: auto;
+  }
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.not-finished-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem;
+  height: 10rem;
+  font-size: 2rem;
+  background-color: #fff;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: #171e4f;
+}
+
+.grid-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+
+  span {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #171e4f;
+    margin: 0.5rem 0;
+  }
+  .carousel-root {
+    width: 100%;
+  }
+}
+
+.slide,
+.slide-selected {
+  display: flex;
+  justify-content: center;
+}
+
+.mvp-image {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 2rem;
+}
+
+.carousel-item {
+  width: 100%;
+  min-width: 0;
+}

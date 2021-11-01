@@ -5,72 +5,25 @@
   flex-direction: column;
 }
 
-.team-standing-table-wrapper {
-  width: 100%;
-  padding: 0 0 1rem 0;
-}
-
-.team-standing-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.team-standing-table td,
-.team-standing-table th {
-  padding: 0.5rem 0;
-  border-bottom: solid #e7e7e7 1px;
-  text-align: center;
-}
-
-thead tr {
-  background-color: #e7e7e7;
-  color: #545454;
-}
-
-.team-link {
-  text-decoration: none;
-  color: #000;
-
-  &:hover {
-    color: #ff5722;
-  }
+.standings-loading-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20rem;
 }
 
 .leader-board-grid {
-  display: grid;
-  grid-template-columns: auto auto auto;
   column-gap: 2rem;
   margin-bottom: 1rem;
-}
-
-.leader-board-item {
-  margin: 0.5rem 0;
-}
-
-.leader-board-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #3f51b5;
-}
-
-.leader-board-title-wrapper {
-  width: 100%;
-  padding: 0.5rem 0;
-  display: flex;
-  justify-content: flex-start;
-  border-bottom: solid #e7e7e7 1px;
-}
-
-.leader-board-table {
-  width: 100%;
-}
-
-.leader-board-table td,
-.leader-board-table th {
-  padding: 0.2rem 0;
-  text-align: center;
-}
-
-.leader-board-table .name {
-  text-align: left;
+  display: grid;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+  @media only screen and (min-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

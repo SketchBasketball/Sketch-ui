@@ -1,0 +1,39 @@
+.leader-board-item {
+  margin: 0.5rem 0;
+}
+
+.leader-board-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3f51b5;
+}
+
+.leader-board-title-wrapper {
+  width: 100%;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: solid #e7e7e7 1px;
+}
+
+.leader-board-table {
+  width: 100%;
+}
+
+.leader-board-table td,
+.leader-board-table th {
+  padding: 0.2rem;
+  text-align: right;
+}
+
+.leader-board-table .leader-board-small-column {
+  width: 1rem;
+}
+
+.leader-board-table .leader-row {
+  font-weight: 700;
+}
+
+.leader-board-table .name {
+  text-align: left;
+}

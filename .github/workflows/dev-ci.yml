@@ -1,9 +1,8 @@
-name: React Dev Deploy
+name: SKETCH UI Dev Deploy
 on:
-  push:       # TODO. dev Branch에서 push 이벤트가 일어났을 때만 실행
+  push:
     branches:
       - dev
-
 
 jobs:
   deploy:
@@ -35,7 +34,7 @@ jobs:
         run: yarn install
 
       - name: Build
-        run: yarn build
+        run: yarn build:dev
 
       - name: Deploy # S3에 배포하기
         run: aws s3 sync ./build s3://sketchbball-dev
