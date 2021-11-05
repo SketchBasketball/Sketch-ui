@@ -7,7 +7,7 @@
 }
 
 .match-content-wrapper {
-  max-width: 1600px;
+  max-width: 1080px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -27,6 +27,16 @@
     color: #171e4f;
     margin: 0.5rem 0;
   }
+  .MuiDataGrid-root {
+    font-size: 0.8rem !important;
+  }
+
+  // [aria-colindex="1"] {
+  //   background-color: yellow;
+  //   position: sticky !important;
+  //   left: 0 !important;
+  // }
+
   .MuiDataGrid-footerContainer {
     display: none !important;
   }
