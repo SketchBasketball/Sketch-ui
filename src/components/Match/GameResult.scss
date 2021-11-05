@@ -8,7 +8,8 @@
   }
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 768px) {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
+    grid-auto-rows: minmax(min-content, max-content);
   }
 }
 
