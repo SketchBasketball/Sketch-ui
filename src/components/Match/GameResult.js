@@ -1,7 +1,7 @@
 import React from "react";
 import "./GameResult.scss";
-import bball from "../logo/bball.png";
-import YoutubeEmbed from "../components/YoutubeEmbed";
+import bball from "../../logo/bball.png";
+import YoutubeEmbed from "../Common/YoutubeEmbed";
 
 const GameResult = ({ matchDetails }) => {
   return (

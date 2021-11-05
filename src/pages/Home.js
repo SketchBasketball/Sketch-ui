@@ -1,9 +1,9 @@
 import React from "react";
 import "./Home.scss";
-import HomeSchedule from "../components/HomeSchedule";
+import HomeSchedule from "../components/Home/HomeSchedule";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import YoutubeEmbed from "../components/YoutubeEmbed";
+import YoutubeEmbed from "../components/Common/YoutubeEmbed";
 import StandingTable from "../components/StandingTable";
 import { useDispatch, useSelector } from "react-redux";
 import { getMainPage } from "../store/actions/mainPage";

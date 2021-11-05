@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.scss";
-import fbLogo from "../logo/facebook.png";
-import igLogo from "../logo/insta.png";
+import fbLogo from "../../logo/facebook.png";
+import igLogo from "../../logo/insta.png";
 
 const Footer = (props) => {
   return (

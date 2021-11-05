@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import "./LeagueDetail.scss";
-import ContentBox from "../components/ContentBox";
+import ContentBox from "../components/Common/ContentBox";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getLeagueStandings,
