@@ -1,7 +1,7 @@
 import React from "react";
 import "./HomeSchedule.scss";
 import Loader from "react-loader-spinner";
-import HomeScheduleItem from "../components/HomeScheduleItem";
+import HomeScheduleItem from "./HomeScheduleItem";
 
 const HomeSchedule = ({ title, games, isLoading }) => {
   return (

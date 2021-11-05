@@ -6,8 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getMatchDetails } from "../store/actions/match";
 import matchStatDefaultHeader from "../const/matchStatDefaultHeader";
-import GameResult from "../components/GameResult";
-import MatchDetailBox from "../components/MatchDetailBox";
+import GameResult from "../components/Match/GameResult";
+import MatchDetailBox from "../components/Match/MatchDetailBox";
 const Match = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
