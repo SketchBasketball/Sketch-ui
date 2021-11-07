@@ -23,7 +23,7 @@ const LeagueDetail = () => {
     let leagueName = league.replaceAll("-", " ");
     dispatch(getLeagueStandings(leagueName));
     dispatch(getLeaderBoard(leagueName));
-  }, []);
+  }, [league]);
 
   return (
     <div className="league-detail-wrapper">
