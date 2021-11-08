@@ -17,31 +17,31 @@ const matchStatDefaultHeader = [
 ];
 
 const statDefaultHeader = [
-  { field: "name", headerName: "PLAYER", flex: 2 },
-  { field: "PTS", headerName: "PTS", flex: 1 },
+  { field: "name", headerName: "PLAYER", flex: 3, minWidth: 160 },
+  { field: "PTS", headerName: "PTS", flex: 1, minWidth: 50 },
 
-  { field: "FGA", headerName: "FGA", flex: 1 },
-  { field: "FGM", headerName: "FGM", flex: 1 },
-  { field: "FG%", headerName: "FG%", flex: 1 },
+  { field: "FGA", headerName: "FGA", flex: 1, minWidth: 50 },
+  { field: "FGM", headerName: "FGM", flex: 1, minWidth: 50 },
+  { field: "FG%", headerName: "FG%", flex: 1, minWidth: 50 },
 
-  { field: "3PA", headerName: "3PA", flex: 1 },
-  { field: "3PM", headerName: "3PM", flex: 1 },
-  { field: "3P%", headerName: "3P%", flex: 1 },
+  { field: "3PA", headerName: "3PA", flex: 1, minWidth: 50 },
+  { field: "3PM", headerName: "3PM", flex: 1, minWidth: 50 },
+  { field: "3P%", headerName: "3P%", flex: 1, minWidth: 50 },
 
-  { field: "FTM", headerName: "FTM", flex: 1 },
-  { field: "FTA", headerName: "FTA", flex: 1 },
-  { field: "FT%", headerName: "FT%", flex: 1 },
+  { field: "FTM", headerName: "FTM", flex: 1, minWidth: 50 },
+  { field: "FTA", headerName: "FTA", flex: 1, minWidth: 50 },
+  { field: "FT%", headerName: "FT%", flex: 1, minWidth: 50 },
 
-  { field: "OREB", headerName: "OREB", flex: 1 },
-  { field: "DREB", headerName: "DREB", flex: 1 },
-  { field: "REB", headerName: "REB", flex: 1 },
+  { field: "OREB", headerName: "OREB", flex: 1, minWidth: 50 },
+  { field: "DREB", headerName: "DREB", flex: 1, minWidth: 50 },
+  { field: "REB", headerName: "REB", flex: 1, minWidth: 50 },
 
-  { field: "AST", headerName: "AST", flex: 1 },
-  { field: "STL", headerName: "STL", flex: 1 },
-  { field: "BLK", headerName: "BLK", flex: 1 },
-  { field: "TOV", headerName: "TOV", flex: 1 },
-  { field: "EFF", headerName: "EFF", flex: 1 },
-  { field: "TSP", headerName: "TSP", flex: 1 },
+  { field: "AST", headerName: "AST", flex: 1, minWidth: 50 },
+  { field: "STL", headerName: "STL", flex: 1, minWidth: 50 },
+  { field: "BLK", headerName: "BLK", flex: 1, minWidth: 50 },
+  { field: "TOV", headerName: "TOV", flex: 1, minWidth: 50 },
+  { field: "EFF", headerName: "EFF", flex: 1, minWidth: 50 },
+  { field: "TSP", headerName: "TSP", flex: 1, minWidth: 50 },
 ];
 
 export { matchStatDefaultHeader, statDefaultHeader };

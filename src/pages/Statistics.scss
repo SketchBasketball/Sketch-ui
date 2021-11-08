@@ -7,7 +7,8 @@
 
 .stat-search-bar {
   display: flex;
-  max-width: 1080px;
+  flex-wrap: wrap;
+  max-width: 1600px;
   width: 100%;
   justify-content: flex-start;
   .MuiInputBase-root {
