@@ -8,12 +8,7 @@ export const GET_SCHEDULES_IN_PAGES_FAIL = "GET_SCHEDULES_IN_PAGES_FAIL";
 
 export function getSchedulesInPages(leagueName, pages) {
   const requestPath = leagueName
-    ? `${
-        process.env.REACT_APP_API_PATH
-      }/schedules/leagues?name=${leagueName.replaceAll(
-        "-",
-        " "
-      )}&page_number=${pages}`
+    ? `${process.env.REACT_APP_API_PATH}/schedules/leagues?league_abv=${leagueName}&page_number=${pages}`
     : `${process.env.REACT_APP_API_PATH}/schedules/pages?num=${pages}`;
   return (dispatch) => {
     dispatch({ type: GET_SCHEDULES_IN_PAGES });

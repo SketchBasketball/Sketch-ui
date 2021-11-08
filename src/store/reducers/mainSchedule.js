@@ -4,9 +4,10 @@ import {
   GET_MAIN_SCHEDULES_FAIL,
 } from "../actions/mainSchedule";
 const initialState = {
-  schedules: [],
-  isLoading: true,
-  isError: false,
+  next_gemes: [],
+  next_loading: false,
+  prev_gemes: [],
+  prev_loading: false,
 };
 
 export default function mainScheduleReducer(state = initialState, action) {

@@ -6,28 +6,39 @@ import { Carousel } from "react-responsive-carousel";
 import YoutubeEmbed from "../components/YoutubeEmbed";
 import StandingTable from "../components/StandingTable";
 import { useDispatch, useSelector } from "react-redux";
-import { getMainPage } from "../store/actions/mainPage";
+import {
+  getBanners,
+  getMainNextGames,
+  getMainPrevGames,
+  getVideo,
+  getAllLeagueStandings,
+} from "../store/actions/mainPage";
 import { useEffect } from "react";
 
 function Home() {
   const dispatch = useDispatch();
   const {
-    main_images,
-    main_video,
+    banners,
+    video,
     next_games,
+    next_loading,
     prev_games,
+    prev_loading,
     season_standings,
-    isLoading,
   } = useSelector((store) => store.mainPageReducer);
   useEffect(() => {
-    dispatch(getMainPage());
+    dispatch(getBanners());
+    dispatch(getMainNextGames());
+    dispatch(getMainPrevGames());
+    dispatch(getAllLeagueStandings());
+    dispatch(getVideo());
   }, []);
   return (
     <div className="home-wrapper">
       <HomeSchedule
         title="Upcoming Matches"
         games={next_games}
-        isLoading={isLoading}
+        isLoading={next_loading}
       />
       <div className="home-carousel-wrapper">
         <Carousel
@@ -36,7 +47,7 @@ function Home() {
           autoPlay={true}
           showThumbs={false}
         >
-          {main_images.map((item, index) => {
+          {banners.map((item, index) => {
             return (
               <div key={index}>
                 <img
@@ -52,7 +63,7 @@ function Home() {
       <HomeSchedule
         title="Game Results"
         games={prev_games}
-        isLoading={isLoading}
+        isLoading={prev_loading}
       />
       <div className="content-wrapper">
         <div className="main-content-box">
@@ -66,14 +77,14 @@ function Home() {
               {season_standings.map((item, index) => {
                 return (
                   <div className="main-carousel-item" key={index}>
-                    <span>{item.league}</span>
-                    <StandingTable standings={item.standings} />
+                    <span>{item.league_name}</span>
+                    <StandingTable standings={item.league_standings} />
                   </div>
                 );
               })}
             </Carousel>
           </div>
-          <YoutubeEmbed embedId={main_video} />
+          <YoutubeEmbed embedId={video} />
         </div>
       </div>
     </div>

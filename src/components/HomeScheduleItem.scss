@@ -29,8 +29,15 @@
 
 .schedule-content .team-info .team-name {
   font-weight: 600;
+  margin-right: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .match-etc {
   color: #757575;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

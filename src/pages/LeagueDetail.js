@@ -20,9 +20,8 @@ const LeagueDetail = () => {
   );
 
   useEffect(() => {
-    let leagueName = league.replaceAll("-", " ");
-    dispatch(getLeagueStandings(leagueName));
-    dispatch(getLeaderBoard(leagueName));
+    dispatch(getLeagueStandings(league));
+    dispatch(getLeaderBoard(league));
   }, [league]);
 
   return (
