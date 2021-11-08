@@ -22,7 +22,7 @@ const Schedule = () => {
           return (
             <LeagueMenuItem
               name={item.abv}
-              path={`/Schedules/${item.path}`}
+              path={`/Schedules/${item.abv}`}
               key={index}
             />
           );

@@ -24,7 +24,7 @@ const League = () => {
             <LeagueMenuItem
               key={index}
               name={league.abv}
-              path={`/Leagues/${league.path}`}
+              path={`/Leagues/${league.abv}`}
             />
           );
         })}
