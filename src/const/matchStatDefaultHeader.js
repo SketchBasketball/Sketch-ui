@@ -17,7 +17,7 @@ const matchStatDefaultHeader = [
 ];
 
 const statDefaultHeader = [
-  { field: "name", headerName: "PLAYER", flex: 3, minWidth: 160 },
+  { field: "name", headerName: "PLAYER", flex: 2.5, minWidth: 160 },
   { field: "PTS", headerName: "PTS", flex: 1, minWidth: 50 },
 
   { field: "FGA", headerName: "FGA", flex: 1, minWidth: 50 },
