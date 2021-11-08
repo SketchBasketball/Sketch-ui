@@ -1,34 +1,72 @@
-import { GET_MAIN, GET_MAIN_SUCCESS, GET_MAIN_FAIL } from "../actions/mainPage";
+import {
+  GET_BANNERS,
+  GET_VIDEO,
+  GET_MAIN_LEAGUE_STANDING,
+  GET_NEXT_GAMES,
+  GET_NEXT_GAMES_SUCCESS,
+  GET_NEXT_GAMES_FAIL,
+  GET_PREV_GAMES,
+  GET_PREV_GAMES_SUCCESS,
+  GET_PREV_GAMES_FAIL,
+} from "../actions/mainPage";
 const initialState = {
-  main_images: [],
-  main_video: "QorHlczkjGM",
+  banners: [],
+  video: "QorHlczkjGM",
   next_games: [],
+  next_loading: false,
   prev_games: [],
+  prev_loading: false,
   season_standings: [],
-  isLoading: false,
 };
 
 export default function mainPageReducer(state = initialState, action) {
   switch (action.type) {
-    case GET_MAIN:
+    case GET_BANNERS:
       return {
         ...state,
-        isLoading: true,
+        banners: action.data,
       };
-    case GET_MAIN_SUCCESS:
+    case GET_VIDEO:
       return {
         ...state,
-        main_images: action.data.main_images,
-        main_video: action.data.main_video,
-        next_games: action.data.next_games,
-        prev_games: action.data.prev_games,
-        season_standings: action.data.season_standings,
-        isLoading: false,
+        video: action.data,
       };
-    case GET_MAIN_FAIL:
+    case GET_NEXT_GAMES:
       return {
         ...state,
-        isLoading: false,
+        next_loading: true,
+      };
+    case GET_NEXT_GAMES_SUCCESS:
+      return {
+        ...state,
+        next_games: action.data,
+        next_loading: false,
+      };
+    case GET_NEXT_GAMES_FAIL:
+      return {
+        ...state,
+        next_loading: false,
+      };
+    case GET_PREV_GAMES:
+      return {
+        ...state,
+        prev_loading: true,
+      };
+    case GET_PREV_GAMES_SUCCESS:
+      return {
+        ...state,
+        prev_games: action.data,
+        prev_loading: false,
+      };
+    case GET_PREV_GAMES_FAIL:
+      return {
+        ...state,
+        prev_loading: false,
+      };
+    case GET_MAIN_LEAGUE_STANDING:
+      return {
+        ...state,
+        season_standings: action.data,
       };
     default:
       return state;

@@ -41,10 +41,13 @@
 }
 
 .game-score-wrapper {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: grid;
+  column-gap: 1rem;
+  margin-bottom: 1rem;
+  margin: 0.5rem;
+  grid-template-columns: 1fr 0.5fr 1fr;
   width: 100%;
+  text-align: center;
 }
 
 .game-score {
