@@ -1,12 +1,10 @@
 import React from "react";
 import "./LeagueSummary.scss";
 import ContentBox from "../components/ContentBox";
-// import { sampleTableData } from "../const/leagueDetailConsts";
 import StandingTable from "../components/StandingTable";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllLeagueStandings } from "../store/actions/leagueStanding";
 import { useEffect } from "react";
-// const temp = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const LeagueSummary = () => {
   const dispatch = useDispatch();
