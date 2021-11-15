@@ -8,8 +8,14 @@ export const GET_SCHEDULES_IN_PAGES_FAIL = "GET_SCHEDULES_IN_PAGES_FAIL";
 
 export function getSchedulesInPages(leagueName, pages) {
   const requestPath = leagueName
-    ? `${process.env.REACT_APP_API_PATH}/schedules/leagues?league_abv=${leagueName}&page_number=${pages}`
-    : `${process.env.REACT_APP_API_PATH}/schedules/pages?num=${pages}`;
+    ? `${
+        process.env.REACT_APP_API_PATH
+      }/schedules/leagues?league_abv=${leagueName}&page_number=${pages}&order_by_asc=${
+        pages >= 0
+      }`
+    : `${
+        process.env.REACT_APP_API_PATH
+      }/schedules/pages?num=${pages}&order_by_asc=${pages >= 0}`;
   return (dispatch) => {
     dispatch({ type: GET_SCHEDULES_IN_PAGES });
     axios
