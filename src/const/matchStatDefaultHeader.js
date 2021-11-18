@@ -2,7 +2,7 @@ const matchStatDefaultHeader = [
   {
     field: "name",
     headerName: "PLAYER",
-    flex: 2,
+    flex: 2.5,
     minWidth: 160,
     sortable: false,
   },
