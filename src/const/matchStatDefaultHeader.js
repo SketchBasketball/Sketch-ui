@@ -115,31 +115,32 @@ const matchStatDefaultHeader = [
 ];
 
 const statDefaultHeader = [
-  { field: "name", headerName: "PLAYER", flex: 2.5, minWidth: 160 },
-  { field: "PTS", headerName: "PTS", flex: 1, minWidth: 50 },
+  { field: "team_name", headerName: "TEAM", flex: 1.5, minWidth: 100 },
+  { field: "player_name", headerName: "PLAYER", flex: 2.5, minWidth: 160 },
+  { field: "PTS", headerName: "PTS", flex: 1, minWidth: 50, align: "right" },
 
-  { field: "FGA", headerName: "FGA", flex: 1, minWidth: 50 },
-  { field: "FGM", headerName: "FGM", flex: 1, minWidth: 50 },
-  { field: "FG%", headerName: "FG%", flex: 1, minWidth: 50 },
+  { field: "FGA", headerName: "FGA", flex: 1, minWidth: 50, align: "right" },
+  { field: "FGM", headerName: "FGM", flex: 1, minWidth: 50, align: "right" },
+  { field: "FG%", headerName: "FG%", flex: 1, minWidth: 50, align: "right" },
 
-  { field: "3PA", headerName: "3PA", flex: 1, minWidth: 50 },
-  { field: "3PM", headerName: "3PM", flex: 1, minWidth: 50 },
-  { field: "3P%", headerName: "3P%", flex: 1, minWidth: 50 },
+  { field: "3PA", headerName: "3PA", flex: 1, minWidth: 50, align: "right" },
+  { field: "3PM", headerName: "3PM", flex: 1, minWidth: 50, align: "right" },
+  { field: "3P%", headerName: "3P%", flex: 1, minWidth: 50, align: "right" },
 
-  { field: "FTM", headerName: "FTM", flex: 1, minWidth: 50 },
-  { field: "FTA", headerName: "FTA", flex: 1, minWidth: 50 },
-  { field: "FT%", headerName: "FT%", flex: 1, minWidth: 50 },
+  { field: "FTM", headerName: "FTM", flex: 1, minWidth: 50, align: "right" },
+  { field: "FTA", headerName: "FTA", flex: 1, minWidth: 50, align: "right" },
+  { field: "FT%", headerName: "FT%", flex: 1, minWidth: 50, align: "right" },
 
-  { field: "OREB", headerName: "OREB", flex: 1, minWidth: 50 },
-  { field: "DREB", headerName: "DREB", flex: 1, minWidth: 50 },
-  { field: "REB", headerName: "REB", flex: 1, minWidth: 50 },
+  { field: "OREB", headerName: "OREB", flex: 1, minWidth: 50, align: "right" },
+  { field: "DREB", headerName: "DREB", flex: 1, minWidth: 50, align: "right" },
+  { field: "REB", headerName: "REB", flex: 1, minWidth: 50, align: "right" },
 
-  { field: "AST", headerName: "AST", flex: 1, minWidth: 50 },
-  { field: "STL", headerName: "STL", flex: 1, minWidth: 50 },
-  { field: "BLK", headerName: "BLK", flex: 1, minWidth: 50 },
-  { field: "TOV", headerName: "TOV", flex: 1, minWidth: 50 },
-  { field: "EFF", headerName: "EFF", flex: 1, minWidth: 50 },
-  { field: "TSP", headerName: "TSP", flex: 1, minWidth: 50 },
+  { field: "AST", headerName: "AST", flex: 1, minWidth: 50, align: "right" },
+  { field: "STL", headerName: "STL", flex: 1, minWidth: 50, align: "right" },
+  { field: "BLK", headerName: "BLK", flex: 1, minWidth: 50, align: "right" },
+  { field: "TOV", headerName: "TOV", flex: 1, minWidth: 50, align: "right" },
+  { field: "EFF", headerName: "EFF", flex: 1, minWidth: 50, align: "right" },
+  { field: "TSP", headerName: "TSP", flex: 1, minWidth: 50, align: "right" },
 ];
 
 export { matchStatDefaultHeader, statDefaultHeader };

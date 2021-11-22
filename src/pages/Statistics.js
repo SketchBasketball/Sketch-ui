@@ -6,81 +6,56 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getLeagues,
+  getSeasons,
+  getStats,
+  getTeams,
+} from "../store/actions/statistics";
 
 const Statistics = () => {
-  const [rows, setRows] = useState([]);
-  const [league, setLeague] = useState("Division 1");
-  const [season, setSeason] = useState("Season 1");
-  const [seasonType, setSeasonType] = useState("Regular Season");
-
-  const handleLeagueChange = (event) => {
-    setLeague(event.target.value);
-    console.log(event.target.value);
-  };
-  const handleSeasonChange = (event) => {
-    setSeason(event.target.value);
-    console.log(event.target.value);
-  };
-  const handleSeasonTypeChange = (event) => {
-    setSeasonType(event.target.value);
-    console.log(event.target.value);
-  };
+  const dispatch = useDispatch();
+  const { leagues, seasons, teams, stats } = useSelector(
+    (store) => store.statisticsReducer
+  );
+  const [leagueId, setLeagueId] = useState("");
+  const [seasonId, setSeasonId] = useState("");
+  const [teamId, setTeamId] = useState("All");
+  const [matchType, setMatchType] = useState("League");
 
   useEffect(() => {
-    let temp = [];
-    setRows([]);
-    for (let i = 0; i < 200; i++) {
-      temp.push({
-        id: i,
-        seasonplayer_id: "b904eb0d-cd08-49cb-b2c9-841a3989256b",
-        name: "Swing Sze Wing V Leung",
-        PTS: 17.4,
-        FGM: 5.7,
-        FGA: 13.7,
-        "FG%": 41.6058,
-        "3PM": 2.6,
-        "3PA": 6.8,
-        "3P%": 38.2353,
-        FTM: 3.4,
-        FTA: 4.4,
-        "FT%": 77.2727,
-        OREB: 0.2,
-        DREB: 0.8,
-        REB: 1,
-        AST: 1.8,
-        STL: 1.1,
-        BLK: 0,
-        TOV: 1.8,
-        EFF: 18.5,
-        TSP: 2,
-      });
-    }
-    temp.push({
-      id: 9999,
-      seasonplayer_id: "b904eb0d-cd08-49cb-b2c9-841a3989256b",
-      name: "Swing Sze Wing V Leung",
-      PTS: 200,
-      FGM: 5.7,
-      FGA: 13.7,
-      "FG%": 41.6058,
-      "3PM": 2.6,
-      "3PA": 6.8,
-      "3P%": 38.2353,
-      FTM: 3.4,
-      FTA: 4.4,
-      "FT%": 77.2727,
-      OREB: 0.2,
-      DREB: 0.8,
-      REB: 1,
-      AST: 1.8,
-      STL: 1.1,
-      BLK: 0,
-      TOV: 1.8,
-      EFF: 18.5,
-      TSP: 2,
-    });
-    setRows(temp);
+    dispatch(getLeagues());
   }, []);
+
+  useEffect(() => {
+    if (leagues.length) {
+      setLeagueId(leagues[0].id);
+    }
+  }, [leagues]);
+
+  useEffect(() => {
+    if (leagueId != "") {
+      dispatch(getSeasons(leagueId));
+    }
+  }, [leagueId]);
+
+  useEffect(() => {
+    if (seasons.length) {
+      setSeasonId(seasons[0].id);
+    }
+  }, [seasons]);
+
+  useEffect(() => {
+    if (seasonId != "") {
+      dispatch(getTeams(seasonId));
+    }
+  }, [seasonId]);
+
+  useEffect(() => {
+    dispatch(getStats(seasonId));
+  }, [seasonId, teamId, matchType]);
+
   return (
     <div className="statistics-wrapper">
       <div className="stat-search-bar">
@@ -89,13 +64,19 @@ const Statistics = () => {
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
-            value={league}
+            value={leagueId}
             label="League"
-            onChange={handleLeagueChange}
+            onChange={(event) => {
+              setLeagueId(event.target.value);
+            }}
           >
-            <MenuItem value={"Division 1"}>Division 1</MenuItem>
-            <MenuItem value={"Division 2"}>Division 2</MenuItem>
-            <MenuItem value={"HKKBL"}>HKKBL</MenuItem>
+            {leagues.map((item, index) => {
+              return (
+                <MenuItem value={item.id} key={index}>
+                  {item.abv}
+                </MenuItem>
+              );
+            })}
           </Select>
         </FormControl>
         <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -103,31 +84,62 @@ const Statistics = () => {
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
-            value={season}
+            value={seasonId}
             label="Season"
-            onChange={handleSeasonChange}
+            onChange={(event) => {
+              setSeasonId(event.target.value);
+              console.log(event.target.value);
+            }}
           >
-            <MenuItem value={"Season 1"}>Season 1</MenuItem>
-            <MenuItem value={"Season 2"}>Season 2</MenuItem>
+            {seasons.map((item, index) => {
+              return (
+                <MenuItem value={item.id} key={index}>
+                  {item.name}
+                </MenuItem>
+              );
+            })}
           </Select>
         </FormControl>
-        <FormControl sx={{ m: 1, minWidth: 180 }}>
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
           <InputLabel id="demo-simple-select-helper-label">Type</InputLabel>
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
-            value={seasonType}
+            value={matchType}
             label="Type"
-            onChange={handleSeasonTypeChange}
+            onChange={(event) => {
+              setMatchType(event.target.value);
+            }}
           >
-            <MenuItem value={"Regular Season"}>Regular Season</MenuItem>
+            <MenuItem value={"League"}>League</MenuItem>
             <MenuItem value={"Playoff"}>Playoff</MenuItem>
+          </Select>
+        </FormControl>
+        <FormControl sx={{ m: 1, minWidth: 210 }}>
+          <InputLabel id="demo-simple-select-helper-label">Teams</InputLabel>
+          <Select
+            labelId="demo-simple-select-helper-label"
+            id="demo-simple-select-helper"
+            value={teamId}
+            label="Teams"
+            onChange={(event) => {
+              setTeamId(event.target.value);
+            }}
+          >
+            <MenuItem value={"All"}>All</MenuItem>
+            {teams.map((item, index) => {
+              return (
+                <MenuItem value={item.id} key={index}>
+                  {item.name}
+                </MenuItem>
+              );
+            })}
           </Select>
         </FormControl>
       </div>
       <div className="stat-data-grid">
         <DataGrid
-          rows={rows}
+          rows={stats}
           columns={statDefaultHeader}
           autoHeight={true}
           rowHeight={30}

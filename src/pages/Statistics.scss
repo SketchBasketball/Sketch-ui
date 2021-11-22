@@ -14,14 +14,12 @@
   .MuiInputBase-root {
     font-size: 0.9rem;
   }
-  .MuiFormControl-root {
-    margin-left: 0;
-  }
 }
 
 .stat-data-grid {
   max-width: 1600px;
   width: 100%;
+  margin: 0.5rem;
   // display: flex;
   // flex-direction: column;
   .MuiDataGrid-root {
