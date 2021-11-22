@@ -68,7 +68,9 @@ export function getMainPrevGames() {
   return (dispatch) => {
     dispatch({ type: GET_PREV_GAMES });
     axios
-      .get(`${process.env.REACT_APP_API_PATH}/schedules/pages?num=-1`)
+      .get(
+        `${process.env.REACT_APP_API_PATH}/schedules/pages?num=-1&order_by_asc=false`
+      )
       .then((res) => {
         dispatch({
           type: GET_PREV_GAMES_SUCCESS,
