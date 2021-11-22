@@ -59,7 +59,6 @@ export function getStats(seasonId, teamId, matchType) {
     axios
       .get(requestURL)
       .then((res) => {
-        // let data = res.data.map((obj) => ({ ...obj, align: "right" }));
         dispatch({ type: GET_STATS_SUCCESS, data: res.data });
       })
       .catch((err) => {
