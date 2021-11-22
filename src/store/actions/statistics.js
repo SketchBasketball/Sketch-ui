@@ -49,11 +49,15 @@ export function getTeams(seasonId) {
   };
 }
 
-export function getStats(seasonId) {
+export function getStats(seasonId, teamId, matchType) {
   return (dispatch) => {
+    let requestURL = `${process.env.REACT_APP_API_PATH}/stats/${seasonId}?match_type=${matchType}`;
+    if (teamId != "All") {
+      requestURL = requestURL + `&team_id=${teamId}`;
+    }
     dispatch({ type: GET_STATS });
     axios
-      .get(`${process.env.REACT_APP_API_PATH}/stats/${seasonId}`)
+      .get(requestURL)
       .then((res) => {
         // let data = res.data.map((obj) => ({ ...obj, align: "right" }));
         dispatch({ type: GET_STATS_SUCCESS, data: res.data });

@@ -49,12 +49,15 @@ const Statistics = () => {
   useEffect(() => {
     if (seasonId != "") {
       dispatch(getTeams(seasonId));
+      setTeamId("All");
     }
   }, [seasonId]);
 
   useEffect(() => {
-    dispatch(getStats(seasonId));
-  }, [seasonId, teamId, matchType]);
+    if (seasonId != "") {
+      dispatch(getStats(seasonId, teamId, matchType));
+    }
+  }, [teamId, matchType, seasonId]);
 
   return (
     <div className="statistics-wrapper">
@@ -68,6 +71,7 @@ const Statistics = () => {
             label="League"
             onChange={(event) => {
               setLeagueId(event.target.value);
+              setSeasonId("");
             }}
           >
             {leagues.map((item, index) => {
@@ -88,7 +92,6 @@ const Statistics = () => {
             label="Season"
             onChange={(event) => {
               setSeasonId(event.target.value);
-              console.log(event.target.value);
             }}
           >
             {seasons.map((item, index) => {
@@ -113,6 +116,7 @@ const Statistics = () => {
           >
             <MenuItem value={"League"}>League</MenuItem>
             <MenuItem value={"Playoff"}>Playoff</MenuItem>
+            <MenuItem value={"Event"}>Event</MenuItem>
           </Select>
         </FormControl>
         <FormControl sx={{ m: 1, minWidth: 210 }}>
