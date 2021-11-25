@@ -1,8 +1,8 @@
 import React from "react";
 import { useHistory } from "react-router";
-import defaultHeaderMenu from "../const/defaultHeaderMenu";
+import defaultHeaderMenu from "../../const/defaultHeaderMenu";
 import "./Header.scss";
-import logo from "../logo/logo.png";
+import logo from "../../logo/logo.png";
 import MenuItem from "./MenuItem";
 
 function Header() {
