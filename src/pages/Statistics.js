@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Statistics.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { statDefaultHeader } from "../const/matchStatDefaultHeader";
+import { statPageDefaultHeader } from "../const/matchStatDefaultHeader";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -144,7 +144,7 @@ const Statistics = () => {
       <div className="stat-data-grid">
         <DataGrid
           rows={stats}
-          columns={statDefaultHeader}
+          columns={statPageDefaultHeader}
           autoHeight={true}
           rowHeight={30}
           pageSize={50}

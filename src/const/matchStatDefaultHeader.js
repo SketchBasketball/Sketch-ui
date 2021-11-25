@@ -114,7 +114,13 @@ const matchStatDefaultHeader = [
   },
 ];
 
-const statDefaultHeader = [
+const statPageDefaultHeader = [
+  {
+    field: "league_season_name",
+    headerName: "SEASON",
+    flex: 2,
+    minWidth: 90,
+  },
   { field: "team_name", headerName: "TEAM", flex: 1.5, minWidth: 100 },
   { field: "player_name", headerName: "PLAYER", flex: 2.5, minWidth: 160 },
   {
@@ -125,22 +131,14 @@ const statDefaultHeader = [
     align: "right",
     type: "number",
   },
-
   {
-    field: "FGA",
-    headerName: "FGA",
-    flex: 1,
-    minWidth: 50,
+    field: "FGM_FGA",
+    headerName: "FG",
+    flex: 1.5,
+    minWidth: 60,
     align: "right",
-    type: "number",
-  },
-  {
-    field: "FGM",
-    headerName: "FGM",
-    flex: 1,
-    minWidth: 50,
-    align: "right",
-    type: "number",
+    headerAlign: "right",
+    sortable: false,
   },
   {
     field: "FG%",
@@ -148,53 +146,40 @@ const statDefaultHeader = [
     flex: 1,
     minWidth: 50,
     align: "right",
-    type: "number",
-  },
-
-  {
-    field: "3PA",
-    headerName: "3PA",
-    flex: 1,
-    minWidth: 50,
-    align: "right",
+    headerAlign: "right",
     type: "number",
   },
   {
-    field: "3PM",
-    headerName: "3PM",
-    flex: 1,
-    minWidth: 50,
+    field: "TPM_TPA",
+    headerName: "TP",
+    headerAlign: "right",
+    flex: 1.5,
+    minWidth: 60,
     align: "right",
-    type: "number",
+    sortable: false,
   },
   {
     field: "3P%",
-    headerName: "3P%",
-    flex: 1,
-    minWidth: 50,
-    align: "right",
-    type: "number",
-  },
-
-  {
-    field: "FTM",
-    headerName: "FTM",
+    headerName: "TP%",
+    headerAlign: "right",
     flex: 1,
     minWidth: 50,
     align: "right",
     type: "number",
   },
   {
-    field: "FTA",
-    headerName: "FTA",
-    flex: 1,
-    minWidth: 50,
+    field: "FTM_FTA",
+    headerName: "FT",
+    headerAlign: "right",
+    flex: 1.5,
+    minWidth: 60,
     align: "right",
-    type: "number",
+    sortable: false,
   },
   {
     field: "FT%",
     headerName: "FT%",
+    headerAlign: "right",
     flex: 1,
     minWidth: 50,
     align: "right",
@@ -204,6 +189,7 @@ const statDefaultHeader = [
   {
     field: "OREB",
     headerName: "OREB",
+    headerAlign: "right",
     flex: 1,
     minWidth: 50,
     align: "right",
@@ -212,6 +198,7 @@ const statDefaultHeader = [
   {
     field: "DREB",
     headerName: "DREB",
+    headerAlign: "right",
     flex: 1,
     minWidth: 50,
     align: "right",
@@ -220,15 +207,16 @@ const statDefaultHeader = [
   {
     field: "REB",
     headerName: "REB",
+    headerAlign: "right",
     flex: 1,
     minWidth: 50,
     align: "right",
     type: "number",
   },
-
   {
     field: "AST",
     headerName: "AST",
+    headerAlign: "right",
     flex: 1,
     minWidth: 50,
     align: "right",
@@ -237,6 +225,7 @@ const statDefaultHeader = [
   {
     field: "STL",
     headerName: "STL",
+    headerAlign: "right",
     flex: 1,
     minWidth: 50,
     align: "right",
@@ -245,6 +234,7 @@ const statDefaultHeader = [
   {
     field: "BLK",
     headerName: "BLK",
+    headerAlign: "right",
     flex: 1,
     minWidth: 50,
     align: "right",
@@ -253,6 +243,7 @@ const statDefaultHeader = [
   {
     field: "TOV",
     headerName: "TOV",
+    headerAlign: "right",
     flex: 1,
     minWidth: 50,
     align: "right",
@@ -261,6 +252,7 @@ const statDefaultHeader = [
   {
     field: "EFF",
     headerName: "EFF",
+    headerAlign: "right",
     flex: 1,
     minWidth: 50,
     align: "right",
@@ -268,7 +260,8 @@ const statDefaultHeader = [
   },
   {
     field: "TSP",
-    headerName: "TSP",
+    headerName: "TS%",
+    headerAlign: "right",
     flex: 1,
     minWidth: 50,
     align: "right",
@@ -276,4 +269,4 @@ const statDefaultHeader = [
   },
 ];
 
-export { matchStatDefaultHeader, statDefaultHeader };
+export { matchStatDefaultHeader, statPageDefaultHeader };
