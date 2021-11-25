@@ -1,6 +1,6 @@
 import React from "react";
 import "./LeagueSummary.scss";
-import ContentBox from "../components/ContentBox";
+import ContentBox from "../components/Common/ContentBox";
 import StandingTable from "../components/StandingTable";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllLeagueStandings } from "../store/actions/leagueStanding";

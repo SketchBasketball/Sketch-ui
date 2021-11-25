@@ -2,13 +2,14 @@ import React from "react";
 import "./App.scss";
 import { Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import Header from "./components/Header";
+import Header from "./components/Common/Header";
 import Schedule from "./pages/Schedule";
 import League from "./pages/League";
-import Footer from "./components/Footer";
+import Footer from "./components/Common/Footer";
 import Error from "./pages/Error";
 import Match from "./pages/Match";
 import Sponsor from "./pages/Sponsor";
+import Statistics from "./pages/Statistics";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/leagues" component={League} />
         <Route path="/matches/:id" component={Match} />
         <Route path="/sponsors" component={Sponsor} />
+        <Route path="/statistics" component={Statistics} />
         <Route path="*" component={Error} />
       </Switch>
       <Footer />
