@@ -149,6 +149,7 @@ const Statistics = () => {
           rowHeight={30}
           pageSize={50}
           rowsPerPageOptions={[50]}
+          disableColumnMenu={true}
         />
       </div>
     </div>
