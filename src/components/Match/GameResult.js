@@ -8,9 +8,10 @@ const GameResult = ({ matchDetails }) => {
     <div className="game-result-wrapper">
       <div className="game-result">
         <span className="match-title">
-          {matchDetails?.season} -{" "}
+          {matchDetails?.league_abv} {matchDetails?.season} -{" "}
           {matchDetails ? matchDetails.match_type : null}
         </span>
+        <span className="match-name">{matchDetails?.match_name}</span>
         <span className="match-sub-title">
           {matchDetails ? matchDetails.scheduled_at.date : "--"}{" "}
           {matchDetails ? matchDetails.scheduled_at.day : "--"}
