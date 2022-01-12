@@ -51,7 +51,7 @@ function Home() {
             return (
               <div key={index}>
                 <img
-                  src={item}
+                  src={item.url}
                   className="main-carousel-item"
                   alt="main-carousel-item"
                 />
