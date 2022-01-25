@@ -1,0 +1,41 @@
+.team-header-container {
+	margin: 0.5rem;
+	max-width: calc(1080px - 1rem);
+	width: 150%;
+	display: flex;
+	// justify-content: flex-start;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.team-banner-logo {
+	display: flex;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+	margin-left: 4vw;
+	margin-right: 2vw;
+	height: 100px;
+	width: 100px;
+}
+
+.team-header-info {
+	margin-left: 1vw;
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	font-family: Arial, sans-serif;
+	line-height: 1.25;
+	font-weight: 700;
+	font-size: 1.75rem;
+}
+
+.team-banner-name {
+}
+
+.team-banner-record {
+}
+
+.team-banner-ranks {
+	display: space-between;
+
+	margin-left: 25vw;
+}
