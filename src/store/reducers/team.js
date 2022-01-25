@@ -26,8 +26,8 @@ export default function teamReducer(state = initialState, action) {
     case GET_TEAM_DETAILS_FAIL:
       return {
         ...state,
-        isLoading: false,
         isError: true,
+        isLoading: false,
       };
     default:
       return state;

@@ -8,7 +8,7 @@ export function getTeamDetails(id) {
   return (dispatch) => {
     dispatch({ type: GET_TEAM_DETAILS });
     axios
-      .get(`${process.env.REACT_APP_API_PATH}/teams/${id}`)
+      .get(`${process.env.REACT_APP_API_PATH}/teams/${id}/seasons`)
       .then((res) => {
         dispatch({ type: GET_TEAM_DETAILS_SUCCESS, data: res.data });
       })
