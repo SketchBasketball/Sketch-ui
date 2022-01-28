@@ -17,7 +17,9 @@ const ScheduleList = () => {
   const pageNum = new URLSearchParams(location.search).get("page");
 
   useEffect(() => {
-    dispatch(getSchedulesInPages(league, pageNum ? +pageNum : 0));
+    dispatch(
+      getSchedulesInPages(league, pageNum ? +pageNum : schedules ? -1 : 0)
+    );
   }, [league, pageNum]);
 
   return (
