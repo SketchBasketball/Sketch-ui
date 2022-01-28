@@ -18,8 +18,6 @@ const Match = () => {
     dispatch(getMatchDetails(id));
   }, []);
 
-  console.log(matchDetails);
-
   return (
     <div className="match-container">
       <div className="match-content-wrapper">
