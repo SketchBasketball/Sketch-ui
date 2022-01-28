@@ -12,7 +12,6 @@ function ScheduleBox({ item }) {
 
   const gameDate = item.scheduled_at.date.replace(/\./g, "");
   const currentDate = new Date().toISOString().slice(0, 10).replace(/-/g, "");
-  console.log(currentDate - gameDate);
 
   return (
     <div>
