@@ -9,8 +9,9 @@ const SubMenuItem = (props) => {
       exact={props.exact ? props.exact : false}
       to={props.path}
       activeStyle={{
-        color: "#FF5722",
-        border: "#FF5722 solid 1px",
+        color: "#171e4f",
+        fontWeight: 700,
+        borderBottom: "#171e4f solid ",
       }}
     >
       {props.name}
