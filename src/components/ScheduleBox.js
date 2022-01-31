@@ -38,7 +38,16 @@ function ScheduleBox({ item }) {
               />
               <div className="team-title">{item.home_team_name}</div>
             </div>
-            <div className="score-wrapper">
+            <div
+              className="score-wrapper"
+              style={{
+                fontSize:
+                  item.home_team_score.toString().length > 2 ||
+                  item.away_team_score.toString().length > 2
+                    ? "1.2rem"
+                    : "1.5rem",
+              }}
+            >
               <span>
                 {item.home_team_score} : {item.away_team_score}
               </span>
