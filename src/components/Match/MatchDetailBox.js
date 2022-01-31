@@ -41,8 +41,8 @@ function MatchDetailBox({ matchDetails }) {
           {matchDetails?.away_team ? matchDetails.away_team.name : null}
         </span>
         <Carousel showArrows={true} infiniteLoop={true} autoPlay={true}>
-          {matchDetails?.away_shooting_chart
-            ? matchDetails.away_shooting_chart.map((item) => {
+          {matchDetails?.away_team.match_stats
+            ? matchDetails.away_team.match_stats.map((item) => {
                 return (
                   <div key={item}>
                     <img
