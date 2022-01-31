@@ -30,7 +30,6 @@ function ScheduleBox({ item }) {
         </div>
         <div className="match-box-detail-wrapper">
           <div className="match-box-detail-header">{item.league_name}</div>
-          {/* <div className="match-box-detail-match-name">{item.match_name}</div> */}
           <div className="match-box-detail">
             <div className="team-wrapper">
               <img
