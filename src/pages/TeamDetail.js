@@ -8,7 +8,7 @@ import TeamHeader from "../components/Team/TeamHeader";
 import TeamRoster from "../components/Team/TeamRoster";
 import TeamStats from "../components/Team/TeamStats";
 // import { getTeamDetails } from "../store/actions/team";
-import teamDetails from "./TeamDetailExample";
+import { teamDetails, teamWLDetails } from "./TeamDetailExample";
 import teamRoster from "./TeamRosterExample";
 
 const TeamDetail = () => {
@@ -44,7 +44,7 @@ const TeamDetail = () => {
         isLoading={next_loading}
       />
       <TeamRoster roster={teamRoster} />
-      <TeamStats stats={teamDetails} />
+      <TeamStats stats={teamDetails} wlstats={teamWLDetails} />
     </div>
   );
 };

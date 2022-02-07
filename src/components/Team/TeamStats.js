@@ -3,21 +3,22 @@ import "./TeamStats.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import {
   overallStatsDefaultHeader,
-  locationStatsDefaultHeader,
+  // locationStatsDefaultHeader,
   winlossStatsDefaultHeader,
 } from "../../const/teamDefaultHeader";
 
-const TeamStats = ({ stats }) => {
+const TeamStats = ({ stats, wlstats }) => {
   const gridTitle = "Team Statistics";
 
-  console.log(stats);
+  console.log("stats", stats);
 
   return (
     <div className="team-stats-wrapper">
       <div className="overall-stats-container">
         <span>{stats ? gridTitle : "No Team Selected"}</span>
         <DataGrid
-          rows={stats ? stats : []}
+          rows={stats && stats}
+          getRowId={(row) => row.team_id}
           columns={overallStatsDefaultHeader}
           autoHeight={true}
           rowHeight={30}
@@ -26,7 +27,7 @@ const TeamStats = ({ stats }) => {
           hideFooter={true}
         />
       </div>
-      <div className="location-stats-container">
+      {/* <div className="location-stats-container">
         <DataGrid
           rows={stats ? stats : []}
           columns={locationStatsDefaultHeader}
@@ -36,10 +37,11 @@ const TeamStats = ({ stats }) => {
           rowsPerPageOptions={[100]}
           hideFooter={true}
         />
-      </div>
+      </div> */}
       <div className="winloss-stats-container">
         <DataGrid
-          rows={stats ? stats : []}
+          rows={wlstats ? wlstats : []}
+          getRowId={(row) => row.team_id}
           columns={winlossStatsDefaultHeader}
           autoHeight={true}
           rowHeight={30}
