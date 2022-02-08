@@ -1,16 +1,16 @@
 .league-menu-link {
-	padding: 0.5rem;
-	margin: 0.5rem 0 0.5rem 0.5rem;
-	border-bottom: #9b9b9b solid;
-	box-sizing: border-box;
-	font-weight: 600;
-	color: #757575;
-	text-decoration: none;
+  padding: 0.5rem;
+  margin: 0.5rem 0 0.5rem 0.5rem;
+  border-bottom: #9b9b9b solid;
+  box-sizing: border-box;
+  font-weight: 600;
+  color: #757575;
+  text-decoration: none;
 
-	&:hover {
-		color: #171e4f;
-		font-weight: 700;
-		// border: #ff5722 solid 1px;
-		border-bottom: #171e4f solid 3px;
-	}
+  &:hover {
+    color: #171e4f;
+    font-weight: 700;
+    // border: #ff5722 solid 1px;
+    border-bottom: #171e4f solid 3px;
+  }
 }
