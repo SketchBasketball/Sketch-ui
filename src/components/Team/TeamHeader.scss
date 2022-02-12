@@ -7,12 +7,17 @@
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.logo-img {
+	height: 6rem;
+	width: auto;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+	margin-left: 3rem;
+	margin-right: 1rem;
+}
+
 .team-banner-logo {
 	display: flex;
-	margin-top: 5vh;
-	margin-bottom: 5vh;
-	margin-left: 4vw;
-	margin-right: 2vw;
 	height: 100px;
 	width: 100px;
 }

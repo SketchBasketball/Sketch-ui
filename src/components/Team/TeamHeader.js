@@ -1,11 +1,12 @@
 import React from "react";
+import bball from "../../logo/bball.png";
 import "./TeamHeader.scss";
 
-const TeamHeader = (/*{ name, logo, stats }*/) => {
+const TeamHeader = (/*{ name, stats }*/) => {
   return (
     <div className="team-header-container">
       <div className="team-header-logo">
-        <div style={{ backgroundColor: "black" }}>{"logo ? logo : null"}</div>
+        <img src={bball} className="logo-img" alt="home-logo" />
       </div>
       <div className="team-header-info">
         <div className="team-header-name">{"Boston Celtics"}</div>
