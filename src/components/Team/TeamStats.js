@@ -3,7 +3,6 @@ import "./TeamStats.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import {
   overallStatsDefaultHeader,
-  // locationStatsDefaultHeader,
   winlossStatsDefaultHeader,
 } from "../../const/teamDefaultHeader";
 
@@ -27,21 +26,10 @@ const TeamStats = ({ stats, wlstats }) => {
           hideFooter={true}
         />
       </div>
-      {/* <div className="location-stats-container">
-        <DataGrid
-          rows={stats ? stats : []}
-          columns={locationStatsDefaultHeader}
-          autoHeight={true}
-          rowHeight={30}
-          pageSize={100}
-          rowsPerPageOptions={[100]}
-          hideFooter={true}
-        />
-      </div> */}
       <div className="winloss-stats-container">
         <DataGrid
           rows={wlstats ? wlstats : []}
-          getRowId={(row) => row.team_id}
+          getRowId={(row) => row.title}
           columns={winlossStatsDefaultHeader}
           autoHeight={true}
           rowHeight={30}
