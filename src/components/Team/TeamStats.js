@@ -9,8 +9,6 @@ import {
 const TeamStats = ({ stats, wlstats }) => {
   const gridTitle = "Team Statistics";
 
-  console.log("stats", stats);
-
   return (
     <div className="team-stats-wrapper">
       <div className="overall-stats-container">
