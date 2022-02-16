@@ -37,7 +37,7 @@ const TeamDetail = () => {
 
   return (
     <div className="team-wrapper">
-      <TeamHeader />
+      <TeamHeader info={teamWLDetails} stats={teamDetails} />
       <TeamSchedule
         title="Upcoming Matches"
         games={next_games}
