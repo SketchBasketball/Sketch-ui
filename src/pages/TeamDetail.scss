@@ -11,3 +11,10 @@
 	display: flex;
 	flex-direction: column;
 }
+
+.team-extra-info {
+	display: flex;
+	justify-content: space-between;
+	max-width: calc(1080px - 1rem);
+	width: 100%;
+}

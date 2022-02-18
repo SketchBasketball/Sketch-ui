@@ -1,0 +1,24 @@
+.team-intro-wrapper {
+	margin: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.team-intro-container {
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 0.5rem;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+	span {
+		font-size: 1rem;
+		font-weight: 700;
+		color: #171e4f;
+		margin: 0.5rem 0;
+	}
+	.MuiDataGrid-root {
+		font-size: 0.8rem !important;
+	}
+}

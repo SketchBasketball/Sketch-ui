@@ -382,8 +382,122 @@ const winlossStatsDefaultHeader = [
   },
 ];
 
+const teamRecordsDefaultHeader = [
+  {
+    field: "record_title",
+    headerName: "",
+    flex: 1,
+    minWidth: 80,
+    sortable: false,
+  },
+  {
+    field: "player_name",
+    headerName: "",
+    flex: 1,
+    minWidth: 40,
+    sortable: false,
+  },
+  {
+    field: "record_count",
+    headerName: "",
+    flex: 1,
+    minWidth: 40,
+    sortable: false,
+  },
+];
+
+const teamAchievementsDefaultHeader = [
+  {
+    field: "achievement_title",
+    headerName: "Achievement",
+    flex: 1,
+    minWidth: 80,
+    sortable: false,
+  },
+  // {
+  //   field: "season_name",
+  //   headerName: "Season",
+  //   flex: 1,
+  //   minWidth: 40,
+  //   sortable: false,
+  // },
+  // {
+  //   field: "league_name",
+  //   headerName: "League",
+  //   flex: 1,
+  //   minWidth: 40,
+  //   sortable: false,
+  // },
+  // {
+  //   field: "division_name",
+  //   headerName: "Division",
+  //   flex: 1,
+  //   minWidth: 40,
+  //   sortable: false,
+  // },
+];
+
+const teamAwardsDefaultHeader = [
+  {
+    field: "award_title",
+    headerName: "Awards",
+    flex: 1,
+    minWidth: 80,
+    sortable: false,
+  },
+  // {
+  //   field: "player_name",
+  //   headerName: "",
+  //   flex: 1,
+  //   minWidth: 40,
+  //   sortable: false,
+  // },
+  // {
+  //   field: "season_name",
+  //   headerName: "Season",
+  //   flex: 1,
+  //   minWidth: 40,
+  //   sortable: false,
+  // },
+  // {
+  //   field: "league_name",
+  //   headerName: "League",
+  //   flex: 1,
+  //   minWidth: 40,
+  //   sortable: false,
+  // },
+  // {
+  //   field: "division_name",
+  //   headerName: "Division",
+  //   flex: 1,
+  //   minWidth: 40,
+  //   sortable: false,
+  // },
+];
+
+const teamIntroDefaultHeader = [
+  {
+    field: "info.title",
+    headerName: "",
+    flex: 1,
+    minWidth: 80,
+    sortable: false,
+  },
+  {
+    field: "info.info",
+    headerName: "",
+    flex: 1,
+    minWidth: 40,
+    sortable: false,
+  },
+];
+
 export {
   teamRosterDefaultHeader,
   overallStatsDefaultHeader,
   winlossStatsDefaultHeader,
+  teamRecordsDefaultHeader,
+  teamAchievementsDefaultHeader,
+  teamAwardsDefaultHeader,
+  teamIntroDefaultHeader,
 };
