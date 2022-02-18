@@ -7,17 +7,14 @@ import TeamSchedule from "../components/Team/TeamSchedule";
 import TeamHeader from "../components/Team/TeamHeader";
 import TeamRoster from "../components/Team/TeamRoster";
 import TeamStats from "../components/Team/TeamStats";
-import TeamRecords from "../components/Team/TeamRecords";
-import TeamAwards from "../components/Team/TeamAwards";
-import TeamIntro from "../components/Team/TeamIntro";
 // import { getTeamDetails } from "../store/actions/team";
 import {
   teamDetails,
   teamWLDetails,
-  teamRecordsDetails,
-  teamAchievementsDetails,
-  teamAwardsDetails,
-  teamIntroDetails,
+  // teamRecordsDetails,
+  // teamAchievementsDetails,
+  // teamAwardsDetails,
+  // teamIntroDetails,
 } from "./TeamDetailExample";
 import teamRoster from "./TeamRosterExample";
 
@@ -55,14 +52,14 @@ const TeamDetail = () => {
       />
       <TeamRoster roster={teamRoster} />
       <TeamStats stats={teamDetails} wlstats={teamWLDetails} />
-      <div className="team-extra-info">
+      {/* <div className="team-extra-info">
         <TeamRecords records={teamRecordsDetails} />
         <TeamAwards
           achievements={teamAchievementsDetails}
           awards={teamAwardsDetails}
         />
         <TeamIntro intro={teamIntroDetails} />
-      </div>
+      </div> */}
     </div>
   );
 };
