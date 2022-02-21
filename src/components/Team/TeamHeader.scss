@@ -1,84 +1,85 @@
 .team-header-container {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 0.5rem;
-	max-width: 100vw;
-	width: 100%;
-	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-	background-color: white;
-	color: black;
+	// justify-content: space-between;
+	// align-items: center;
+	// margin-bottom: 0.5rem;
+	// max-width: 100vw;
+	// width: 100%;
+	// height: 100%;
+	// box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	// background-color: white;
+	// color: black;
 
 	position: sticky;
 	top: 3.5rem;
 	z-index: 10;
 }
 
-.logo-img {
-	height: 6rem;
-	width: auto;
-	margin-top: 3rem;
-	margin-bottom: 3rem;
-	margin-left: 15rem;
-	margin-right: 1rem;
-}
+// .logo-img {
+// 	height: 6rem;
+// 	width: auto;
+// 	margin-top: 3rem;
+// 	margin-bottom: 3rem;
+// 	margin-left: 15rem;
+// 	margin-right: 1rem;
+// }
 
-.team-header-logo {
-	display: flex;
-	align-items: center;
-}
+// .team-header-logo {
+// 	display: flex;
+// 	align-items: center;
+// }
 
-.team-header-info {
-	display: flex;
-	flex-direction: column;
-	font-family: Arial, sans-serif;
-	line-height: 1.25;
-	font-weight: 700;
-	font-size: 2rem;
-	margin-left: 1vw;
-}
+// .team-header-info {
+// 	display: flex;
+// 	flex-direction: column;
+// 	font-family: Arial, sans-serif;
+// 	line-height: 1.25;
+// 	font-weight: 700;
+// 	font-size: 2rem;
+// 	margin-left: 1vw;
+// }
 
-.team-header-name {
-	display: flex;
-}
+// .team-header-name {
+// 	display: flex;
+// }
 
-.team-header-record {
-	display: flex;
-	font-size: 1.2rem;
-	margin-top: 0.5rem;
-}
+// .team-header-record {
+// 	display: flex;
+// 	font-size: 1.2rem;
+// 	margin-top: 0.5rem;
+// }
 
-.team-header-stats {
-	display: flex;
-	margin-right: 15rem;
-	font-family: Arial, sans-serif;
-	line-height: 1.25;
-	font-weight: 550;
-	font-size: 1.2rem;
-}
+// .team-header-stats {
+// 	display: flex;
+// 	margin-right: 15rem;
+// 	font-family: Arial, sans-serif;
+// 	line-height: 1.25;
+// 	font-weight: 550;
+// 	font-size: 1.2rem;
+// }
 
-.team-ppg {
-	display: flex;
-	flex-direction: column;
-	padding: 0.8rem;
-}
+// .team-ppg {
+// 	display: flex;
+// 	flex-direction: column;
+// 	padding: 0.8rem;
+// }
 
-.team-rpg {
-	display: flex;
-	flex-direction: column;
-	padding: 0.8rem;
-}
-.team-apg {
-	display: flex;
-	flex-direction: column;
-	padding: 0.8rem;
-}
-.team-oppg {
-	display: flex;
-	flex-direction: column;
-	padding: 0.8rem;
-}
+// .team-rpg {
+// 	display: flex;
+// 	flex-direction: column;
+// 	padding: 0.8rem;
+// }
+// .team-apg {
+// 	display: flex;
+// 	flex-direction: column;
+// 	padding: 0.8rem;
+// }
+// .team-oppg {
+// 	display: flex;
+// 	flex-direction: column;
+// 	padding: 0.8rem;
+// }
 
-.vl {
-	border-left: 0.08rem solid black;
-}
+// .vl {
+// 	border-left: 0.08rem solid black;
+// }

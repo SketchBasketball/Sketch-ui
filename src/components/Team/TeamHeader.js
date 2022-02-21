@@ -1,11 +1,11 @@
 import React from "react";
-import bball from "../../logo/bball.png";
+// import bball from "../../logo/bball.png";
 import "./TeamHeader.scss";
 
-const TeamHeader = ({ info, stats }) => {
+const TeamHeader = (/*{ info, stats }*/) => {
   return (
     <div className="team-header-container">
-      <div className="team-header-logo">
+      {/* <div className="team-header-logo">
         <img src={bball} className="logo-img" alt="home-logo" />
         <div className="team-header-info">
           <div className="team-header-name">{info[0].team_name}</div>
@@ -44,7 +44,8 @@ const TeamHeader = ({ info, stats }) => {
             {(info[0].games / (info[0].games + info[1].games)).toFixed(2)}
           </div>
         </div>
-      </div>
+      </div> */}
+      <div>boob</div>
     </div>
   );
 };
