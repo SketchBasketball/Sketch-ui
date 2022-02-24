@@ -1,0 +1,21 @@
+.banner-logo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 4rem;
+}
+
+.banner-logo {
+	display: flex;
+
+	.logo {
+		display: flex;
+		height: 13vw;
+	}
+}
+
+.banner-team-name {
+	align-content: center;
+	font-size: 150%;
+	font-style: italic;
+}
