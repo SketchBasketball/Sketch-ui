@@ -2,9 +2,9 @@ import {
   GET_TEAM_DETAILS,
   GET_TEAM_DETAILS_SUCCESS,
   GET_TEAM_DETAILS_FAIL,
-} from "../actions/match";
+} from "../actions/team";
 const initialState = {
-  teamDetails: null,
+  teamDetails: [],
   isLoading: true,
   isError: false,
 };
@@ -19,7 +19,7 @@ export default function teamReducer(state = initialState, action) {
     case GET_TEAM_DETAILS_SUCCESS:
       return {
         ...state,
-        matchDetails: action.data,
+        teamDetails: action.data,
         isError: false,
         isLoading: false,
       };
