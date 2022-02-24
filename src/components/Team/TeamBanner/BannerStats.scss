@@ -1,0 +1,77 @@
+.banner-stats-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0.8rem 0.8rem 0 0.8rem;
+	background-color: #012b5c;
+}
+
+.banner-stats-title {
+	display: flex;
+	justify-content: space-evenly;
+
+	.banner-division {
+		display: flex;
+		text-transform: uppercase;
+	}
+
+	.banner-season {
+		display: flex;
+		font-size: 75%;
+		align-self: flex-end;
+		margin-left: 0.5rem;
+	}
+}
+
+.banner-stats-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner-score {
+	display: flex;
+	font-size: 4rem;
+	justify-content: center;
+	align-content: center;
+	margin: 0 1rem 0 2rem;
+
+	.banner-score-stat {
+		display: flex;
+		margin: 0.5rem 0.5rem -0.5rem 0.5rem;
+	}
+
+	.banner-score-title {
+		display: flex;
+		font-size: 30%;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.banner-stats-details {
+	display: grid;
+	padding: 1rem;
+
+	grid-template-columns: 1fr 1fr;
+	grid-row: auto auto;
+	grid-column-gap: 1rem;
+	grid-row-gap: 1rem;
+
+	.banner-stat-box {
+		font-size: 0.8rem;
+
+		.banner-stat-title {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.banner-stat-content {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 2rem;
+		}
+	}
+}
