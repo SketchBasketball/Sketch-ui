@@ -1,63 +1,106 @@
 import axios from "axios";
 
-export const GET_TEAM_DETAILS = "GET_TEAM_DETAILS";
-export const GET_TEAM_DETAILS_SUCCESS = "GET_TEAM_DETAILS_SUCCESS";
-export const GET_TEAM_DETAILS_FAIL = "GET_TEAM_DETAILS_FAIL";
+export const GET_TEAM_SEASONS = "GET_TEAM_SEASONS";
+export const GET_TEAM_SEASONS_SUCCESS = "GET_TEAM_SEASONS_SUCCESS";
+export const GET_TEAM_SEASONS_FAIL = "GET_TEAM_SEASONS_FAIL";
 
-export const GET_WIN_LOSS_TEAM_DETAILS = "GET_WIN_LOSS_TEAM_DETAILS";
-export const GET_WIN_LOSS_TEAM_DETAILS_SUCCESS =
-  "GET_WIN_LOSS_TEAM_DETAILS_SUCCESS";
-export const GET_WIN_LOSS_TEAM_DETAILS_FAIL = "GET_WIN_LOSS_TEAM_DETAILS_FAIL";
+export const GET_TEAM_PLAYER_STATS = "GET_TEAM_PLAYER_STATS";
+export const GET_TEAM_PLAYER_STATS_SUCCESS = "GET_TEAM_PLAYER_STATS_SUCCESS";
+export const GET_TEAM_PLAYER_STATS_FAIL = "GET_TEAM_PLAYER_STATS_FAIL";
 
-export const GET_All_TIME_HIGHS = "GET_All_TIME_HIGHS";
-export const GET_All_TIME_HIGHS_SUCCESS = "GET_All_TIME_HIGHS_SUCCESS";
-export const GET_All_TIME_HIGHS_FAIL = "GET_All_TIME_HIGHS_FAIL";
+export const GET_TEAM_STATS = "GET_TEAM_STATS";
+export const GET_TEAM_STATS_SUCCESS = "GET_TEAM_STATS_SUCCESS";
+export const GET_TEAM_STATS_FAIL = "GET_TEAM_STATS_FAIL";
 
-export function getTeamDetails(id) {
+export const GET_TEAM_WL_STATS = "GET_TEAM_WL_STATS";
+export const GET_TEAM_WL_STATS_SUCCESS = "GET_TEAM_WL_STATS_SUCCESS";
+export const GET_TEAM_WL_STATS_FAIL = "GET_TEAM_WL_STATS_FAIL";
+
+export const GET_TEAM_ALL_TIME_HIGH = "GET_TEAM_ALL_TIME_HIGH";
+export const GET_TEAM_ALL_TIME_HIGH_SUCCESS = "GET_TEAM_ALL_TIME_HIGH_SUCCESS";
+export const GET_TEAM_ALL_TIME_HIGH_FAIL = "GET_TEAM_ALL_TIME_HIGH_FAIL";
+
+export function getTeamSeasons(id) {
   return (dispatch) => {
-    dispatch({ type: GET_TEAM_DETAILS });
+    dispatch({ type: GET_TEAM_SEASONS });
     axios
-      .get(`${process.env.REACT_APP_API_PATH}/teams/${id}/season-stats`)
+      .get(`${process.env.REACT_APP_API_PATH}/teams/${id}/seasons`)
       .then((res) => {
-        dispatch({ type: GET_TEAM_DETAILS_SUCCESS, data: res.data });
+        dispatch({ type: GET_TEAM_SEASONS_SUCCESS, data: res.data });
       })
       .catch((err) => {
         // TODO. toast some messages
-        dispatch({ type: GET_TEAM_DETAILS_FAIL });
+        dispatch({ type: GET_TEAM_SEASONS_FAIL });
         console.log(err);
       });
   };
 }
 
-export function getWLTeamDetails(id) {
+export function getTeamPlayerStats(teamId, seasonId) {
   return (dispatch) => {
-    dispatch({ type: GET_WIN_LOSS_TEAM_DETAILS });
+    dispatch({ type: GET_TEAM_PLAYER_STATS });
     axios
       .get(
-        `${process.env.REACT_APP_API_PATH}/teams/${id}/season-stats/win-loss`
+        `${process.env.REACT_APP_API_PATH}/teams/${teamId}/seasons/${seasonId}/players`
       )
       .then((res) => {
-        dispatch({ type: GET_WIN_LOSS_TEAM_DETAILS_SUCCESS, data: res.data });
+        dispatch({ type: GET_TEAM_PLAYER_STATS_SUCCESS, data: res.data });
       })
       .catch((err) => {
         // TODO. toast some messages
-        dispatch({ type: GET_WIN_LOSS_TEAM_DETAILS_FAIL });
+        dispatch({ type: GET_TEAM_PLAYER_STATS_FAIL });
         console.log(err);
       });
   };
 }
 
-export function getAllTimeHighs(id) {
+export function getTeamStats(teamId, seasonId) {
   return (dispatch) => {
-    dispatch({ type: GET_All_TIME_HIGHS });
+    dispatch({ type: GET_TEAM_STATS });
     axios
-      .get(`${process.env.REACT_APP_API_PATH}/teams/${id}/all-stats/highs`)
+      .get(
+        `${process.env.REACT_APP_API_PATH}/teams/${teamId}/seasons/${seasonId}/stats`
+      )
       .then((res) => {
-        dispatch({ type: GET_All_TIME_HIGHS_SUCCESS, data: res.data });
+        dispatch({ type: GET_TEAM_STATS_SUCCESS, data: res.data });
       })
       .catch((err) => {
         // TODO. toast some messages
-        dispatch({ type: GET_All_TIME_HIGHS_FAIL });
+        dispatch({ type: GET_TEAM_STATS_FAIL });
+        console.log(err);
+      });
+  };
+}
+
+export function getTeamWLStats(teamId, seasonId) {
+  return (dispatch) => {
+    dispatch({ type: GET_TEAM_WL_STATS });
+    axios
+      .get(
+        `${process.env.REACT_APP_API_PATH}/teams/${teamId}/seasons/${seasonId}/stats/win-loss`
+      )
+      .then((res) => {
+        dispatch({ type: GET_TEAM_WL_STATS_SUCCESS, data: res.data });
+      })
+      .catch((err) => {
+        // TODO. toast some messages
+        dispatch({ type: GET_TEAM_WL_STATS_FAIL });
+        console.log(err);
+      });
+  };
+}
+
+export function getTeamAllTimeHigh(teamId) {
+  return (dispatch) => {
+    dispatch({ type: GET_TEAM_ALL_TIME_HIGH });
+    axios
+      .get(`${process.env.REACT_APP_API_PATH}/teams/${teamId}/all-stats/highs`)
+      .then((res) => {
+        dispatch({ type: GET_TEAM_ALL_TIME_HIGH_SUCCESS, data: res.data });
+      })
+      .catch((err) => {
+        // TODO. toast some messages
+        dispatch({ type: GET_TEAM_ALL_TIME_HIGH_FAIL });
         console.log(err);
       });
   };

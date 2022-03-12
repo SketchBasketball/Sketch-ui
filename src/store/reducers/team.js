@@ -1,79 +1,121 @@
 import {
-  GET_TEAM_DETAILS,
-  GET_TEAM_DETAILS_SUCCESS,
-  GET_TEAM_DETAILS_FAIL,
-  GET_WIN_LOSS_TEAM_DETAILS,
-  GET_WIN_LOSS_TEAM_DETAILS_SUCCESS,
-  GET_WIN_LOSS_TEAM_DETAILS_FAIL,
-  GET_All_TIME_HIGHS,
-  GET_All_TIME_HIGHS_SUCCESS,
-  GET_All_TIME_HIGHS_FAIL,
+  GET_TEAM_SEASONS,
+  GET_TEAM_SEASONS_SUCCESS,
+  GET_TEAM_SEASONS_FAIL,
+  GET_TEAM_PLAYER_STATS,
+  GET_TEAM_PLAYER_STATS_SUCCESS,
+  GET_TEAM_PLAYER_STATS_FAIL,
+  GET_TEAM_STATS,
+  GET_TEAM_STATS_SUCCESS,
+  GET_TEAM_STATS_FAIL,
+  GET_TEAM_WL_STATS,
+  GET_TEAM_WL_STATS_SUCCESS,
+  GET_TEAM_WL_STATS_FAIL,
+  GET_TEAM_ALL_TIME_HIGH,
+  GET_TEAM_ALL_TIME_HIGH_SUCCESS,
+  GET_TEAM_ALL_TIME_HIGH_FAIL,
 } from "../actions/team";
 const initialState = {
-  teamDetails: [],
-  wlDetails: [],
-  allTimeHighs: [],
+  teamSeasons: [],
+  teamPlayerStats: [],
+  teamStats: [],
+  teamWLStats: [],
+  allTimeHigh: [],
   isLoading: true,
   isError: false,
 };
-
 export default function teamReducer(state = initialState, action) {
   switch (action.type) {
-    case GET_TEAM_DETAILS:
+    case GET_TEAM_SEASONS:
       return {
         ...state,
         isLoading: true,
       };
-    case GET_TEAM_DETAILS_SUCCESS:
+    case GET_TEAM_SEASONS_SUCCESS:
       return {
         ...state,
-        teamDetails: action.data,
+        teamSeasons: action.data,
         isError: false,
         isLoading: false,
       };
-    case GET_TEAM_DETAILS_FAIL:
+    case GET_TEAM_SEASONS_FAIL:
       return {
         ...state,
-        isError: true,
         isLoading: false,
+        isError: true,
       };
-    case GET_WIN_LOSS_TEAM_DETAILS:
+    case GET_TEAM_PLAYER_STATS:
       return {
         ...state,
         isLoading: true,
       };
-    case GET_WIN_LOSS_TEAM_DETAILS_SUCCESS:
+    case GET_TEAM_PLAYER_STATS_SUCCESS:
       return {
         ...state,
-        wlDetails: action.data,
+        teamPlayerStats: action.data,
         isError: false,
         isLoading: false,
       };
-    case GET_WIN_LOSS_TEAM_DETAILS_FAIL:
+    case GET_TEAM_PLAYER_STATS_FAIL:
       return {
         ...state,
-        isError: true,
         isLoading: false,
+        isError: true,
       };
-    case GET_All_TIME_HIGHS:
+    case GET_TEAM_STATS:
       return {
         ...state,
         isLoading: true,
       };
-    case GET_All_TIME_HIGHS_SUCCESS:
+    case GET_TEAM_STATS_SUCCESS:
       return {
         ...state,
-        allTimeHighs: action.data,
+        teamStats: action.data,
         isError: false,
         isLoading: false,
       };
-    case GET_All_TIME_HIGHS_FAIL:
+    case GET_TEAM_STATS_FAIL:
       return {
         ...state,
+        isLoading: false,
         isError: true,
+      };
+    case GET_TEAM_WL_STATS:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case GET_TEAM_WL_STATS_SUCCESS:
+      return {
+        ...state,
+        teamWLStats: action.data,
+        isError: false,
         isLoading: false,
       };
-
+    case GET_TEAM_WL_STATS_FAIL:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
+    case GET_TEAM_ALL_TIME_HIGH:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case GET_TEAM_ALL_TIME_HIGH_SUCCESS:
+      return {
+        ...state,
+        allTimeHigh: action.data,
+        isError: false,
+        isLoading: false,
+      };
+    case GET_TEAM_ALL_TIME_HIGH_FAIL:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
     default:
       return state;
   }
