@@ -1,6 +1,5 @@
 .team-banner-wrapper {
 	display: flex;
-	justify-content: center;
 
 	position: sticky;
 	top: 3.5rem;
@@ -17,10 +16,17 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	max-width: calc(1080px - 1rem);
+}
+
+.team-banner-top-wrapper {
+	display: flex;
+	justify-content: center;
 }
 
 .team-banner-top-container {
+	width: 100%;
+	max-width: calc(1080px - 1rem);
+
 	display: flex;
 	justify-content: space-between;
 
@@ -30,7 +36,16 @@
 	font-size: 2rem;
 }
 
+.team-banner-bottom-wrapper {
+	display: flex;
+	justify-content: center;
+	background-color: #0a2347;
+}
+
 .team-banner-bottom-container {
+	width: 100%;
+	max-width: calc(1080px - 1rem);
+
 	display: flex;
 	justify-content: space-between;
 }
