@@ -54,10 +54,6 @@ const TeamDetail = () => {
     dispatch(getTeamAllTimeHigh(team_id));
   }, []);
 
-  useEffect(() => {
-    console.log("getTeamSeasons", teamSeasons);
-  }, [teamSeasons]);
-
   return (
     <div className="team-wrapper">
       <TeamBanner />
