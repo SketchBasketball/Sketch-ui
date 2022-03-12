@@ -14,6 +14,9 @@ import {
   GET_TEAM_ALL_TIME_HIGH,
   GET_TEAM_ALL_TIME_HIGH_SUCCESS,
   GET_TEAM_ALL_TIME_HIGH_FAIL,
+  GET_TEAM_BEST_FIVE,
+  GET_TEAM_BEST_FIVE_SUCCESS,
+  GET_TEAM_BEST_FIVE_FAIL,
 } from "../actions/team";
 const initialState = {
   teamSeasons: [],
@@ -21,6 +24,7 @@ const initialState = {
   teamStats: [],
   teamWLStats: [],
   allTimeHigh: [],
+  teamBestFive: [],
   isLoading: true,
   isError: false,
 };
@@ -111,6 +115,24 @@ export default function teamReducer(state = initialState, action) {
         isLoading: false,
       };
     case GET_TEAM_ALL_TIME_HIGH_FAIL:
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+      };
+    case GET_TEAM_BEST_FIVE:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case GET_TEAM_BEST_FIVE_SUCCESS:
+      return {
+        ...state,
+        teamBestFive: action.data,
+        isError: false,
+        isLoading: false,
+      };
+    case GET_TEAM_BEST_FIVE_FAIL:
       return {
         ...state,
         isLoading: false,

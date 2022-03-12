@@ -20,6 +20,10 @@ export const GET_TEAM_ALL_TIME_HIGH = "GET_TEAM_ALL_TIME_HIGH";
 export const GET_TEAM_ALL_TIME_HIGH_SUCCESS = "GET_TEAM_ALL_TIME_HIGH_SUCCESS";
 export const GET_TEAM_ALL_TIME_HIGH_FAIL = "GET_TEAM_ALL_TIME_HIGH_FAIL";
 
+export const GET_TEAM_BEST_FIVE = "GET_TEAM_BEST_FIVE";
+export const GET_TEAM_BEST_FIVE_SUCCESS = "GET_TEAM_BEST_FIVE_SUCCESS";
+export const GET_TEAM_BEST_FIVE_FAIL = "GET_TEAM_BEST_FIVE_FAIL";
+
 export function getTeamSeasons(id) {
   return (dispatch) => {
     dispatch({ type: GET_TEAM_SEASONS });
@@ -101,6 +105,24 @@ export function getTeamAllTimeHigh(teamId) {
       .catch((err) => {
         // TODO. toast some messages
         dispatch({ type: GET_TEAM_ALL_TIME_HIGH_FAIL });
+        console.log(err);
+      });
+  };
+}
+
+export function getTeamBestFive(teamId, seasonId) {
+  return (dispatch) => {
+    dispatch({ type: GET_TEAM_BEST_FIVE });
+    axios
+      .get(
+        `${process.env.REACT_APP_API_PATH}/teams/${teamId}/seasons/${seasonId}/bestfive`
+      )
+      .then((res) => {
+        dispatch({ type: GET_TEAM_BEST_FIVE_SUCCESS, data: res.data });
+      })
+      .catch((err) => {
+        // TODO. toast some messages
+        dispatch({ type: GET_TEAM_BEST_FIVE_FAIL });
         console.log(err);
       });
   };
