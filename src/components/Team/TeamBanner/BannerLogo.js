@@ -4,7 +4,7 @@ import "./BannerLogo.scss";
 import { useSelector } from "react-redux";
 
 const BannerLogo = () => {
-  const { teamDetails } = useSelector((store) => store.teamReducer);
+  const { teamStats } = useSelector((store) => store.teamReducer);
 
   return (
     <div className="banner-logo-container">
@@ -12,7 +12,7 @@ const BannerLogo = () => {
         <img src={teamLogo} className="logo" />
       </div>
       <div className="banner-team-name">
-        <div>{teamDetails[0]?.team_name?.toUpperCase()}</div>
+        <div>{teamStats[0]?.team_name?.toUpperCase()}</div>
       </div>
     </div>
   );
