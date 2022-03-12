@@ -1,20 +1,21 @@
 import React from "react";
 import "./TeamStats.scss";
+import { useSelector } from "react-redux";
 import { DataGrid } from "@mui/x-data-grid";
 import {
   overallStatsDefaultHeader,
   winlossStatsDefaultHeader,
 } from "../../const/teamDefaultHeader";
 
-const TeamStats = ({ stats, wlstats }) => {
-  const gridTitle = "Team Statistics";
+const TeamStats = () => {
+  const { teamStats, teamWLStats } = useSelector((store) => store.teamReducer);
 
   return (
     <div className="team-stats-wrapper">
       <div className="overall-stats-container">
-        <span>{stats ? gridTitle : "No Team Selected"}</span>
+        <span>{teamStats ? "Team Statistics" : "No Team Selected"}</span>
         <DataGrid
-          rows={stats && stats}
+          rows={teamStats ? teamStats : []}
           getRowId={(row) => row.team_id}
           columns={overallStatsDefaultHeader}
           autoHeight={true}
@@ -26,7 +27,7 @@ const TeamStats = ({ stats, wlstats }) => {
       </div>
       <div className="winloss-stats-container">
         <DataGrid
-          rows={wlstats ? wlstats : []}
+          rows={teamWLStats ? teamWLStats : []}
           getRowId={(row) => row.title}
           columns={winlossStatsDefaultHeader}
           autoHeight={true}
