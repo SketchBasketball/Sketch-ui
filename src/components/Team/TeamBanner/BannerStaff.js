@@ -11,7 +11,6 @@ const BannerStaff = () => {
         <div className="staff-title">CAPTAIN</div>
         <div className="staff-person">-</div>
       </div>
-
       <div className="banner-staff">
         <div className="staff-title">COACH</div>
         <div className="staff-person">-</div>
