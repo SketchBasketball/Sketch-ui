@@ -23,7 +23,7 @@ const initialState = {
   teamPlayerStats: [],
   teamStats: [],
   teamWLStats: [],
-  allTimeHigh: [],
+  teamAllTimeHigh: [],
   teamBestFive: [],
   isLoading: true,
   isError: false,
@@ -110,7 +110,7 @@ export default function teamReducer(state = initialState, action) {
     case GET_TEAM_ALL_TIME_HIGH_SUCCESS:
       return {
         ...state,
-        allTimeHigh: action.data,
+        teamAllTimeHigh: action.data,
         isError: false,
         isLoading: false,
       };
