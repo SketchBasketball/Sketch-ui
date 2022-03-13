@@ -55,11 +55,12 @@ const BannerStats = () => {
             </div>
           </div>
           <div className="banner-stat-box">
-            <div className="banner-stat-title">{"PF"}</div>
+            <div className="banner-stat-title">{"REB"}</div>
             <div className="banner-stat-content">
-              {((teamWLStats[0]?.PF_AVG + teamWLStats[1]?.PF_AVG) / 2).toFixed(
-                1
-              )}
+              {(
+                (teamWLStats[0]?.REB_AVG + teamWLStats[1]?.REB_AVG) /
+                2
+              ).toFixed(1)}
             </div>
           </div>
         </div>
