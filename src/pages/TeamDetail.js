@@ -25,7 +25,6 @@ const TeamDetail = () => {
   const dispatch = useDispatch();
 
   const team_id = "6ceb528c-f839-4580-b322-b0af0f79d81d";
-  const season_id = "4453f917-8248-4df2-b62c-2356408a26f0";
 
   const { next_games, next_loading } = useSelector(
     (store) => store.mainPageReducer
@@ -48,37 +47,51 @@ const TeamDetail = () => {
   }, [teamSeasons]);
 
   useEffect(() => {
-    dispatch(getTeamPlayerStats(team_id, season_id));
-    dispatch(getTeamStats(team_id, season_id));
-    dispatch(getTeamWLStats(team_id, season_id));
+    dispatch(getTeamPlayerStats(team_id, teamSeasonId));
+  }, [teamSeasonId]);
+
+  useEffect(() => {
+    dispatch(getTeamStats(team_id, teamSeasonId));
+  }, [teamSeasonId]);
+
+  useEffect(() => {
+    dispatch(getTeamWLStats(team_id, teamSeasonId));
+  }, [teamSeasonId]);
+
+  useEffect(() => {
     dispatch(getTeamAllTimeHigh(team_id));
   }, []);
 
   return (
     <div className="team-wrapper">
-      <TeamBanner />
-      <div className="stat-search-bar">
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="demo-simple-select-helper-label">Seasons</InputLabel>
-          <Select
-            labelId="demo-simple-select-helper-label"
-            id="demo-simple-select-helper"
-            value={teamSeasonId}
-            label="League"
-            onChange={(event) => {
-              setTeamSeasonId(event.target.value);
-            }}
-          >
-            {teamSeasons.map((item, index) => {
-              return (
-                <MenuItem value={item.id} key={index}>
-                  {item.name}
-                </MenuItem>
-              );
-            })}
-          </Select>
-        </FormControl>
+      <div className="team-season-search-bar-container">
+        <div className="team-season-search-bar">
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <InputLabel id="demo-simple-select-helper-label">
+              {"Divison/Season"}
+            </InputLabel>
+            <Select
+              sx={{ height: "2.5rem" }}
+              labelId="demo-simple-select-helper-label"
+              id="demo-simple-select-helper"
+              value={teamSeasonId}
+              label="League"
+              onChange={(event) => {
+                setTeamSeasonId(event.target.value);
+              }}
+            >
+              {teamSeasons.map((item, index) => {
+                return (
+                  <MenuItem value={item.id} key={index}>
+                    {item.league_name + " - " + item.name}
+                  </MenuItem>
+                );
+              })}
+            </Select>
+          </FormControl>
+        </div>
       </div>
+      <TeamBanner />
       <div className="team-alltime-starting">
         <TeamAllTime />
         <TeamStarting />

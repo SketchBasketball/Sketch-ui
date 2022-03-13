@@ -5,13 +5,30 @@
 	width: 100%;
 }
 
-.team-alltime-starting {
-	padding: 0.5rem;
+.team-season-search-bar-container {
 	display: flex;
-	justify-content: space-between;
+	align-items: center;
+	justify-content: center;
+	position: sticky;
+	top: 3.5rem;
+	z-index: 10;
+	width: 100%;
+	height: 3.5rem;
+	background-color: #f6f6f6;
+}
+
+.team-season-search-bar {
+	display: flex;
 	max-width: calc(1080px - 1rem);
 	width: 100%;
-	height: 14vh;
+}
+
+.team-alltime-starting {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem;
+	max-width: calc(1080px - 1rem);
+	width: 100%;
 }
 
 .team-content-wrapper {
