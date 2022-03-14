@@ -10,7 +10,6 @@ import Error from "./pages/Error";
 import Match from "./pages/Match";
 import Sponsor from "./pages/Sponsor";
 import Statistics from "./pages/Statistics";
-// import Team from "./pages/Team";
 import TeamDetail from "./pages/TeamDetail";
 
 function App() {
@@ -24,8 +23,8 @@ function App() {
         <Route path="/matches/:id" component={Match} />
         <Route path="/sponsors" component={Sponsor} />
         <Route path="/statistics" component={Statistics} />
-        {/* <Route path="/teams" component={Team} /> */}
-        <Route path="/teams" component={TeamDetail} />
+        <Route path="/teams/:teamId" component={TeamDetail} />
+        {/* <Route path="/teams" component={TeamDetail} /> */}
         <Route path="*" component={Error} />
       </Switch>
       <Footer />
