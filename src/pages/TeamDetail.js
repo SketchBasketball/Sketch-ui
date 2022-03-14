@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./TeamDetail.scss";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getMainNextGames } from "../store/actions/mainPage";
 import TeamSchedule from "../components/Team/TeamSchedule";
@@ -22,14 +22,14 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 
 const TeamDetail = () => {
+  const { teamId } = useParams();
   const dispatch = useDispatch();
 
-  const team_id = "6ceb528c-f839-4580-b322-b0af0f79d81d";
-
+  const { teamSeasons } = useSelector((store) => store.teamReducer);
   const { next_games, next_loading } = useSelector(
     (store) => store.mainPageReducer
   );
-  const { teamSeasons } = useSelector((store) => store.teamReducer);
+
   const [teamSeasonId, setTeamSeasonId] = useState("");
 
   useEffect(() => {
@@ -37,7 +37,9 @@ const TeamDetail = () => {
   }, []);
 
   useEffect(() => {
-    dispatch(getTeamSeasons(team_id));
+    if (teamId) {
+      dispatch(getTeamSeasons(teamId));
+    }
   }, []);
 
   useEffect(() => {
@@ -47,19 +49,27 @@ const TeamDetail = () => {
   }, [teamSeasons]);
 
   useEffect(() => {
-    dispatch(getTeamPlayerStats(team_id, teamSeasonId));
+    if (teamSeasonId != "" && teamId != "") {
+      dispatch(getTeamPlayerStats(teamId, teamSeasonId));
+    }
   }, [teamSeasonId]);
 
   useEffect(() => {
-    dispatch(getTeamStats(team_id, teamSeasonId));
+    if (teamSeasonId != "" && teamId != "") {
+      dispatch(getTeamStats(teamId, teamSeasonId));
+    }
   }, [teamSeasonId]);
 
   useEffect(() => {
-    dispatch(getTeamWLStats(team_id, teamSeasonId));
+    if (teamSeasonId != "" && teamId != "") {
+      dispatch(getTeamWLStats(teamId, teamSeasonId));
+    }
   }, [teamSeasonId]);
 
   useEffect(() => {
-    dispatch(getTeamAllTimeHigh(team_id));
+    if (teamId) {
+      dispatch(getTeamAllTimeHigh(teamId));
+    }
   }, []);
 
   return (
