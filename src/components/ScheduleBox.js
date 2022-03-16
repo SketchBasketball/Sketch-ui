@@ -2,13 +2,20 @@ import React from "react";
 import "./ScheduleBox.scss";
 import { useHistory } from "react-router";
 import defaultLogo from "../logo/bball.png";
+import TeamNameButton from "./Team/TeamNameButton";
 
 function ScheduleBox({ item }) {
   const history = useHistory();
+  const TeamNameButtonStyle = {
+    color: "black",
+    fontSize: "1rem",
+    fontWeight: 600,
+  };
 
   const scheduleClickHandler = (match_id) => {
     history.push(`/matches/${match_id}`);
   };
+
   return (
     <div
       className="match-box"
@@ -27,7 +34,16 @@ function ScheduleBox({ item }) {
               src={item.home_team_logo ? item.home_team_logo : defaultLogo}
               className="temp-icon"
             />
-            <div className="team-title">{item.home_team_name}</div>
+            <div className="team-title">
+              {
+                <TeamNameButton
+                  ButtonStyle={TeamNameButtonStyle}
+                  ButtonSize={"medium"}
+                  TeamName={item.home_team_name}
+                  TeamId={item.home_team_id}
+                />
+              }
+            </div>
           </div>
           <div className="score-wrapper">
             <span>
@@ -39,7 +55,16 @@ function ScheduleBox({ item }) {
               src={item.away_team_logo ? item.away_team_logo : defaultLogo}
               className="temp-icon"
             />
-            <div className="team-title">{item.away_team_name}</div>
+            <div className="team-title">
+              {
+                <TeamNameButton
+                  ButtonStyle={TeamNameButtonStyle}
+                  ButtonSize={"medium"}
+                  TeamName={item.away_team_name}
+                  TeamId={item.away_team_id}
+                />
+              }
+            </div>
           </div>
         </div>
         <div className="match-box-venue-time">
