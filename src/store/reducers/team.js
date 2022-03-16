@@ -51,6 +51,7 @@ export default function teamReducer(state = initialState, action) {
     case GET_TEAM_PLAYER_STATS:
       return {
         ...state,
+        teamPlayerStats: [],
         isLoading: true,
       };
     case GET_TEAM_PLAYER_STATS_SUCCESS:
@@ -69,6 +70,7 @@ export default function teamReducer(state = initialState, action) {
     case GET_TEAM_STATS:
       return {
         ...state,
+        teamStats: [],
         isLoading: true,
       };
     case GET_TEAM_STATS_SUCCESS:
@@ -87,6 +89,7 @@ export default function teamReducer(state = initialState, action) {
     case GET_TEAM_WL_STATS:
       return {
         ...state,
+        teamWLStats: [],
         isLoading: true,
       };
     case GET_TEAM_WL_STATS_SUCCESS:
@@ -105,6 +108,7 @@ export default function teamReducer(state = initialState, action) {
     case GET_TEAM_ALL_TIME_HIGH:
       return {
         ...state,
+        teamAllTimeHigh: [],
         isLoading: true,
       };
     case GET_TEAM_ALL_TIME_HIGH_SUCCESS:
@@ -123,6 +127,7 @@ export default function teamReducer(state = initialState, action) {
     case GET_TEAM_BEST_FIVE:
       return {
         ...state,
+        teamBestFive: [],
         isLoading: true,
       };
     case GET_TEAM_BEST_FIVE_SUCCESS:
