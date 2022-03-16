@@ -5,8 +5,6 @@ import { useSelector } from "react-redux";
 const BannerStats = () => {
   const { teamStats, teamWLStats } = useSelector((store) => store.teamReducer);
 
-  console.log(teamStats);
-
   return (
     <div className="banner-stats-wrapper">
       <div className="banner-stats-title">
