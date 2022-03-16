@@ -1,11 +1,13 @@
 import React from "react";
 import "./StandingTable.scss";
 import { defaultStandingTableHeader } from "../const/leagueDetailConsts";
-import TeamNameButton from "./Team/TeamNameButton";
+import { useHistory } from "react-router";
 
 const StandingTable = ({ standings }) => {
-  const TeamNameButtonStyle = {
-    color: "black",
+  const history = useHistory();
+
+  const teamClickHandler = (team_id) => {
+    history.push(`/Teams/${team_id}`);
   };
   return (
     <div className="team-standing-table-wrapper">
@@ -22,15 +24,14 @@ const StandingTable = ({ standings }) => {
             return (
               <tr key={index}>
                 <td>{item.rank}</td>
-                <td className="name">
-                  {
-                    <TeamNameButton
-                      ButtonStyle={TeamNameButtonStyle}
-                      ButtonSize={"small"}
-                      TeamName={item.name}
-                      TeamId={item.id}
-                    />
-                  }
+                <td
+                  className="team-standing-table-datacell-name"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    teamClickHandler(item.id);
+                  }}
+                >
+                  {item.name}
                 </td>
                 <td>{item.win}</td>
                 <td>{item.loss}</td>
