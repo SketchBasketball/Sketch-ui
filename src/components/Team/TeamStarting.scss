@@ -1,0 +1,44 @@
+.team-starting-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1.3rem;
+	width: 100%;
+	max-width: calc((1080px - 1rem) * 0.45);
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	background-color: #ffffff;
+}
+
+.team-starting-title {
+	display: flex;
+	font-family: "NEXONFootballGothic";
+	line-height: 1.25;
+	font-size: 2.5rem;
+	color: #294d76;
+}
+
+.team-starting-five {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.starting-player {
+	display: flex;
+	justify-content: space-evenly;
+
+	font-family: Arial, sans-serif;
+	line-height: 1.25;
+	font-weight: 400;
+	font-size: 1.2rem;
+	color: #294d76;
+
+	.team-starting-player {
+		display: flex;
+	}
+
+	.team-starting-position {
+		display: flex;
+		font-size: 1rem;
+	}
+}

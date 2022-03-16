@@ -1,8 +1,12 @@
 import React from "react";
 import "./StandingTable.scss";
 import { defaultStandingTableHeader } from "../const/leagueDetailConsts";
+import TeamNameButton from "./Team/TeamNameButton";
 
 const StandingTable = ({ standings }) => {
+  const TeamNameButtonStyle = {
+    color: "black",
+  };
   return (
     <div className="team-standing-table-wrapper">
       <table className="team-standing-table">
@@ -18,7 +22,16 @@ const StandingTable = ({ standings }) => {
             return (
               <tr key={index}>
                 <td>{item.rank}</td>
-                <td className="name">{item.name}</td>
+                <td className="name">
+                  {
+                    <TeamNameButton
+                      ButtonStyle={TeamNameButtonStyle}
+                      ButtonSize={"small"}
+                      TeamName={item.name}
+                      TeamId={item.id}
+                    />
+                  }
+                </td>
                 <td>{item.win}</td>
                 <td>{item.loss}</td>
                 <td>{item.win_percentage}</td>

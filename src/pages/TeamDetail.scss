@@ -1,0 +1,52 @@
+.team-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.team-season-search-bar-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: sticky;
+	top: 3.5rem;
+	z-index: 10;
+	width: 100%;
+	height: 3.5rem;
+	background-color: #f6f6f6;
+}
+
+.team-season-search-bar {
+	display: flex;
+	max-width: calc(1080px - 1rem);
+	width: 100%;
+}
+
+.team-alltime-starting {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5rem;
+	max-width: calc(1080px - 1rem);
+	width: 100%;
+}
+
+.team-content-wrapper {
+	display: flex;
+	flex-direction: column;
+	max-width: 1600px;
+	width: 100%;
+}
+
+.team-extra-info {
+	display: flex;
+	justify-content: space-between;
+	max-width: calc(1080px - 1rem);
+	width: 100%;
+}
+
+.team-detail-dropdown {
+	display: flex;
+	width: 100%;
+	height: 5vh;
+}
