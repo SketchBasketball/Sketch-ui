@@ -1,0 +1,25 @@
+.banner-logo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-right: 1rem;
+	margin-right: 1rem;
+}
+
+.banner-logo {
+	display: flex;
+
+	.logo {
+		display: flex;
+		height: 20vw;
+		max-height: 300px;
+		margin: -1rem -4rem -1rem -4rem;
+	}
+}
+
+.banner-team-name {
+	align-content: center;
+	font-family: "GmarketSansTTFBold";
+	font-size: 150%;
+	font-style: italic;
+}

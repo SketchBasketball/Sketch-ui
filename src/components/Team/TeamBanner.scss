@@ -1,0 +1,51 @@
+.team-banner-wrapper {
+	display: flex;
+
+	position: sticky;
+	top: 7rem;
+	z-index: 10;
+
+	max-width: 100vw;
+	width: 100%;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	background-color: #1e2b89;
+	color: #ffffff;
+}
+
+.team-banner-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.team-banner-top-wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.team-banner-top-container {
+	width: 100%;
+	max-width: calc(1080px - 1rem);
+
+	display: flex;
+	justify-content: space-between;
+
+	font-family: Arial, sans-serif;
+	line-height: 1.25;
+	font-weight: 700;
+	font-size: 2rem;
+}
+
+.team-banner-bottom-wrapper {
+	display: flex;
+	justify-content: center;
+	background-color: #161e4f;
+}
+
+.team-banner-bottom-container {
+	width: 100%;
+	max-width: calc(1080px - 1rem);
+
+	display: flex;
+	justify-content: space-between;
+}

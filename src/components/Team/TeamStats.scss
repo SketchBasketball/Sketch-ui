@@ -1,0 +1,60 @@
+.team-stats-wrapper {
+	display: flex;
+	max-width: calc(1080px - 1rem);
+	width: 100%;
+	margin: 0.5rem;
+	flex-direction: column;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.overall-stats-container {
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 0.5rem;
+
+	span {
+		font-size: 1rem;
+		font-weight: 700;
+		color: #171e4f;
+		margin: 0.5rem 0;
+	}
+	.MuiDataGrid-root {
+		font-size: 0.8rem !important;
+	}
+}
+
+.location-stats-container {
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 0.5rem;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+	span {
+		font-size: 1rem;
+		font-weight: 700;
+		color: #171e4f;
+		margin: 0.5rem 0;
+	}
+	.MuiDataGrid-root {
+		font-size: 0.8rem !important;
+	}
+}
+
+.winloss-stats-container {
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	padding: 0.5rem;
+
+	span {
+		font-size: 1rem;
+		font-weight: 700;
+		color: #171e4f;
+		margin: 0.5rem 0;
+	}
+	.MuiDataGrid-root {
+		font-size: 0.8rem !important;
+	}
+}

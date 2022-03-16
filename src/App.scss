@@ -1,23 +1,48 @@
 html {
-  /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 600px) {
-    font-size: 12px;
-  }
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 600px) {
-    font-size: 16px;
-  }
-  // /* Medium devices (landscape tablets, 768px and up) */
-  // @media only screen and (min-width: 768px) {...}
-  // /* Large devices (laptops/desktops, 992px and up) */
-  // @media only screen and (min-width: 992px) {...}
-  // /* Extra large devices (large laptops and desktops, 1200px and up) */
-  // @media only screen and (min-width: 1200px) {...}
+	/* Extra small devices (phones, 600px and down) */
+	@media only screen and (max-width: 600px) {
+		font-size: 12px;
+	}
+	/* Small devices (portrait tablets and large phones, 600px and up) */
+	@media only screen and (min-width: 600px) {
+		font-size: 16px;
+	}
+	// /* Medium devices (landscape tablets, 768px and up) */
+	// @media only screen and (min-width: 768px) {...}
+	// /* Large devices (laptops/desktops, 992px and up) */
+	// @media only screen and (min-width: 992px) {...}
+	// /* Extra large devices (large laptops and desktops, 1200px and up) */
+	// @media only screen and (min-width: 1200px) {...}
 }
 .App {
-  min-height: 100vh;
-  height: 100%;
-  background-color: #f6f6f6;
-  display: flex;
-  flex-direction: column;
+	min-height: 100vh;
+	height: 100%;
+	background-color: #f6f6f6;
+	display: flex;
+	flex-direction: column;
+}
+
+@font-face {
+	font-family: "Cafe24Simplehae";
+	src: url("./fonts/Cafe24Simplehae.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "GmarketSansTTFBold";
+	src: url("./fonts/GmarketSansTTFBold.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "GmarketSansTTFLight";
+	src: url("./fonts/GmarketSansTTFLight.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "GmarketSansTTFMedium";
+	src: url("./fonts/GmarketSansTTFMedium.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "NEXONFootballGothic";
+	src: url("./fonts/NEXON\ Football\ Gothic\ B.otf") format("opentype");
 }

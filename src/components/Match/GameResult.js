@@ -2,8 +2,14 @@ import React from "react";
 import "./GameResult.scss";
 import bball from "../../logo/bball.png";
 import YoutubeEmbed from "../Common/YoutubeEmbed";
+import TeamNameButton from "../Team/TeamNameButton";
 
 const GameResult = ({ matchDetails }) => {
+  const TeamNameButtonStyle = {
+    color: "Black",
+    fontSize: "1.5rem",
+  };
+
   return (
     <div className="game-result-wrapper">
       <div className="game-result">
@@ -28,7 +34,14 @@ const GameResult = ({ matchDetails }) => {
               alt="home-logo"
             />
             <span>
-              {matchDetails?.home_score ? matchDetails.home_team.name : null}
+              {matchDetails?.home_score ? (
+                <TeamNameButton
+                  ButtonStyle={TeamNameButtonStyle}
+                  ButtonSize={"small"}
+                  TeamName={matchDetails.home_team.name}
+                  TeamId={matchDetails.home_team.match_stats[0]?.team_id}
+                />
+              ) : null}
             </span>
           </div>
           <div className="game-score">
@@ -46,7 +59,14 @@ const GameResult = ({ matchDetails }) => {
               alt="away-logo"
             />
             <span>
-              {matchDetails?.away_team ? matchDetails.away_team.name : null}
+              {matchDetails?.away_team ? (
+                <TeamNameButton
+                  ButtonStyle={TeamNameButtonStyle}
+                  ButtonSize={"small"}
+                  TeamName={matchDetails.away_team.name}
+                  TeamId={matchDetails.away_team.match_stats[0]?.team_id}
+                />
+              ) : null}
             </span>
           </div>
         </div>

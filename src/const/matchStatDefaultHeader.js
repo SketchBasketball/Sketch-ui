@@ -1,3 +1,7 @@
+import React from "react";
+import { useHistory } from "react-router";
+import Button from "@mui/material/Button";
+
 const matchStatDefaultHeader = [
   {
     field: "name",
@@ -121,7 +125,36 @@ const statPageDefaultHeader = [
     flex: 1.5,
     minWidth: 70,
   },
-  { field: "team_name", headerName: "TEAM", flex: 1.5, minWidth: 90 },
+  {
+    field: "team_name",
+    headerName: "TEAM",
+    flex: 1.5,
+    minWidth: 110,
+    renderCell: (teamDetails) => {
+      const history = useHistory();
+
+      const teamClickHandler = (team_id) => {
+        history.push(`/Teams/${team_id}`);
+      };
+      return (
+        <Button
+          sx={{
+            color: "black",
+            fontSize: "0.7rem",
+            justifyContent: "flex-start",
+          }}
+          size={"small"}
+          variant="text"
+          onClick={(e) => {
+            e.stopPropagation();
+            teamClickHandler(teamDetails.row.team_id);
+          }}
+        >
+          {teamDetails.row.team_name}
+        </Button>
+      );
+    },
+  },
   { field: "player_name", headerName: "PLAYER", flex: 2.5, minWidth: 150 },
   {
     field: "GP",

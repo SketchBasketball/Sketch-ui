@@ -1,8 +1,14 @@
 import React from "react";
 import "./StandingTable.scss";
 import { defaultStandingTableHeader } from "../const/leagueDetailConsts";
+import { useHistory } from "react-router";
 
 const StandingTable = ({ standings }) => {
+  const history = useHistory();
+
+  const teamClickHandler = (team_id) => {
+    history.push(`/Teams/${team_id}`);
+  };
   return (
     <div className="team-standing-table-wrapper">
       <table className="team-standing-table">
@@ -18,7 +24,15 @@ const StandingTable = ({ standings }) => {
             return (
               <tr key={index}>
                 <td>{item.rank}</td>
-                <td className="name">{item.name}</td>
+                <td
+                  className="team-standing-table-datacell-name"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    teamClickHandler(item.id);
+                  }}
+                >
+                  {item.name}
+                </td>
                 <td>{item.win}</td>
                 <td>{item.loss}</td>
                 <td>{item.win_percentage}</td>

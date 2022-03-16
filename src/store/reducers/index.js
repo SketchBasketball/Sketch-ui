@@ -5,6 +5,7 @@ import matchReducer from "./match";
 import leagueStandingReducer from "./leagueStanding";
 import mainPageReducer from "./mainPage";
 import statisticsReducer from "./statistics";
+import teamReducer from "./team";
 import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   leagueStandingReducer,
   mainPageReducer,
   statisticsReducer,
+  teamReducer,
 });
 
 export default rootReducer;
