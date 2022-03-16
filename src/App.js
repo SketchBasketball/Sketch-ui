@@ -24,7 +24,6 @@ function App() {
         <Route path="/sponsors" component={Sponsor} />
         <Route path="/statistics" component={Statistics} />
         <Route path="/teams/:teamId" component={TeamDetail} />
-        {/* <Route path="/teams" component={TeamDetail} /> */}
         <Route path="*" component={Error} />
       </Switch>
       <Footer />
