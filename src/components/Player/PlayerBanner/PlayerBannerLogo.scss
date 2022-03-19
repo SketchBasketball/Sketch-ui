@@ -1,0 +1,28 @@
+.player-banner-logo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-right: 4rem;
+}
+
+.player-banner-logo {
+	display: flex;
+	align-self: flex-end;
+
+	.player-logo {
+		display: flex;
+		width: 20vw;
+		max-width: 250px;
+		margin-top: 2rem;
+	}
+}
+
+.player-banner-team-name {
+	display: flex;
+	text-align: right;
+	font-family: "GmarketSansTTFBold";
+	font-size: 3rem;
+	font-style: italic;
+	width: 20vw;
+	max-width: 300px;
+}
