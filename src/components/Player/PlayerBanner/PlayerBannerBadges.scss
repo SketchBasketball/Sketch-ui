@@ -1,0 +1,22 @@
+.player-banner-badges-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	max-width: calc((1080px - 1rem) * 0.49);
+
+	font-family: Arial, sans-serif;
+	line-height: 1.25;
+	font-weight: 700;
+	font-size: 1rem;
+}
+
+.player-banner-badges-title {
+	display: flex;
+	flex-direction: center;
+}
+
+.player-anner-badges-content {
+	display: flex;
+	flex-direction: center;
+}
