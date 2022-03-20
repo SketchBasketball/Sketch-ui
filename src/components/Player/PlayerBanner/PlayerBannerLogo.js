@@ -20,8 +20,17 @@ const PlayerBannerLogo = () => {
           className="player-logo"
         />
       </div>
-      <div className="player-banner-team-name">
-        <div>{playerStats[0]?.name?.toUpperCase()}</div>
+      <div className="player-banner-intro">
+        <div className="player-banner-intro-line">
+          {"To Achieve, You Must Believe"}
+        </div>
+        <div className="player-banner-intro-name">
+          {playerStats[0]?.name?.toUpperCase()}
+        </div>
+        <div className="player-banner-intro-tags">
+          <div className="player-banner-intro-single-tag">{"#6X_MVP"}</div>
+          <div className="player-banner-intro-single-tag">{"#50X_POTG"}</div>
+        </div>
       </div>
     </div>
   );
