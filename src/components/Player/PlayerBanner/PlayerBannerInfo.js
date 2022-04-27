@@ -1,24 +1,9 @@
 import React from "react";
 import "./PlayerBannerInfo.scss";
+import { useSelector } from "react-redux";
 
 const PlayerBannerInfo = () => {
-  const playerStats = [
-    {
-      name: "Eric Jee Won Han",
-      profile_photo: null,
-      age: 21,
-      birthdate: "Jan 21st, 1999",
-      weight: 90,
-      height: 195,
-      PPG: 15.7,
-      RPG: 14.8,
-      SPG: 1.9,
-      BPG: 5.7,
-      APG: 11.7,
-      gp: 5,
-      potg: 3,
-    },
-  ];
+  const { playerDetails } = useSelector((store) => store.playerReducer);
 
   return (
     <div className="player-banner-staff-container">
@@ -28,7 +13,7 @@ const PlayerBannerInfo = () => {
             {"GAMES PLAYED"}
           </div>
           <div className="player-banner-upper-container-value">
-            {playerStats[0]?.gp}
+            {playerDetails?.gp ? playerDetails?.gp : 0}
           </div>
         </div>
         <div className="player-banner-upper-box">
@@ -36,7 +21,7 @@ const PlayerBannerInfo = () => {
             {"PLAYER OF THE GAME"}
           </div>
           <div className="player-banner-upper-container-value">
-            {playerStats[0]?.potg}
+            {playerDetails?.potg ? playerDetails?.potg : 0}
           </div>
         </div>
       </div>
@@ -44,13 +29,13 @@ const PlayerBannerInfo = () => {
         <div className="player-banner-lower-box">
           <div className="player-banner-lower-container-title">{"AGE"}</div>
           <div className="player-banner-lower-container-value">
-            {playerStats[0]?.age}
+            {playerDetails?.age ? playerDetails?.age : "-"}
           </div>
         </div>
         <div className="player-banner-lower-box">
           <div className="player-banner-lower-container-title">{"HEIGHT"}</div>
           <div className="player-banner-lower-container-value">
-            {playerStats[0]?.height}
+            {playerDetails?.height ? playerDetails?.height + "cm" : "-"}
           </div>
         </div>
         <div className="player-banner-lower-box">
@@ -58,7 +43,7 @@ const PlayerBannerInfo = () => {
             {"BIRTHDATE"}
           </div>
           <div className="player-banner-lower-container-value">
-            {playerStats[0]?.birthdate}
+            {playerDetails?.birthdate ? playerDetails?.birthdate : "-"}
           </div>
         </div>
       </div>
