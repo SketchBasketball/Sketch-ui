@@ -1,20 +1,18 @@
 import React from "react";
 import defaultPlayerPhoto from "../../../logo/default-player.png";
 import "./PlayerBannerLogo.scss";
-// import { useSelector } from "react-redux";
-
-import { playerStats } from "../PlayerAPIExample";
+import { useSelector } from "react-redux";
 
 const PlayerBannerLogo = () => {
-  // const { playerStats } = useSelector((store) => store.playerReducer);
+  const { playerDetails } = useSelector((store) => store.playerReducer);
 
   return (
     <div className="player-banner-logo-container">
       <div className="player-banner-logo">
         <img
           src={
-            playerStats[0]?.profile_photo != null
-              ? playerStats[0]?.profile_photo
+            playerDetails?.profile_photo != null
+              ? playerDetails?.profile_photo
               : defaultPlayerPhoto
           }
           className="player-logo"
@@ -22,14 +20,22 @@ const PlayerBannerLogo = () => {
       </div>
       <div className="player-banner-intro">
         <div className="player-banner-intro-line">
-          {"To Achieve, You Must Believe"}
+          {playerDetails?.quote ? playerDetails.quote : null}
         </div>
         <div className="player-banner-intro-name">
-          {playerStats[0]?.name?.toUpperCase()}
+          {playerDetails?.name
+            ? playerDetails?.name?.toUpperCase()
+            : "No Player Selected"}
         </div>
         <div className="player-banner-intro-tags">
-          <div className="player-banner-intro-single-tag">{"#6X_MVP"}</div>
-          <div className="player-banner-intro-single-tag">{"#50X_POTG"}</div>
+          {playerDetails.keywords == []
+            ? playerDetails?.keywords?.map((keyword, index) => {
+                <div
+                  className="player-banner-intro-single-tag"
+                  key={index}
+                >{`#${keyword}`}</div>;
+              })
+            : null}
         </div>
       </div>
     </div>
