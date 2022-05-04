@@ -3,11 +3,9 @@ import "./PlayerMatchStats.scss";
 import { useSelector } from "react-redux";
 import { DataGrid } from "@mui/x-data-grid";
 import { playerMatchStatsStatisticsHeader } from "../../const/playerDetailStatisticsHeader";
-// import { playerStatsBySeasons } from "../Player/PlayerAPIExample";
 
 const PlayerMatchStats = () => {
   const { playerMatchStats } = useSelector((store) => store.playerReducer);
-  console.log(playerMatchStats);
 
   return (
     <div className="player-match-stats-wrapper">

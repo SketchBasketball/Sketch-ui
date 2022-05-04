@@ -3,11 +3,9 @@ import "./PlayerSeasonStats.scss";
 import { useSelector } from "react-redux";
 import { DataGrid } from "@mui/x-data-grid";
 import { playerSeasonStatsStatisticsHeader } from "../../const/playerDetailStatisticsHeader";
-// import { playerStatsBySeasons } from "../Player/PlayerAPIExample";
 
 const PlayerSeasonStats = () => {
   const { playerSeasonStats } = useSelector((store) => store.playerReducer);
-  console.log(playerSeasonStats);
 
   return (
     <div className="team-roster-wrapper">

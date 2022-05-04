@@ -3,7 +3,7 @@ const playerMatchStatsStatisticsHeader = [
     field: "match_name",
     headerName: "MATCH",
     flex: 1,
-    minWidth: 90,
+    minWidth: 70,
     sortable: false,
   },
   {
@@ -17,7 +17,14 @@ const playerMatchStatsStatisticsHeader = [
     field: "away_team_name",
     headerName: "AWAY",
     flex: 1,
-    minWidth: 120,
+    minWidth: 100,
+    sortable: false,
+  },
+  {
+    field: "winloss",
+    headerName: "W/L",
+    flex: 1,
+    minWidth: 60,
     sortable: false,
   },
   {
@@ -179,6 +186,27 @@ const playerSeasonStatsStatisticsHeader = [
     headerName: "SEASON",
     flex: 1,
     minWidth: 90,
+    sortable: false,
+  },
+  {
+    field: "match_type",
+    headerName: "TYPE",
+    flex: 1,
+    minWidth: 90,
+    sortable: false,
+  },
+  {
+    field: "win",
+    headerName: "Win",
+    flex: 1,
+    minWidth: 60,
+    sortable: false,
+  },
+  {
+    field: "loss",
+    headerName: "Loss",
+    flex: 1,
+    minWidth: 60,
     sortable: false,
   },
   {
