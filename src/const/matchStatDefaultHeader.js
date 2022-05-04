@@ -9,6 +9,30 @@ const matchStatDefaultHeader = [
     flex: 2.5,
     minWidth: 160,
     sortable: false,
+    renderCell: (playerDetails) => {
+      const history = useHistory();
+
+      const playerClickHandler = (player_id) => {
+        history.push(`/players/${player_id}`);
+      };
+      return (
+        <Button
+          sx={{
+            color: "black",
+            fontSize: "0.8rem",
+            justifyContent: "flex-start",
+          }}
+          size={"small"}
+          variant="text"
+          onClick={(e) => {
+            e.stopPropagation();
+            playerClickHandler(playerDetails.row.player_id);
+          }}
+        >
+          {playerDetails.row.name}
+        </Button>
+      );
+    },
   },
   {
     field: "minutes",
@@ -155,7 +179,36 @@ const statPageDefaultHeader = [
       );
     },
   },
-  { field: "player_name", headerName: "PLAYER", flex: 2.5, minWidth: 150 },
+  {
+    field: "player_name",
+    headerName: "PLAYER",
+    flex: 2.5,
+    minWidth: 150,
+    renderCell: (playerDetails) => {
+      const history = useHistory();
+
+      const playerClickHandler = (player_id) => {
+        history.push(`/players/${player_id}`);
+      };
+      return (
+        <Button
+          sx={{
+            color: "black",
+            fontSize: "0.7rem",
+            justifyContent: "flex-start",
+          }}
+          size={"small"}
+          variant="text"
+          onClick={(e) => {
+            e.stopPropagation();
+            playerClickHandler(playerDetails.row.player_id);
+          }}
+        >
+          {playerDetails.row.player_name}
+        </Button>
+      );
+    },
+  },
   {
     field: "GP",
     headerName: "GP",
