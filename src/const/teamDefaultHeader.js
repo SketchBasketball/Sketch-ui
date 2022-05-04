@@ -1,3 +1,7 @@
+import React from "react";
+import { useHistory } from "react-router";
+import Button from "@mui/material/Button";
+
 const teamRosterDefaultHeader = [
   {
     field: "player_name",
@@ -5,6 +9,30 @@ const teamRosterDefaultHeader = [
     flex: 1,
     minWidth: 180,
     sortable: false,
+    renderCell: (playerDetails) => {
+      const history = useHistory();
+
+      const playerClickHandler = (player_id) => {
+        history.push(`/players/${player_id}`);
+      };
+      return (
+        <Button
+          sx={{
+            color: "black",
+            fontSize: "0.7rem",
+            justifyContent: "flex-start",
+          }}
+          size={"small"}
+          variant="text"
+          onClick={(e) => {
+            e.stopPropagation();
+            playerClickHandler(playerDetails.row.player_id);
+          }}
+        >
+          {playerDetails.row.player_name}
+        </Button>
+      );
+    },
   },
   // {
   //   field: "back_number",
