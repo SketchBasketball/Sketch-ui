@@ -8,6 +8,7 @@ import League from "./pages/League";
 import Footer from "./components/Common/Footer";
 import Error from "./pages/Error";
 import Match from "./pages/Match";
+import PlayerDetail from "./pages/PlayerDetail";
 import Sponsor from "./pages/Sponsor";
 import Statistics from "./pages/Statistics";
 import TeamDetail from "./pages/TeamDetail";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/sponsors" component={Sponsor} />
         <Route path="/statistics" component={Statistics} />
         <Route path="/teams/:teamId" component={TeamDetail} />
+        <Route path="/players/:playerId" component={PlayerDetail} />
         <Route path="*" component={Error} />
       </Switch>
       <Footer />

@@ -1,0 +1,49 @@
+.player-banner-wrapper {
+	display: flex;
+	position: sticky;
+	top: 7rem;
+	z-index: 10;
+
+	width: 100%;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	background-color: #1e2b89;
+	color: #ffffff;
+
+	border: 2px solid purple;
+}
+
+.player-banner-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.player-banner-top-wrapper {
+	display: flex;
+	justify-content: center;
+
+	.player-banner-top-container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		max-width: calc(1080px - 1rem);
+
+		font-family: Arial, sans-serif;
+		line-height: 1.25;
+		font-weight: 700;
+		font-size: 2rem;
+	}
+}
+
+.player-banner-bottom-wrapper {
+	display: flex;
+	justify-content: center;
+	background-color: #161e4f;
+
+	.player-banner-bottom-container {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		max-width: calc(1080px - 1rem);
+	}
+}

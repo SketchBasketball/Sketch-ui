@@ -1,0 +1,60 @@
+.player-banner-logo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-right: 4rem;
+}
+
+.player-banner-logo {
+	display: flex;
+	align-self: flex-end;
+
+	.player-logo {
+		display: flex;
+		width: 20vw;
+		max-width: 250px;
+		margin-top: 2rem;
+	}
+}
+
+.player-banner-intro {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	width: 20vw;
+	max-width: 300px;
+
+	.player-banner-intro-name {
+		display: flex;
+
+		text-align: right;
+		font-family: "GmarketSansTTFBold";
+		font-size: 3rem;
+		font-style: italic;
+	}
+
+	.player-banner-intro-line {
+		display: flex;
+		align-self: flex-end;
+
+		font-family: "Cafe24Simplehae";
+		font-size: 0.7rem;
+		font-style: italic;
+	}
+
+	.player-banner-intro-tags {
+		display: flex;
+		justify-content: space-evenly;
+
+		font-family: "Cafe24Simplehae";
+		font-size: 0.8rem;
+
+		.player-banner-intro-single-tag {
+			display: flex;
+			padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+			border-radius: 0.5rem;
+			border: 0.05rem solid white;
+		}
+	}
+}

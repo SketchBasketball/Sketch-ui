@@ -1,0 +1,50 @@
+.player-current-season-avg-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 1.3rem;
+	width: 100%;
+	max-width: calc((1080px - 1rem) * 0.45);
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	background-color: #ffffff;
+}
+
+.player-current-season-avg-title {
+	display: flex;
+	margin: -0.5rem 1rem 0.5rem 1rem;
+	text-transform: uppercase;
+
+	font-family: Arial, sans-serif;
+	line-height: 1.25;
+	font-weight: 700;
+	font-size: 0.9rem;
+	color: #294d76;
+}
+
+.player-current-season-avg-value {
+	display: flex;
+	justify-content: space-evenly;
+
+	font-family: Arial, sans-serif;
+	line-height: 1.25;
+	color: #294d76;
+}
+
+.player-current-season-single-avg {
+	display: flex;
+	flex-direction: column;
+
+	.player-current-season-single-avg-value {
+		font-family: "NEXONFootballGothic";
+		font-size: 2rem;
+		font-weight: 550;
+		align-self: center;
+	}
+
+	.player-current-season-single-avg-name {
+		display: flex;
+		justify-content: center;
+		font-size: 0.8rem;
+		font-weight: 400;
+	}
+}

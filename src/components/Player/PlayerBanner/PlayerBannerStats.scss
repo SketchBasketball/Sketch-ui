@@ -1,0 +1,67 @@
+.player-banner-stats-wrapper {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0.8rem 0.8rem 0 0.8rem;
+	z-index: 10;
+	background: url(../../../logo/sketch_logo3.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30vw;
+	max-width: 500px;
+}
+
+.player-banner-stats-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+
+	display: flex;
+	padding: 1rem;
+
+	flex-direction: column;
+	justify-content: center;
+
+	.player-banner-stat-upper-box {
+		display: grid;
+		padding: 0.5rem;
+		width: 75%;
+
+		grid-template-columns: 1fr 1fr;
+		grid-row: auto auto;
+		grid-column-gap: 1rem;
+		grid-row-gap: 1rem;
+	}
+
+	.player-banner-stat-lower-box {
+		display: grid;
+		padding: 0.5rem;
+		width: 100%;
+
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-row: auto auto;
+		grid-column-gap: 1rem;
+		grid-row-gap: 1rem;
+	}
+
+	.player-banner-stat-box {
+		font-size: 1rem;
+
+		.player-banner-stat-title {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-family: "Cafe24Simplehae";
+		}
+
+		.player-banner-stat-content {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 3.5rem;
+			font-family: "NEXONFootballGothic";
+		}
+	}
+}
