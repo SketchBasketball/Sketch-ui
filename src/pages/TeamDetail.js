@@ -30,7 +30,7 @@ const TeamDetail = () => {
     (store) => store.mainPageReducer
   );
 
-  const [teamSeasonId, setTeamSeasonId] = useState("");
+  const [selectedSeason, setSelectedSeason] = useState("");
 
   useEffect(() => {
     dispatch(getMainNextGames());
@@ -39,55 +39,37 @@ const TeamDetail = () => {
   useEffect(() => {
     if (teamId) {
       dispatch(getTeamSeasons(teamId));
+      dispatch(getTeamAllTimeHigh(teamId));
     }
   }, []);
 
   useEffect(() => {
     if (teamSeasons.length) {
-      setTeamSeasonId(teamSeasons[0].id);
+      setSelectedSeason(teamSeasons[0].id);
     }
   }, [teamSeasons]);
 
   useEffect(() => {
-    if (teamSeasonId != "" && teamId != "") {
-      dispatch(getTeamPlayerStats(teamId, teamSeasonId));
+    if (selectedSeason != "" && teamId != "") {
+      dispatch(getTeamStats(teamId, selectedSeason));
+      dispatch(getTeamWLStats(teamId, selectedSeason));
+      dispatch(getTeamPlayerStats(teamId, selectedSeason));
     }
-  }, [teamSeasonId]);
-
-  useEffect(() => {
-    if (teamSeasonId != "" && teamId != "") {
-      dispatch(getTeamStats(teamId, teamSeasonId));
-    }
-  }, [teamSeasonId]);
-
-  useEffect(() => {
-    if (teamSeasonId != "" && teamId != "") {
-      dispatch(getTeamWLStats(teamId, teamSeasonId));
-    }
-  }, [teamSeasonId]);
-
-  useEffect(() => {
-    if (teamId) {
-      dispatch(getTeamAllTimeHigh(teamId));
-    }
-  }, []);
+  }, [selectedSeason]);
 
   return (
     <div className="team-wrapper">
       <div className="team-season-search-bar-container">
         <div className="team-season-search-bar">
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-helper-label">
-              {"Divison/Season"}
-            </InputLabel>
+          <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+            <InputLabel id="demo-select-small">{"Leagues/Season"}</InputLabel>
             <Select
-              sx={{ height: "2.5rem" }}
-              labelId="demo-simple-select-helper-label"
-              id="demo-simple-select-helper"
-              value={teamSeasonId}
-              label="League"
+              labelId="demo-select-small"
+              id="demo-select-small"
+              value={selectedSeason}
+              label="League/Seasons"
               onChange={(event) => {
-                setTeamSeasonId(event.target.value);
+                setSelectedSeason(event.target.value);
               }}
             >
               {teamSeasons.map((item, index) => {
