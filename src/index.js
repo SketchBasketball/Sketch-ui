@@ -7,6 +7,7 @@ import thunk from "redux-thunk";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./store/reducers";
+import { ViewportProvider } from "./components/ViewportResolution/ViewportResolution";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
@@ -14,7 +15,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <App />
+        <ViewportProvider>
+          <App />
+        </ViewportProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>,
