@@ -9,7 +9,10 @@ const BannerLogo = () => {
   return (
     <div className="banner-logo-container">
       <div className="banner-logo">
-        <img src={teamInfo ? teamInfo?.logo : teamLogo} className="logo" />
+        <img
+          src={teamInfo?.logo ? teamInfo?.logo : teamLogo}
+          className="logo"
+        />
       </div>
       <div className="banner-team-name">
         <div>{teamStats[0]?.team_name?.toUpperCase()}</div>
