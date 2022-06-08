@@ -39,7 +39,7 @@ const GameResult = ({ matchDetails }) => {
                   ButtonStyle={TeamNameButtonStyle}
                   ButtonSize={"small"}
                   TeamName={matchDetails.home_team.name}
-                  TeamId={matchDetails.home_team.match_stats[0]?.team_id}
+                  TeamId={matchDetails.home_team.id}
                 />
               ) : null}
             </span>
@@ -64,7 +64,7 @@ const GameResult = ({ matchDetails }) => {
                   ButtonStyle={TeamNameButtonStyle}
                   ButtonSize={"small"}
                   TeamName={matchDetails.away_team.name}
-                  TeamId={matchDetails.away_team.match_stats[0]?.team_id}
+                  TeamId={matchDetails.away_team.id}
                 />
               ) : null}
             </span>
