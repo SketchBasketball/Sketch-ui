@@ -4,12 +4,12 @@ import "./BannerLogo.scss";
 import { useSelector } from "react-redux";
 
 const BannerLogo = () => {
-  const { teamStats } = useSelector((store) => store.teamReducer);
+  const { teamStats, teamInfo } = useSelector((store) => store.teamReducer);
 
   return (
     <div className="banner-logo-container">
       <div className="banner-logo">
-        <img src={teamLogo} className="logo" />
+        <img src={teamInfo ? teamInfo?.logo : teamLogo} className="logo" />
       </div>
       <div className="banner-team-name">
         <div>{teamStats[0]?.team_name?.toUpperCase()}</div>

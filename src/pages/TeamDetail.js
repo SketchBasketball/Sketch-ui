@@ -15,6 +15,7 @@ import {
   getTeamStats,
   getTeamWLStats,
   getTeamAllTimeHigh,
+  getTeamInfo,
 } from "../store/actions/team";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
@@ -39,6 +40,12 @@ const TeamDetail = () => {
   useEffect(() => {
     if (teamId) {
       dispatch(getTeamSeasons(teamId));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (teamId) {
+      dispatch(getTeamInfo(teamId));
     }
   }, []);
 
