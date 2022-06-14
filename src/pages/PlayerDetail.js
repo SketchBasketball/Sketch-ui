@@ -55,7 +55,9 @@ const PlayerDetail = () => {
 
   useEffect(() => {
     if (playerTeamSeasons.length) {
-      setSelectedSeason(playerTeamSeasons[0].season_id);
+      setSelectedSeason(
+        playerTeamSeasons[playerTeamSeasons.length - 1].season_id
+      );
     }
   }, [playerTeamSeasons]);
 
