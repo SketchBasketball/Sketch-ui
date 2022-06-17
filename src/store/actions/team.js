@@ -24,6 +24,10 @@ export const GET_TEAM_BEST_FIVE = "GET_TEAM_BEST_FIVE";
 export const GET_TEAM_BEST_FIVE_SUCCESS = "GET_TEAM_BEST_FIVE_SUCCESS";
 export const GET_TEAM_BEST_FIVE_FAIL = "GET_TEAM_BEST_FIVE_FAIL";
 
+export const GET_TEAM_INFO = "GET_TEAM_INFO";
+export const GET_TEAM_INFO_SUCCESS = "GET_TEAM_INFO_SUCCESS";
+export const GET_TEAM_INFO_FAIL = "GET_TEAM_INFO_FAIL";
+
 export function getTeamSeasons(id) {
   return (dispatch) => {
     dispatch({ type: GET_TEAM_SEASONS });
@@ -123,6 +127,22 @@ export function getTeamBestFive(teamId, seasonId) {
       .catch((err) => {
         // TODO. toast some messages
         dispatch({ type: GET_TEAM_BEST_FIVE_FAIL });
+        console.log(err);
+      });
+  };
+}
+
+export function getTeamInfo(teamId) {
+  return (dispatch) => {
+    dispatch({ type: GET_TEAM_INFO });
+    axios
+      .get(`${process.env.REACT_APP_API_PATH}/teams/${teamId}`)
+      .then((res) => {
+        dispatch({ type: GET_TEAM_INFO_SUCCESS, data: res.data });
+      })
+      .catch((err) => {
+        // TODO. toast some messages
+        dispatch({ type: GET_TEAM_INFO_FAIL });
         console.log(err);
       });
   };
