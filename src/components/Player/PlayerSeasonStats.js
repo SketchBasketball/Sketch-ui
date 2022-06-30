@@ -16,7 +16,7 @@ const PlayerSeasonStats = () => {
         <DataGrid
           rows={playerSeasonStats ? playerSeasonStats : []}
           columns={playerSeasonStatsStatisticsHeader}
-          getRowId={(row) => row.season_id}
+          getRowId={(row) => row.season_id + row.match_type}
           autoHeight={true}
           rowHeight={30}
           pageSize={100}

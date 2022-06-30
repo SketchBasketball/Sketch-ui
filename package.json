@@ -25,6 +25,7 @@
   },
   "scripts": {
     "start": "REACT_APP_API_PATH=https://dev.api.sketchbball.com react-scripts start",
+    "start:qa": "REACT_APP_API_PATH=https://api.sketchbball.com react-scripts start",
     "build:dev": "REACT_APP_API_PATH=https://dev.api.sketchbball.com react-scripts build",
     "build:prod": "REACT_APP_API_PATH=https://api.sketchbball.com react-scripts build",
     "test": "react-scripts test",
